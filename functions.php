@@ -347,4 +347,3 @@ function qtrans_TextTranslate($engString, $jpnString) {
 }
 
 ?>
-		

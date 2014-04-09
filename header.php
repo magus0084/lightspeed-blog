@@ -6,8 +6,9 @@
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
 	<head>
-		<meta charset="utf-8">
-
+		<!--<meta charset="UTF-8">-->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		
 		<?php // Google Chrome Frame for IE ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -72,6 +73,7 @@
 								<li>
 									<a href="" rel="nofollow">
 										<?php qtrans_TextTranslate('About', 'Lightspeedについて'); ?>
+										<i class="fa fa-caret-down"></i>
 									</a>
 								</li>
 								
@@ -79,6 +81,7 @@
 								<li>
 									<a href="" rel="nofollow">
 										<?php qtrans_TextTranslate('Features', 'お薦め記事'); ?>
+										<i class="fa fa-caret-down"></i>
 									</a>
 								</li>
 								
@@ -86,26 +89,35 @@
 								<li>
 									<a href="" rel="nofollow">
 										<?php qtrans_TextTranslate('Topics', 'カテゴリー'); ?>
+										<i class="fa fa-caret-down"></i>
 									</a>
 								</li>
 							</ul>
 							
-							<?php //bones_main_nav(); ?>
+							<?php /* bones_main_nav(); */ ?>
 						</nav>
 						
 						<nav class="right-header-nav">
 							<ul class="nav-header">
 								<li id="nav-share">
-									<i></i>
+									<a href="">
+										<i class="fa fa-share"></i>
+									</a>
 								</li>
 								<li id="nav-lang">
-									<i></i>
+									<a href="">
+										<i class="fa fa-globe"></i>
+									</a>
 								</li>
 								<li id="nav-RSS">
-									<i></i>
+									<a href="">
+										<i class="fa fa-rss"></i>
+									</a>
 								</li>
 								<li class="" id="nav-Search">
-									<i></i>
+									<a href="">
+										<i class="fa fa-search"></i>
+									</a>
 								</li>
 							</ul>
 						</nav>

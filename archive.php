@@ -11,7 +11,7 @@
 				<?php } else {
 					$thumb = $defaultImage;
 					?>
-					<header id="post-header-image" class="header-image short-header-image" style="background-image:url('$defaultImage');"></header>
+					<header id="post-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $defaultImage ?>');"></header>
 				<? } ?>
 
 				<!-- BEGIN MAIN CONTENT -->
@@ -103,7 +103,7 @@
 										<h3><a href="<?php the_permalink(); ?>" title="Read the article &quot;<?php the_title(); ?>&quot;"><?php the_title(); ?></a></h3>
 														
 										<!-- POST EXCERPT AND READ MORE LINK -->
-										<?php echo get_excerpt_by_chars($numCharsExcerpt, 'en'); ?>
+										<?php echo get_excerpt_by_chars($numCharsExcerpt, qtrans_getLanguage() ); ?>
 										
 										<!-- POST AUTHOR -->
 										<p class="article-author">By <a href="<?php echo $authorURL ?>"><?php echo $authorName ?></a></p>

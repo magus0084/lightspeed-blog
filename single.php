@@ -11,13 +11,16 @@
 				<?php } else {
 					$thumb = $defaultImage;
 					?>
-					<header id="post-header-image" class="header-image" style="background-image:url('$defaultImage');"></header>
+					<header id="post-header-image" class="header-image" style="background-image:url('<?php echo $defaultImage ?>');"></header>
 				<? } ?>
 							
 				<div id="inner-content" class="wrap clearfix article-page">
 					
 					<!-- TAGLINE -->
-					<aside id="tagline">On Pace. On Target. IT Industry Insights.</aside>
+					<aside id="tagline">
+						On Pace. On Target. IT Industry Insights.<br>
+						<span>Powered by KVH</span>
+					</aside>
 					
 					<!-- MAIN CONTENT -->
 					<div id="main" class="eightcol first clearfix" role="main">
@@ -30,7 +33,7 @@
 
 									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 									<?php
-										$entryExcerpt = get_excerpt_by_chars($numCharsExcerptLong, qtrans_getLanguage());
+										$entryExcerpt = get_excerpt_by_chars($numCharsExcerptLong, qtrans_getLanguage() );
 										//$entryExcerpt = get_the_excerpt();
 										if ($entryExcerpt != '') {
 											printf ( __('<p class="entry-excerpt single-excerpt" itemprop="summary">%1s</p>'), $entryExcerpt);
