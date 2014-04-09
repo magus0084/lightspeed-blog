@@ -1,0 +1,43 @@
+/*
+Syntax error: Inconsistent indentation: previous line was indented by 3 spaces, but this line was indented by 1 space.
+        on line 18 of /Users/todaa/Documents/HTML Test Bed/local_server/wp-content/themes/lightspeed/style.css
+
+13: /*! normalize.css v2.1.3 | MIT License | git.io/normalize *\/
+14: /* ==========================================================================
+15:    HTML5 display definitions
+16:    ========================================================================== *\/
+17: /**
+18:  * Correct `block` display not defined in IE 8/9.
+19:  *\/
+20: article,
+21: aside,
+22: details,
+23: figcaption,
+
+Backtrace:
+/Users/todaa/Documents/HTML Test Bed/local_server/wp-content/themes/lightspeed/style.css:18
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/engine.rb:512:in `try_comment'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/engine.rb:460:in `block in tabulate'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/engine.rb:449:in `each'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/engine.rb:449:in `each_with_index'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/engine.rb:449:in `tabulate'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/engine.rb:412:in `_to_tree'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/engine.rb:274:in `render'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:186:in `each'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:221:in `watch'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin.rb:108:in `method_missing'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/exec.rb:509:in `watch_or_update'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/exec.rb:346:in `process_result'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/exec.rb:43:in `parse'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/exec.rb:22:in `parse!'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/bin/sass:13:in `<top (required)>'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/bin/sass:19:in `load'
+/Users/todaa/.rvm/gems/ruby-1.9.2-p180/bin/sass:19:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Inconsistent indentation: previous line was indented by 3 spaces, but this line was indented by 1 space.\A         on line 18 of /Users/todaa/Documents/HTML Test Bed/local_server/wp-content/themes/lightspeed/style.css\A \A 13: /*! normalize.css v2.1.3 | MIT License | git.io/normalize */\A 14: /* ==========================================================================\A 15:    HTML5 display definitions\A 16:    ========================================================================== */\A 17: /**\A 18:  * Correct `block` display not defined in IE 8/9.\A 19:  */\A 20: article,\A 21: aside,\A 22: details,\A 23: figcaption,"; }

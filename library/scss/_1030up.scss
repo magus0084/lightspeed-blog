@@ -1,0 +1,148 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+
+/**********************
+POSTS & CONTENT STYLES
+***********************/
+
+.header-image {
+	height: $article-header-image-xlarge;
+	
+	&#top-page-header-image {
+		height: $top-page-header-image-xlarge;
+	}
+}
+
+/* Fills left margin space */
+#main {
+  background-color: white;
+  @include full-left-width;
+}
+
+/* Creates left margin for cooler layout of images */
+.post {
+  position: relative;
+  padding-left: $left-margin;
+}
+
+/* Puts the author box in the left margin */
+#writtenByBox {
+	width: $large-avatar;	
+	position: absolute;
+	top: $h1-top-margin;
+	left: 0;
+	
+	
+	.avatar {
+		width: $large-avatar;
+		height: $large-avatar;
+	}
+}
+
+.entry-content {	
+	box-sizing: border-box;
+
+	.alignleft, img.alignleft { 
+		margin-left: -$left-margin; 
+	}
+	
+	blockquote {
+		width: 50%;
+		float: left;
+		margin-left: -$left-margin;
+	}
+}
+
+
+/***********************
+COMMENT STYLES
+***********************/
+
+.commentlist {
+
+	.comment {
+		
+		article {
+			padding-bottom: 2em;
+			position: relative;
+			
+			&:hover .comment-reply-link {
+				opacity: 0.7;
+				//display: block;
+			}
+		}
+	}
+	
+
+	.comment-reply-link {
+		opacity: 0;
+		//display: none;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+} /* end .commentlist */
+
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
+	margin-top: 12em;
+	padding-left: 2em;
+}
+
+
+
+/*********************
+AUTHOR BIO BOX
+*********************/
+
+
+
+
+/*********************
+ARTICLE EXCERPT BOX
+*********************/
+
+.article-excerpt-box {
+	height: 38em;
+	
+	&.no-sidebar {
+		width: $three-col-width;
+		margin-right: $three-col-margin;
+		float: left;
+	}
+
+	.article-excerpt-image { 
+		height: $article-key-image-large-screen;
+	}
+}
+
+
+/*********************
+CUSTOM PAGE STYLES
+*********************/
+
+/* ARCHIVES */
+/* -------- */
+
+
+.archives {
+
+	.archives-info-box {
+		width: $three-col-width * 2 + $three-col-margin;
+		@include box-sizing(border-box);
+	}
+}
+

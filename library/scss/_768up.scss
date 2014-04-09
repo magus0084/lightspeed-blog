@@ -1,0 +1,419 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {}
+
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	@include transition(all 0.2s ease-in-out);
+
+	a:hover {
+		color: $link-color;
+	}
+}
+
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	max-width: 1140px;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header {}
+
+	#logo {}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+.mobile-nav {
+	background: #eee;
+	border: 0;
+	ul {
+		margin-top:0;
+	}
+	li {
+		float: left;
+		position: relative;
+
+		a {
+			border-bottom: 0;
+
+			/*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/
+			&:hover, &:focus {
+				background-color: #dedede;
+			}
+		}
+
+		&:first-child {}
+		&:last-child {}
+
+		/*
+		plan your menus and drop-downs wisely.
+		*/
+		ul.sub-menu,
+		ul.children {
+			margin-top: 0;
+			border: 1px solid #ccc;
+			border-top: 0;
+			position: absolute;
+			overflow: hidden;
+			visibility: hidden;
+			z-index: 8999;
+
+			li {
+
+				a {
+					padding-left: 10px;
+					border-right: 0;
+					display: block;
+					width: 180px;
+					border-bottom: 1px solid #ccc;
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+				}
+
+				&:first-child {}
+
+				&:last-child {
+
+					a {
+						border-bottom: 0;
+					}
+				}
+
+				/*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/
+				ul {}
+			}
+
+			/* highlight sub-menu current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current-page-ancestor {
+				a {}
+			}
+		}
+
+		/* showing sub-menus */
+		&:hover ul {
+			top: auto;
+			overflow: visible;
+			visibility:visible;
+		}
+
+	} /* end .menu ul li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current-page-ancestor {
+		a {}
+	}  /* end current highlighters */
+
+} /* end .nav */
+
+
+/**********************
+POSTS & CONTENT STYLES
+***********************/
+
+.header-image {
+	height: $article-header-image-large;
+	background-attachment: fixed;
+	
+	&#top-page-header-image {
+		height: $top-page-header-image-large;
+	}
+}
+
+
+
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+
+
+.commentlist {
+
+	/* comment reply link */
+	.comment-reply-link {
+		@include transition(all 0.3s ease-in-out);
+		
+	} /* end .commentlist .comment-reply-link */
+
+} /* end .commentlist */
+
+
+
+
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+
+.respond-form {
+
+	form {
+		input[type=text],
+		input[type=email],
+		input[type=url],
+		textarea {
+			/*&:hover {
+				background: $white;
+			} */
+		}
+	}
+	
+	&:hover #cancel-comment-reply a {
+		color: $ls-purple;
+	}
+	
+	&:hover input[type=text],
+	&:hover	input[type=email],
+	&:hover	input[type=url],
+	&:hover	textarea {
+		//background: $white;
+		background: rgba(255,255,255, 0.7);
+	}
+}
+
+	#cancel-comment-reply a {
+		@include transition(all 0.3s ease-in-out);
+	}
+
+
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
+	margin-top: 8em;
+	padding-left: 1em;
+}
+
+#content.top-page {
+	.sidebar {
+		margin-top: 0;
+	}
+}
+
+	.widgettitle {
+		margin-bottom: 0.75em;
+		@include border-top;
+	}
+
+	.widget {
+		padding: 0 10px;
+		margin: 2.2em 0 6em;
+
+		ul {
+			li {
+				margin-bottom: 0.75em;
+
+				&:first-child {}
+				&:last-child {}
+				a {}
+				/* deep nesting */
+
+				ul {
+					margin-top: 0.75em;
+					padding-left: 1em;
+				}
+			}
+		}
+	}
+
+
+	/* links widget */
+	.widget_links {}
+	.widget_links ul {}
+	.widget_links ul li {}
+	.widget_links ul li a {}
+
+	/* meta widget */
+	.widget_meta {}
+	.widget_meta ul {}
+	.widget_meta ul li {}
+	.widget_meta ul li a {}
+
+	/* pages widget */
+	.widget_pages {}
+	.widget_pages ul {}
+	.widget_pages ul li {}
+	.widget_pages ul li a {}
+
+	/* recent-posts widget */
+	.widget_recent_entries {}
+	.widget_recent_entries ul {}
+	.widget_recent_entries ul li {}
+	.widget_recent_entries ul li a {}
+
+	/* archives widget */
+	.widget_archive {}
+	.widget_archive ul {}
+	.widget_archive ul li {}
+	.widget_archive ul li a {}
+	.widget_archive select {}
+	.widget_archive option {}
+
+	/* tag-cloud widget */
+	.widget_links {}
+	.widget_links li:after {}
+	.widget_links li:before {}
+	.widget_tag_cloud {}
+	.widget_tag_cloud a {}
+	.widget_tag_cloud a:after {}
+	.widget_tag_cloud a:before {}
+
+	/* calendar widget */
+	.widget_calendar {}
+	#calendar_wrap {}
+	#calendar_wrap th {}
+	#calendar_wrap td {}
+	#wp-calendar tr td {}
+	#wp-calendar caption {}
+	#wp-calendar a {}
+	#wp-calendar #today {}
+	#wp-calendar #prev {}
+	#wp-calendar #next {}
+	#wp-calendar #next a {}
+	#wp-calendar #prev a {}
+
+	/* category widget */
+	.widget_categories {}
+	.widget_categories ul { 
+		list-style: disc;
+		margin-left: 1em;
+	}
+	.widget_categories ul li {}
+	.widget_categories ul ul.children {}
+	.widget_categories a {}
+	.widget_categories select{}
+	.widget_categories select#cat {}
+	.widget_categories select.postform {}
+	.widget_categories option {}
+	.widget_categories .level-0 {}
+	.widget_categories .level-1 {}
+	.widget_categories .level-2 {}
+	.widget_categories .level-3 {}
+
+	/* recent-comments widget */
+	.recentcomments {}
+	#recentcomments {}
+	#recentcomments li {}
+	#recentcomments li a {}
+	.widget_recent_comments {}
+
+	/* search widget */
+	#searchform {}
+	.widget_search {}
+	.screen-reader-text {}
+
+	/* text widget */
+	.textwidget {}
+	.widget_text {}
+	.textwidget p {}
+	
+	/* Recommended Content */
+	#widget-recommend {}
+	.recommended-post {}
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links {
+	ul {
+		li {
+			a {
+				&:hover {}
+			}
+			/*
+			be careful with the depth of your menus.
+			it's very rare to have multi-depth menus in
+			the footer.
+			*/
+			ul {}
+		}
+	}
+} /* end .footer-links */
+
+
+
+/*********************
+ARTICLE EXCERPT BOX
+*********************/
+
+.article-excerpt-box {
+	height: 40em;
+	
+	.article-excerpt-image { 
+		height: $article-key-image-medium-screen;
+		@include transition(all 0.4s ease-in-out);
+		
+		&:hover {
+			@include background-size(110% auto);
+		}
+	}
+	
+	&.no-sidebar {
+		
+		.article-excerpt-image {
+			height: $article-key-image-large-screen;	
+		}
+	}
+}
+
+
+
+/*********************
+CUSTOM PAGE STYLES
+*********************/
+
+/* TOP PAGE */
+/* -------- */
+
+

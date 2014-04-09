@@ -1,0 +1,28 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/
+
+/**********************
+POSTS & CONTENT STYLES
+***********************/
+
+.header-image {
+	height: $article-header-image-xxlarge;
+	
+	&#top-page-header-image {
+		height: $top-page-header-image-xxlarge;
+	}
+}
+
+#inner-content {
+	margin-top: -$content-overlap-margin;
+	background-color: white;
+	@include box-sizing(content-box);
+}
