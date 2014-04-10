@@ -18,7 +18,10 @@
 				<div id="inner-content" class="wrap clearfix">
 				
 						<!-- TAGLINE -->
-						<aside id="tagline">On Pace. On Target. IT Industry Insights.</aside>
+						<aside id="tagline">
+							On Pace. On Target. IT Industry Insights.<br>
+							<span>Powered by KVH</span>
+						</aside>
 					
 						<!-- MAIN -->
 						<div id="main" class="twelvecol first clearfix archives" role="main">

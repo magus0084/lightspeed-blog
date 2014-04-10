@@ -27,8 +27,11 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	@include transition(all 0.2s ease-in-out);
 
-	a:hover {
-		color: $link-color;
+	a, a:visited {
+		&:hover, &:focus {
+			color: $ls-purple;
+			background-color: transparent;
+		}
 	}
 }
 
@@ -40,6 +43,16 @@ LAYOUT & GRID STYLES
 .wrap {
 	max-width: 1140px;
 }
+
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+	@include transition(all 0.3s ease-in-out);
+}
+
 
 /*********************
 HEADER STYLES
@@ -154,6 +167,20 @@ NAVIGATION STYLES
 POSTS & CONTENT STYLES
 ***********************/
 
+#writtenByBox {
+	a {
+		img {
+			@include img-hover-effect;
+		}
+	}
+	
+	.author {
+		a {
+			@include link-hover-effect;
+		}
+	}
+}
+
 .header-image {
 	height: $article-header-image-large;
 	background-attachment: fixed;
@@ -163,7 +190,70 @@ POSTS & CONTENT STYLES
 	}
 }
 
+	.entry-content {
+	
+		a {
+			&:hover {
+				@include link-hover-effect;
+			}
+			
+			img {
+				@include img-hover-effect;
+			}
+		}
+	}
 
+	
+.article-footer {
+	a {
+		@include link-hover-effect;
+	}
+}
+	
+	
+/*********************
+AUTHOR BIO BOX
+*********************/
+.author-bio-box-avatar {
+	a {
+		img {
+			@include img-hover-effect;
+		}
+	}
+}
+
+h4.author-bio-box-position {
+	a {
+		color: $link-color;
+		@include link-hover-effect;
+	}
+}
+	
+ul.author-bio-box-social-media {
+	a {
+		@include link-hover-effect;
+	}
+}
+
+
+/***********************
+RELATED CONTENT
+***********************/
+
+.related-content {
+	a {
+		img {
+			@include img-hover-effect;
+		}
+		
+		h5 {
+			&:hover {
+				color: $link-color;
+			}
+		}
+	}
+}
+	
 
 /******************************************************************
 COMMENT STYLES
@@ -194,9 +284,7 @@ COMMENT FORM STYLES
 		input[type=email],
 		input[type=url],
 		textarea {
-			/*&:hover {
-				background: $white;
-			} */
+			
 		}
 	}
 	
@@ -208,7 +296,7 @@ COMMENT FORM STYLES
 	&:hover	input[type=email],
 	&:hover	input[type=url],
 	&:hover	textarea {
-		//background: $white;
+		background: $white;
 		background: rgba(255,255,255, 0.7);
 	}
 }
@@ -249,7 +337,7 @@ SIDEBARS & ASIDES
 
 				&:first-child {}
 				&:last-child {}
-				a {}
+				a { }
 				/* deep nesting */
 
 				ul {
@@ -258,8 +346,25 @@ SIDEBARS & ASIDES
 				}
 			}
 		}
+		
+		a {
+			@include link-hover-effect; 
+			
+			img {
+				@include img-hover-effect;
+			}
+		}
+		
+		h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+		
+			a, a:visited {
+				&:hover, &:focus {
+					color: $ls-purple;
+					background-color: transparent;
+				}
+			}
+		}
 	}
-
 
 	/* links widget */
 	.widget_links {}
@@ -392,17 +497,23 @@ ARTICLE EXCERPT BOX
 	
 	.article-excerpt-image { 
 		height: $article-key-image-medium-screen;
-		@include transition(all 0.4s ease-in-out);
-		
-		&:hover {
-			@include background-size(110% auto);
-		}
+		@include transition(all 0.25s ease-in);
+	}
+	
+	&:hover .article-excerpt-image {
+		background-position-y: -50px;
 	}
 	
 	&.no-sidebar {
 		
 		.article-excerpt-image {
 			height: $article-key-image-large-screen;	
+		}
+	}
+
+	.article-author {
+		a {
+			@include link-hover-effect;
 		}
 	}
 }

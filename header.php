@@ -59,12 +59,12 @@
 
 					<nav id="header-nav" class="clearfix" role="navigation">
 						<nav class="left-header-nav">
-							<ul class="desktop-nav nav-header clearfix">
+							<ul class="desktop-nav header-nav clearfix">
 							
 								<!-- LOGO -->
 								<li>
 									<a href="<?php echo home_url(); ?>" rel="nofollow">
-										<image id="logo" xlink:href="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.svg" src="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.png" />
+										<image id="logo" xlink:href="<?php echo qtrans_convertURL(get_bloginfo('template_url')); ?>/library/images/lightspeed-logo.svg" src="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.png" />
 										<!--<div id="header-logo" class="ls-logo"></div>-->
 									</a>
 								</li>
@@ -98,26 +98,68 @@
 						</nav>
 						
 						<nav class="right-header-nav">
-							<ul class="nav-header">
-								<li id="nav-share">
-									<a href="">
+							<ul class="header-nav">
+								
+								<!-- SHARE -->
+								<li id="nav-share1">
+									<a>
 										<i class="fa fa-share"></i>
 									</a>
+									
+									<ul class="sub-menu">
+										<li>
+											<a href="<?php echo qtrans_convertURL(get_permalink(), 'en') ?>">
+												<i class="fa fa-twitter"></i> Twitter
+											</a>
+										</li>
+										<li>
+											<a href="<?php echo qtrans_convertURL(get_permalink(), 'ja') ?>">
+												<i class="fa fa-linkedin"></i> LinkedIn
+											</a>
+										</li>
+									</ul>
 								</li>
+								
+								<!-- GLOBE -->
 								<li id="nav-lang">
-									<a href="">
+									<a>
 										<i class="fa fa-globe"></i>
 									</a>
+									
+									<ul class="sub-menu">
+										<li>
+											<a href="<?php echo qtrans_convertURL(get_permalink(), 'en') ?>">
+												English
+											</a>
+										</li>
+										<li>
+											<a href="<?php echo qtrans_convertURL(get_permalink(), 'ja') ?>">
+												日本語
+											</a>
+										</li>
+									</ul>
 								</li>
+								
+								<!-- RSS -->
 								<li id="nav-RSS">
-									<a href="">
+									<a>
 										<i class="fa fa-rss"></i>
 									</a>
 								</li>
+								
+								<!-- SEARCH -->
 								<li class="" id="nav-Search">
-									<a href="">
+									<a>
 										<i class="fa fa-search"></i>
 									</a>
+									
+									<ul class="sub-menu">
+										<li>
+											<div class="search-box-container">
+												<?php echo bones_wpsearch($form) ?>
+											</div>
+										</li>
+									</ul>
 								</li>
 							</ul>
 						</nav>

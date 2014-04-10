@@ -42,7 +42,10 @@ Template Name: Top Page
 						<div id="inner-content" class="wrap clearfix top-page">
 	
 							<!-- TAGLINE -->
-							<aside id="tagline">On Pace. On Target. IT Industry Insights.</aside>
+							<aside id="tagline">
+								On Pace. On Target. IT Industry Insights.<br>
+								<span>Powered by KVH</span>
+							</aside>
 					
 							<!-- BEGIN main -->
 							<div id="main" class="eightcol first clearfix" role="main">

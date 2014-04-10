@@ -546,6 +546,9 @@ Thanks to @anthonyshort for the inspiration on these.
 USAGE: @include transition(all 0.2s ease-in-out);
 */
 /*********************
+HOVER EFFECTS
+*********************/
+/*********************
 CSS3 GRADIENTS
 Be careful with these since they can
 really slow down your CSS. Don't overdo it.
@@ -567,7 +570,7 @@ OPACITY
 /*********************
 BUTTONS
 *********************/
-.button, .button:visited {
+.button, input[type=submit], .button:visited, input[type=submit]:visited {
   font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: 0;
   border-bottom: 1px solid #392348;
@@ -586,11 +589,11 @@ BUTTONS
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
-  .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
+  .button:hover, input[type=submit]:hover, .button:focus, input[type=submit]:focus, .button:visited:hover, input[type=submit]:visited:hover, .button:visited:focus, input[type=submit]:visited:focus {
     color: white;
     background-color: #613c7c;
     border-bottom: 1px solid #030204; }
-  .button:active, .button:visited:active {
+  .button:active, input[type=submit]:active, .button:visited:active, input[type=submit]:visited:active {
     background-color: #7c4d9e;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#6f458d), to(#7c4d9e));
     background-image: -webkit-linear-gradient(top, #6f458d, #7c4d9e);
@@ -619,6 +622,7 @@ BUTTONS
     background-image: -o-linear-gradient(top, #1681c4, #1990db);
     background-image: linear-gradient(to bottom, #1681c4, #1990db); }
 
+/* Make submit button look like all other buttons */
 /*********************
 BORDERS
 *********************/
@@ -739,7 +743,9 @@ a, a:visited {
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #643e7f; }
+    color: #2f2772; }
+  a:active, a:visited:active {
+    color: #2f2772; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
@@ -796,21 +802,21 @@ HEADER STYLES
   width: 120px;
   height: auto; }
 
-.nav-header {
+.header-nav {
   font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 0;
   margin: 0; }
-  .nav-header a {
+  .header-nav a {
     color: white; }
 
-ul.nav-header {
+ul.header-nav {
   vertical-align: middle; }
-  ul.nav-header li {
+  ul.header-nav > li {
     display: inline-block;
     vertical-align: middle;
     margin-right: 1em;
     line-height: 2.5em; }
-    ul.nav-header li a {
+    ul.header-nav > li a {
       display: block;
       padding: 0.25em 1em;
       -webkit-transition: all 0.3s ease-in-out;
@@ -818,18 +824,63 @@ ul.nav-header {
       -ms-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
-      ul.nav-header li a:hover {
+      ul.header-nav > li a:hover {
+        color: white;
         background-color: #7c4d9e;
-        color: white; }
-      ul.nav-header li a img {
+        cursor: pointer; }
+      ul.header-nav > li a img {
         vertical-align: middle;
         margin-bottom: 0.4em; }
+    ul.header-nav > li:hover {
+      background-color: #7c4d9e;
+      cursor: pointer; }
 
 .left-header-nav {
   float: left; }
 
 .right-header-nav {
   float: right; }
+  .right-header-nav ul.header-nav > li {
+    margin-left: 0.25em;
+    margin-right: 0;
+    position: relative; }
+    .right-header-nav ul.header-nav > li:hover .sub-menu {
+      visibility: visible;
+      -moz-opacity-size: 1;
+      -ms-opacity-size: 1;
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=100);
+      right: 0; }
+
+.sub-menu {
+  -moz-opacity-size: 0;
+  -ms-opacity-size: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+  filter: alpha(opacity=0);
+  visibility: hidden;
+  position: absolute;
+  top: 3em;
+  right: 2em;
+  color: white;
+  border-top: 2px solid #7c4d9e;
+  border-bottom: 5px solid black;
+  padding-bottom: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  .sub-menu > li {
+    display: block; }
+    .sub-menu > li a, .sub-menu > li div {
+      min-width: 10em;
+      padding: 0.75em 1.5em;
+      background-color: #8b8b8b;
+      background-color: rgba(0, 0, 0, 0.7); }
+  .sub-menu:hover ul.header-nav > li > a {
+    background-color: #7c4d9e; }
 
 /*********************
 NAVIGATION STYLES
@@ -880,9 +931,20 @@ and more scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-#writtenByBox .avatar {
-  width: 2.5em;
-  height: 2.5em; }
+#writtenByBox {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #f1f1f1;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  padding-left: 1000em;
+  margin-left: -1000em; }
+  #writtenByBox .avatar {
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 1em; }
 
 .header-image {
   background-color: #292929;
@@ -902,14 +964,20 @@ POSTS & CONTENT STYLES
 #tagline {
   display: block;
   position: absolute;
-  top: -4em;
+  top: -5em;
   right: 0;
+  background-color: #8b8b8b;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 0.5em 1.5em;
   color: white;
   font-family: "Helvetica Neue", Helvetica, Century Gothic, Tahoma, Arial, sans-seif;
   font-weight: 300;
-  font-style: italic; }
+  font-style: italic;
+  text-align: right;
+  border-bottom: 5px solid black;
+  padding-bottom: 0; }
+  #tagline span {
+    font-size: 0.7em; }
 
 /* end .hentry */
 /* STYLING ON EXCERPT */
@@ -960,7 +1028,7 @@ POSTS & CONTENT STYLES
     color: #787878;
     margin-bottom: 1.5em; }
   .entry-content img {
-    margin: 0 0 1.5em 0;
+    margin: 1.5em 0 1.5em 0;
     max-width: 100%;
     height: auto;
     border-top: 1px solid #c3c3c3;
@@ -1150,6 +1218,9 @@ PAGE NAVI STYLES
 
 /* end .wp-prev-next */
 /******************************************************************
+SEARCH FORM
+******************************************************************/
+/******************************************************************
 COMMENT STYLES
 ******************************************************************/
 /* #comments-section {
@@ -1242,13 +1313,21 @@ COMMENT STYLES
     background: #c3c3c3;
     padding: 3px 1em;
     color: #fff;
+    -moz-opacity-size: 0.65;
+    -ms-opacity-size: 0.65;
     opacity: 0.65;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=65);
     margin-bottom: 10px;
     font-weight: 700;
     font-size: 0.9em; }
     .commentlist .comment-reply-link:hover, .commentlist .comment-reply-link:focus {
       background-color: #7c4d9e;
-      opacity: 1; }
+      -moz-opacity-size: 1;
+      -ms-opacity-size: 1;
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=100); }
 
 /* end .commentlist */
 /******************************************************************
@@ -1400,7 +1479,8 @@ ARTICLE EXCERPT BOX
   .article-excerpt-box .article-excerpt-image {
     width: 100%;
     height: 15em;
-    background-color: #8b8b8b;
+    background-color: black;
+    background-repeat: no-repeat;
     border-bottom: 5px solid black;
     padding-bottom: 0;
     -webkit-background-size: cover;
@@ -1477,16 +1557,15 @@ tweeners.
   .entry-content {
     /* at this larger size, we can start to align images */ }
     .entry-content .alignleft, .entry-content img.alignleft {
-      margin-right: 1.5em;
+      margin: 1em 1.5em 1em 0;
       display: inline;
       float: left; }
     .entry-content .alignright, .entry-content img.alignright {
-      margin-left: 1.5em;
+      margin-left: 1em 0 1em 1.5em;
       display: inline;
       float: right; }
     .entry-content .aligncenter, .entry-content img.aligncenter {
-      margin-right: auto;
-      margin-left: auto;
+      margin: 1em auto;
       display: block;
       clear: both; }
 
@@ -1640,14 +1719,25 @@ you can add resource intensive styles.
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
-    h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:hover, .h4 a:hover, h5 a:hover, .h5 a:hover {
-      color: #7c4d9e; }
+    h1 a:hover, h1 a:focus, h1 a:visited:hover, h1 a:visited:focus, .h1 a:hover, .h1 a:focus, .h1 a:visited:hover, .h1 a:visited:focus, h2 a:hover, h2 a:focus, h2 a:visited:hover, h2 a:visited:focus, .h2 a:hover, .h2 a:focus, .h2 a:visited:hover, .h2 a:visited:focus, h3 a:hover, h3 a:focus, h3 a:visited:hover, h3 a:visited:focus, .h3 a:hover, .h3 a:focus, .h3 a:visited:hover, .h3 a:visited:focus, h4 a:hover, h4 a:focus, h4 a:visited:hover, h4 a:visited:focus, .h4 a:hover, .h4 a:focus, .h4 a:visited:hover, .h4 a:visited:focus, h5 a:hover, h5 a:focus, h5 a:visited:hover, h5 a:visited:focus, .h5 a:hover, .h5 a:focus, .h5 a:visited:hover, .h5 a:visited:focus {
+      color: #7c4d9e;
+      background-color: transparent; }
 
   /*********************
   LAYOUT & GRID STYLES
   *********************/
   .wrap {
     max-width: 1140px; }
+
+  /*********************
+  LINK STYLES
+  *********************/
+  a, a:visited {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
 
   /*********************
   HEADER STYLES
@@ -1714,11 +1804,124 @@ you can add resource intensive styles.
   /**********************
   POSTS & CONTENT STYLES
   ***********************/
+  #writtenByBox a img {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    #writtenByBox a img:hover {
+      background-color: white;
+      -moz-opacity-size: 0.5;
+      -ms-opacity-size: 0.5;
+      opacity: 0.5;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=50); }
+  #writtenByBox .author a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    #writtenByBox .author a:hover {
+      background-color: #7c4d9e;
+      color: white; }
+
   .header-image {
     height: 25em;
     background-attachment: fixed; }
     .header-image#top-page-header-image {
       height: 18em; }
+
+  .entry-content a:hover {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .entry-content a:hover:hover {
+      background-color: #7c4d9e;
+      color: white; }
+  .entry-content a img {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .entry-content a img:hover {
+      background-color: white;
+      -moz-opacity-size: 0.5;
+      -ms-opacity-size: 0.5;
+      opacity: 0.5;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=50); }
+
+  .article-footer a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .article-footer a:hover {
+      background-color: #7c4d9e;
+      color: white; }
+
+  /*********************
+  AUTHOR BIO BOX
+  *********************/
+  .author-bio-box-avatar a img {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .author-bio-box-avatar a img:hover {
+      background-color: white;
+      -moz-opacity-size: 0.5;
+      -ms-opacity-size: 0.5;
+      opacity: 0.5;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=50); }
+
+  h4.author-bio-box-position a {
+    color: #7c4d9e;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    h4.author-bio-box-position a:hover {
+      background-color: #7c4d9e;
+      color: white; }
+
+  ul.author-bio-box-social-media a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    ul.author-bio-box-social-media a:hover {
+      background-color: #7c4d9e;
+      color: white; }
+
+  /***********************
+  RELATED CONTENT
+  ***********************/
+  .related-content a img {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .related-content a img:hover {
+      background-color: white;
+      -moz-opacity-size: 0.5;
+      -ms-opacity-size: 0.5;
+      opacity: 0.5;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=50); }
+  .related-content a h5:hover {
+    color: #7c4d9e; }
 
   /******************************************************************
   COMMENT STYLES
@@ -1737,16 +1940,10 @@ you can add resource intensive styles.
   /******************************************************************
   COMMENT FORM STYLES
   ******************************************************************/
-  .respond-form form input[type=text],
-  .respond-form form input[type=email],
-  .respond-form form input[type=url],
-  .respond-form form textarea {
-    /*&:hover {
-    	background: $white;
-    } */ }
   .respond-form:hover #cancel-comment-reply a {
     color: #7c4d9e; }
   .respond-form:hover input[type=text], .respond-form:hover input[type=email], .respond-form:hover input[type=url], .respond-form:hover textarea {
+    background: white;
     background: rgba(255, 255, 255, 0.7); }
 
   #cancel-comment-reply a {
@@ -1780,6 +1977,31 @@ you can add resource intensive styles.
       .widget ul li ul {
         margin-top: 0.75em;
         padding-left: 1em; }
+    .widget a {
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      .widget a:hover {
+        background-color: #7c4d9e;
+        color: white; }
+      .widget a img {
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+        .widget a img:hover {
+          background-color: white;
+          -moz-opacity-size: 0.5;
+          -ms-opacity-size: 0.5;
+          opacity: 0.5;
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+          filter: alpha(opacity=50); }
+    .widget h1 a:hover, .widget h1 a:focus, .widget h1 a:visited:hover, .widget h1 a:visited:focus, .widget .h1 a:hover, .widget .h1 a:focus, .widget .h1 a:visited:hover, .widget .h1 a:visited:focus, .widget h2 a:hover, .widget h2 a:focus, .widget h2 a:visited:hover, .widget h2 a:visited:focus, .widget .h2 a:hover, .widget .h2 a:focus, .widget .h2 a:visited:hover, .widget .h2 a:visited:focus, .widget h3 a:hover, .widget h3 a:focus, .widget h3 a:visited:hover, .widget h3 a:visited:focus, .widget .h3 a:hover, .widget .h3 a:focus, .widget .h3 a:visited:hover, .widget .h3 a:visited:focus, .widget h4 a:hover, .widget h4 a:focus, .widget h4 a:visited:hover, .widget h4 a:visited:focus, .widget .h4 a:hover, .widget .h4 a:focus, .widget .h4 a:visited:hover, .widget .h4 a:visited:focus, .widget h5 a:hover, .widget h5 a:focus, .widget h5 a:visited:hover, .widget h5 a:visited:focus, .widget .h5 a:hover, .widget .h5 a:focus, .widget .h5 a:visited:hover, .widget .h5 a:visited:focus {
+      color: #7c4d9e;
+      background-color: transparent; }
 
   /* links widget */
   /* meta widget */
@@ -1820,19 +2042,24 @@ you can add resource intensive styles.
     height: 40em; }
     .article-excerpt-box .article-excerpt-image {
       height: 10em;
-      -webkit-transition: all 0.4s ease-in-out;
-      -moz-transition: all 0.4s ease-in-out;
-      -ms-transition: all 0.4s ease-in-out;
-      -o-transition: all 0.4s ease-in-out;
-      transition: all 0.4s ease-in-out; }
-      .article-excerpt-box .article-excerpt-image:hover {
-        -webkit-background-size: 110% auto;
-        -moz-background-size: 110% auto;
-        -ms-background-size: 110% auto;
-        -o-background-size: 110% auto;
-        background-size: 110% auto; }
+      -webkit-transition: all 0.25s ease-in;
+      -moz-transition: all 0.25s ease-in;
+      -ms-transition: all 0.25s ease-in;
+      -o-transition: all 0.25s ease-in;
+      transition: all 0.25s ease-in; }
+    .article-excerpt-box:hover .article-excerpt-image {
+      background-position-y: -50px; }
     .article-excerpt-box.no-sidebar .article-excerpt-image {
       height: 15em; }
+    .article-excerpt-box .article-author a {
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      .article-excerpt-box .article-author a:hover {
+        background-color: #7c4d9e;
+        color: white; }
 
   /*********************
   CUSTOM PAGE STYLES
@@ -1884,10 +2111,20 @@ you can add resource intensive styles.
     width: 4.75em;
     position: absolute;
     top: 0.67em;
-    left: 0; }
+    left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 0;
+    margin-left: 0; }
     #writtenByBox .avatar {
       width: 4.75em;
-      height: 4.75em; }
+      height: 4.75em;
+      margin-right: 0; }
 
   .entry-content {
     box-sizing: border-box; }
@@ -1905,9 +2142,17 @@ you can add resource intensive styles.
     padding-bottom: 2em;
     position: relative; }
     .commentlist .comment article:hover .comment-reply-link {
-      opacity: 0.7; }
+      -moz-opacity-size: 0.7;
+      -ms-opacity-size: 0.7;
+      opacity: 0.7;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=70); }
   .commentlist .comment-reply-link {
+    -moz-opacity-size: 0;
+    -ms-opacity-size: 0;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=0);
     position: absolute;
     bottom: 0;
     right: 0; }
