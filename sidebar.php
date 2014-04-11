@@ -47,9 +47,10 @@
 													<?php
 														$photo = get_the_post_thumbnail($id, 'recommended-post-img');
 																	
-														if ($photo) { ?>
-															<?php echo $photo ?>
-													<?php } ?>
+														if (isset($photo)) { 
+															echo $photo;
+														}
+													?>
 												</a>
 												
 												<!-- TITLE -->

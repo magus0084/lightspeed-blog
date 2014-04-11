@@ -22,7 +22,7 @@ $defaultImages = '';
 // Recent Posts 
 $numPostsPerPage = 8;
 $numRecommendedPosts = 3;
-
+$numPostsNavDetails = 4;
 
 
 /************* INCLUDE NEEDED FILES ***************/
@@ -314,7 +314,7 @@ function the_author_bio($authorID) {
 }
 
 
-/************* CREATE AUTHOR BIO BOX *************/
+/************* CREATE NAVIGATION DETAILS *************/
 /** Requires the 'Advanced Custom Fields' plugin to be installed to work
  ** properly. 
  */
@@ -323,13 +323,108 @@ function ls_navigation() {
 	
 }
 
-function ls_navigation_details($navRegionParent) {
+
+/************* ls_navigation_about **************/
+
+function ls_navigation_about() {
+	// Set Arguments for array
+	$args = array(
+		'child_of' => get_ID_by_slug('about-us')
+	);
+		
+	// Get List
+	$pages = get_pages($args); ?>
+	 
+	<ul class="sub-menu">
+		<li>
+			<a href="<?php echo get_permalink( get_ID_by_slug('about-us') ); ?>">
+				<?php echo get_the_title( get_ID_by_slug('about-us') ); ?>
+			</a>
+		</li>
+				
+		<!-- the loop -->
+		<?php foreach ( $pages as $page ) { ?>
+			<li>
+				<a href="<?php get_permalink( $page->ID ); ?>">
+					<?php echo $page->post_title; ?>
+				</a>
+			</li>
+		<?php } ?>
+		<!-- end of the loop -->
+	</ul>
+<?php }
+
+
+/************* ls_navigation_features **************/
+
+function ls_navigation_features() {
+
+	// Set Arguments for array
+	$args = array(
+		'numberposts' => 5, 
+		'orderby' => 'post_date', 
+		'meta_query' => array(
+			array(
+				'key' => 'recommended',
+				'value' => 'yes'
+			)
+		)
+	);
+		
+	// Get list
+	$featuredArticles = new WP_Query($args); ?>
+
+	<ul class="sub-menu">
+		<!-- the loop -->
+		<?php if($featuredArticles->have_posts()) : while($featuredArticles->have_posts()) : $featuredArticles->the_post(); ?>
+			<li class="sub-menu-featured-article">
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php
+						$photo = get_the_post_thumbnail($id, 'thumbnail');
+					
+						if (isset($photo)) { 
+							echo $photo;
+						}
+					?>
+					<div><?php the_title(); ?></div>
+				</a>
+			</li>
+		<?php endwhile; endif; ?>
+		<!-- end of the loop -->
+	</ul>	
+	<?php wp_reset_postdata(); ?>
 	
+<?php }
+
+
+
+/************* ls_navigation_categories **************/
+
+function ls_navigation_categories() {
+
+	// Set Arguments for array
+	$args = array(
+		'hide_empty' => 1,
+		'exclude' => array(
+				get_cat_ID( 'Uncategorized' ), 
+				get_cat_ID( 'KVH News' )
+			)		
+		);
+	$categories = get_categories($args); ?>
 		
-	if ($navRegionParent == 'categories') {
-		
-	}
-}
+	<ul class="sub-menu">
+		<!-- the loop -->
+		<?php foreach ( $categories as $category ) { ?>
+			<li>
+				<a href="<?php echo get_category_link($category->cat_ID); ?>">
+					<?php echo $category->name; ?>
+				</a>
+			</li>
+		<?php } ?>
+		<!-- end of the loop -->
+	</ul>
+<?php }
+
 
 /************* TRANSLATION *************/
 /** Requires the 'qTranslate' plugin to be installed to work
@@ -344,6 +439,20 @@ function qtrans_TextTranslate($engString, $jpnString) {
 	} elseif (qtrans_getLanguage() == 'ja') {
 		echo $jpnString;
 	}
+}
+
+
+/************* GET PAGE ID BY SLUG **************/
+/** Gets a page's ID by referencing it's slug.
+ */
+ 
+function get_ID_by_slug($page_slug) {
+    $page = get_page_by_path($page_slug);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
 }
 
 ?>

@@ -79,6 +79,7 @@ LINK STYLES
 a, a:visited {
 	color: $link-color;
 	text-decoration: none;
+	@include transition(all 0.3s ease-in-out);
 	
 	/* on hover */
 	&:hover, &:focus {
@@ -210,49 +211,72 @@ HEADER STYLES
 	
 	.left-header-nav {
 		float: left;
+		
+		ul.header-nav {
+			&>li:hover {
+				.sub-menu {
+					left: 0;
+				}
+			}
+		}
+		
+		.sub-menu {
+			left: 2em;	
+		}
 	}
 	
 	.right-header-nav {
 		float: right;
 		
-		ul.header-nav {
+		ul.header-nav >li {
+			&:hover {
+				.sub-menu {
+					right: 0;
+				}
+			}
+		}
+		
+		.sub-menu {
+			right: 2em;	
+		}
+	}
+	
+	ul.header-nav {
 			
-			&>li {
-				margin-left: 0.25em;
-				margin-right: 0;
-				position: relative;
+		&>li {
+			margin-left: 0.25em;
+			margin-right: 0;
+			position: relative;
 				
-				&:hover {
+			&:hover {
 					
-					.sub-menu {
-						visibility: visible;
-						@include opacity(1);
-						right: 0;
-					}
+				.sub-menu {
+					visibility: visible;
+					@include opacity(1);
 				}
 			}
 		}
 	}
 	
 		.sub-menu {
-			@include opacity(0);
 			visibility: hidden;
 			position: absolute;
 			top: 3em;
-			right: 2em;
 			color: white;
+			z-index: 100;
 			border-top: 2px solid $ls-purple;	// should be a made a mixin
+			@include opacity(0);
 			@include border-bottom-black;
 			@include transition(all 0.2s ease-in-out);
 			
 			&>li {
 				display: block;
-				
-				a, div {
+				background-color: $medium-gray;
+				background-color: rgba(0,0,0, 0.7);
+					
+				&>a, &>div {
 					min-width: 10em;
 					padding: 0.75em 1.5em;
-					background-color: $medium-gray;
-					background-color: rgba(0,0,0, 0.7);
 				}
 			}
 			
@@ -260,6 +284,29 @@ HEADER STYLES
 				background-color: $ls-purple;
 			}
 		}
+		
+		.sub-menu-featured-article {
+			width: 450px;
+			
+			img {
+				display: inline-block;
+				vertical-align: top;
+				width: $featured-articles-img-size;
+				height: auto;
+			}
+		
+			div {
+				display: inline-block;
+				vertical-align: middle;
+				background-color: transparent;
+				margin-left: 1em;
+				width: 300px;
+				line-height: 1.4em;
+			}
+		}
+		
+		
+		
 
 /*********************
 NAVIGATION STYLES
@@ -377,6 +424,7 @@ POSTS & CONTENT STYLES
 .header-image {
 	background-color: $darker-gray;
 	height: $article-header-image-small;
+	background-position: center center;
 	@include background-size(cover);
 	
 	&#top-page-header-image {
@@ -1180,6 +1228,7 @@ ARTICLE EXCERPT BOX
 		height: $article-key-image-small-screen;
 		background-color: $black;
 		background-repeat: no-repeat;
+		background-position: center center;
 		@include border-bottom-black;
 		@include background-size(cover);
 	}

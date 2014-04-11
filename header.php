@@ -63,34 +63,39 @@
 							
 								<!-- LOGO -->
 								<li>
-									<a href="<?php echo home_url(); ?>" rel="nofollow">
-										<image id="logo" xlink:href="<?php echo qtrans_convertURL(get_bloginfo('template_url')); ?>/library/images/lightspeed-logo.svg" src="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.png" />
-										<!--<div id="header-logo" class="ls-logo"></div>-->
+									<a href="<?php echo qtrans_convertURL(home_url()); ?>" rel="nofollow">
+										<image id="logo" xlink:href="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.svg" src="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.png" />
 									</a>
 								</li>
 								
 								<!-- ABOUT -->
 								<li>
-									<a href="" rel="nofollow">
+									<a rel="nofollow">
 										<?php qtrans_TextTranslate('About', 'Lightspeedについて'); ?>
 										<i class="fa fa-caret-down"></i>
 									</a>
+									
+									<?php ls_navigation_about(); ?>
 								</li>
 								
-								<!-- CATEGORIES -->
+								<!-- FEATURES -->
 								<li>
-									<a href="" rel="nofollow">
+									<a rel="nofollow">
 										<?php qtrans_TextTranslate('Features', 'お薦め記事'); ?>
 										<i class="fa fa-caret-down"></i>
 									</a>
+									
+									<?php ls_navigation_features(); ?>
 								</li>
 								
 								<!-- CATEGORIES -->
 								<li>
-									<a href="" rel="nofollow">
+									<a rel="nofollow">
 										<?php qtrans_TextTranslate('Topics', 'カテゴリー'); ?>
 										<i class="fa fa-caret-down"></i>
 									</a>
+									
+									<?php ls_navigation_categories(); ?>
 								</li>
 							</ul>
 							
@@ -142,7 +147,7 @@
 								
 								<!-- RSS -->
 								<li id="nav-RSS">
-									<a>
+									<a href="http://feeds.feedburner.com/kvhblog">
 										<i class="fa fa-rss"></i>
 									</a>
 								</li>
@@ -164,9 +169,5 @@
 							</ul>
 						</nav>
 					</nav>
-				</div>
-				
-				<div>
-				
 				</div>
 			</header>

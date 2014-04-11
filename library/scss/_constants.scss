@@ -60,19 +60,13 @@ $tagline-fonts:		"Helvetica Neue", Helvetica, Century Gothic, Tahoma, Arial, san
 $h1-top-margin: 	0.67em;
 
 /*********************
-LAYOUT
+IMAGE SIZES
 *********************/
 
 /* AVATAR SIZES */
 $small-avatar: 		2.5em;
 $medium-avatar: 	3.5em;
 $large-avatar: 		4.75em;
-
-/* CONTENT OVERLAP EFFECT */
-$content-overlap-margin: 		10em;
-
-/* LEFT MARGIN */
-$left-margin: 					120px;
 
 /* HEADER IMAGE SIZES */
 $article-header-image-small: 	15em;
@@ -92,6 +86,19 @@ $top-page-header-image-xxlarge: 30em;
 $article-key-image-small-screen: 15em;
 $article-key-image-medium-screen: 10em;
 $article-key-image-large-screen: 15em;
+
+/* TOP PAGE ARTICLE LIST IMAGE SIZES */
+$featured-articles-img-size: 	4.5em;
+
+/*********************
+LAYOUT
+*********************/
+
+/* CONTENT OVERLAP EFFECT */
+$content-overlap-margin: 		10em;
+
+/* LEFT MARGIN */
+$left-margin: 					120px;
 
 /* INNER ARTICLE EXCERPT BOX GRID */
 $three-col-width: 		30%;
