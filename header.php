@@ -107,7 +107,7 @@
 								
 								<!-- SHARE -->
 								<li id="nav-share1">
-									<a>
+									<a rel="nofollow">
 										<i class="fa fa-share"></i>
 									</a>
 									
@@ -127,7 +127,7 @@
 								
 								<!-- GLOBE -->
 								<li id="nav-lang">
-									<a>
+									<a rel="nofollow">
 										<i class="fa fa-globe"></i>
 									</a>
 									
@@ -154,7 +154,7 @@
 								
 								<!-- SEARCH -->
 								<li class="" id="nav-Search">
-									<a>
+									<a rel="nofollow">
 										<i class="fa fa-search"></i>
 									</a>
 									

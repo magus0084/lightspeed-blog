@@ -15,9 +15,10 @@ POSTS & CONTENT STYLES
 
 .header-image {
 	height: $article-header-image-xlarge;
+	//@include background-size(cover);
 	
-	&#top-page-header-image {
-		height: $top-page-header-image-xlarge;
+	&.short-header-image {
+		height: $short-header-image-xlarge;
 	}
 }
 

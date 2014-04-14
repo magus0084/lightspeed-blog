@@ -185,9 +185,9 @@ HEADER STYLES
 			margin-right: 1em;
 			line-height: 2.5em;
 			
+			// For all links and submenus
 			a {
 				display: block;
-				padding: 0.25em 1em;
 				@include transition(all 0.3s ease-in-out);
 				
 				&:hover {
@@ -195,8 +195,14 @@ HEADER STYLES
 					background-color: $ls-purple;
 					cursor: pointer;
 				}
+			}
+			
+			// For links ONLY in the nav header bar
+			&>a {
+				padding: 0.25em 1em;
 				
-				img {
+				// For logo
+				&>img {
 					vertical-align: middle;
 					margin-bottom: 0.4em;
 				}
@@ -237,7 +243,7 @@ HEADER STYLES
 		}
 		
 		.sub-menu {
-			right: 2em;	
+			right: 2em;
 		}
 	}
 	
@@ -273,13 +279,14 @@ HEADER STYLES
 				display: block;
 				background-color: $medium-gray;
 				background-color: rgba(0,0,0, 0.7);
-					
+				
 				&>a, &>div {
-					min-width: 10em;
-					padding: 0.75em 1.5em;
+					min-width: 12em;
+					padding: 0.5em 1em;
 				}
 			}
 			
+			// Highlights the active navigation header for this menu
 			&:hover ul.header-nav>li>a {
 				background-color: $ls-purple;
 			}
@@ -425,10 +432,12 @@ POSTS & CONTENT STYLES
 	background-color: $darker-gray;
 	height: $article-header-image-small;
 	background-position: center center;
+	background-repeat: no-repeat;
+	@include background-size(100% 25%);
 	@include background-size(cover);
 	
-	&#top-page-header-image {
-		height: $top-page-header-image-small;
+	&.short-header-image {
+		height: $short-header-image-small;
 	}
 }
 
@@ -865,7 +874,7 @@ COMMENT STYLES
 		}
 
 		ul.children {
-			margin: 0 0 0 2em;
+			margin: 0em;
 
 			li {}
 
@@ -1044,13 +1053,17 @@ COMMENT FORM STYLES
 		textarea {
 			padding: 1.2em 0.9em 0.2em 0.9em;
 			background-color: transparent;
-			border: 0;
+			border-radius: 0;
+			border: none;
 			border-bottom: 1px solid $light-gray;
-			//background: #f4f4f4;
-			//border: 1px solid $light-gray;
 			line-height: 1.5em;
 			@include transition(all 0.4s ease-in-out);
 			font-family: $serif;
+			-webkit-appearance: none;
+			-webkit-box-shadow: none;
+			   -moz-box-shadow: none;
+				-ms-box-shadow: none;
+				    box-shadow: none;
 
 			&:focus {
 				background: $white;
@@ -1237,7 +1250,7 @@ ARTICLE EXCERPT BOX
 		@include article-excerpt-text-padding;
 	}
 	
-	.article-author {
+	.article-meta {
 		margin-bottom: 0;
 	}
 }

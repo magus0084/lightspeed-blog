@@ -74,8 +74,8 @@ POSTS & CONTENT STYLES
 .header-image {
 	height: $article-header-image-medium;
 	
-	&#top-page-header-image {
-		height: $top-page-header-image-medium;
+	&.short-header-image {
+		height: $short-header-image-medium;
 	}
 }
 
@@ -142,7 +142,7 @@ ARTICLE EXCERPT BOX
 		height: $article-key-image-medium-screen;
 	}
 	
-	.article-author {
+	.article-meta {
 		position: absolute;
 		bottom: 0;
 		left: 0;

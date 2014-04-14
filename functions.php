@@ -16,13 +16,17 @@ $numCharsExcerptLong = 1000;
 $numCharsExcerpt = 230;
 
 // Default Background images
-$defaultImage = '';
+$defaultImage = get_bloginfo('template_url').'/library/images/default-images/default-image1.jpg';
 $defaultImages = '';
 
 // Recent Posts 
 $numPostsPerPage = 8;
-$numRecommendedPosts = 3;
-$numPostsNavDetails = 4;
+$numRecommendedPosts = 4;
+$numPostsNavDetails = 5;
+$numFeaturedPostsSidebar = 3;
+
+// Author Box Presets
+$avatarSize = 180;
 
 
 /************* INCLUDE NEEDED FILES ***************/
@@ -226,10 +230,11 @@ function get_first_image($size) {
 /************* GET EXCERPT BY NUMBER OF CHARS *************/
 
 function get_excerpt_by_chars($count, $language){
-  
+  global $numCharsExcerpt;
+		
   // Set a default count if none is provided
   if ($count == "" || $count == null) {
-	$count = 250;		
+	$count = $numCharsExcerpt;		
   }
   
   // Get content and strip tags
@@ -257,6 +262,8 @@ function get_excerpt_by_chars($count, $language){
  */
 
 function the_author_bio($authorID) {
+		
+	global $avatarSize;
 	
 	// Special formatting to get custom fields
 	$customFieldAuthorID = 'user_'.$authorID;
@@ -276,7 +283,7 @@ function the_author_bio($authorID) {
 	$authorLinkedIn = get_field('linkedin', $customFieldAuthorID);			// Custom Field
 	
 	// Assemble author bio box parts
-	$authorBioBoxName = '<h2 class="author-bio-box-name"><a href="'.$authorPostsURL.'">'.$authorName.'</a></h2>';
+	$authorBioBoxName = '<h2 class="author-bio-box-name"><a href="'.$authorPostsURL.'" rel="author">'.$authorName.'</a></h2>';
 	$authorBioBoxPosition = ($authorPosition?
 								('<h4 class="author-bio-box-position">'.$authorPosition.($authorCompany?
 									(' at '.($authorCompanyURL? 
@@ -297,8 +304,8 @@ function the_author_bio($authorID) {
 	// Put it all together
 	$authorBioBox = '<div class="author-bio-box clearfix">
 							<div class="author-bio-box-avatar">
-								<a href="'.$authorPostsURL.'">'.
-									get_avatar($authorID , 180 ).
+								<a href="'.$authorPostsURL.'" rel="author">'.
+									get_avatar($authorID , $avatarSize ).
 								'</a>
 							</div>
 							<div class="author-bio-box-text">'.
@@ -314,14 +321,62 @@ function the_author_bio($authorID) {
 }
 
 
+/************* CREATE ARTICLE BOX *************/
+/** Creates a post box that's used to display a group of posts
+ ** on the top page, archive pages, or the search results.
+ ** Must be called within the loop.
+ */
+ 
+function create_article_box($noSidebar, $showExcerpt, $showDate, $showCategories) {
+		
+	// Call in constants
+	global $defaultImage;
+	global $numCharsExcerpt;
+	
+	// Setup variables
+	$authorName = get_the_author_meta('display_name');
+	$authorURL = get_author_posts_url( get_the_author_meta( 'ID' ) );
+	$postImage = array($defaultImage);
+	
+	// Set $postImage if an image exists for the post.
+	if (has_post_thumbnail()) {
+		$postImage = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium'); 
+	} ?>
+	
+	<!-- ARTICLE BOX -->
+	<article class="article-excerpt-box <?php echo ($noSidebar? 'no-sidebar': ''); ?>" role="article">
+									
+		<!-- POST IMAGE -->
+		<a href="<?php the_permalink(); ?>" title="Read the article &quot;<?php the_title(); ?>&quot;">
+			<header class="article-excerpt-image" style="background-image:url('<?php echo $postImage[0] ?>');"></header>	
+		</a>
+											
+		<!-- EXCERPT -->
+		<div class="article-excerpt-text">
+			<h3><a href="<?php the_permalink(); ?>" title="Read the article &quot;<?php the_title(); ?>&quot;"><?php the_title(); ?></a></h3>
+														
+			<!-- POST EXCERPT -->
+			<?php echo ($showExcerpt? get_excerpt_by_chars($numCharsExcerpt, qtrans_getLanguage() ) : ''); ?>
+										
+			<!-- POST AUTHOR -->
+			<p class="article-meta">
+				By <a href="<?php echo $authorURL ?>"><?php echo $authorName ?></a>
+			
+				<!-- POST DATE -->
+				<?php echo ($showDate? '<br><time class="updated" datetime="'.get_the_time( 'Y-m-j' ).'" pubdate>'.get_the_time( __( 'F jS, Y', 'bonestheme' ) ).'</time>' : '') ?>
+			
+				<!-- POST CATEGORIES -->
+				<?php echo ($showCategories? '<br>'.get_the_category_list(', ') : '') ?>	
+			</p>
+		</div>
+	</article>
+<?php }
+
+ 
 /************* CREATE NAVIGATION DETAILS *************/
 /** Requires the 'Advanced Custom Fields' plugin to be installed to work
  ** properly. 
  */
-
-function ls_navigation() {
-	
-}
 
 
 /************* ls_navigation_about **************/
@@ -345,7 +400,7 @@ function ls_navigation_about() {
 		<!-- the loop -->
 		<?php foreach ( $pages as $page ) { ?>
 			<li>
-				<a href="<?php get_permalink( $page->ID ); ?>">
+				<a href="<?php echo get_permalink( $page->ID ); ?>">
 					<?php echo $page->post_title; ?>
 				</a>
 			</li>
@@ -380,7 +435,7 @@ function ls_navigation_features() {
 			<li class="sub-menu-featured-article">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 					<?php
-						$photo = get_the_post_thumbnail($id, 'thumbnail');
+						$photo = get_the_post_thumbnail(get_the_ID(), 'thumbnail');
 					
 						if (isset($photo)) { 
 							echo $photo;

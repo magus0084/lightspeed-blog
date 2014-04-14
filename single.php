@@ -44,7 +44,7 @@
 									
 									<!-- USER INFO -->
 									<p id="writtenByBox"><?php
-										printf( __( '<a href="%1$s">%2$s</a>', 'bonestheme'), get_author_posts_url( get_the_author_meta( 'ID' ) ) , get_avatar( get_the_author_meta( 'ID' ) , 100 )); 
+										printf( __( '<a href="%1$s" rel="author">%2$s</a>', 'bonestheme'), get_author_posts_url( get_the_author_meta( 'ID' ) ) , get_avatar( get_the_author_meta( 'ID' ) , 100 )); 
 										printf( __( 'By <span class="author">%1$s</span>', 'bonestheme' ), bones_get_the_author_posts_link() );
 									?></p>
 
@@ -72,33 +72,33 @@
 									<!-- RELATED ARTICLES -->
 									<?php global $post;
 										$categories = get_the_category();
-										$category = $categories[rand(0, count($categories))];
-									?>
+										$category = $categories[rand(0, count($categories) - 1)]; ?>
+										
 										<h2>You Might Also Be Interested In</h2>
 										<ul class="clearfix">
-									<?php
-										$posts = get_posts('numberposts=3&category='. $category->term_id);
-										$index = 0;
-										foreach($posts as $post) :
-										setup_postdata($post);
-										$index++;
-									?>
-									<li class="related-article threecol <?php if ($index==1) {echo 'first'; } ?>">
-											<a href="<?php the_permalink(); ?>">
-												<?php
-													if (has_post_thumbnail()) {
-														$thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail');
-												?> 	
-														<img class="related-article-img square-img" src="<?php echo $thumb[0]; ?>">
-												<?php } ?>
-												<h5><?php the_title(); ?></h5>
-											</a>
-										</li>
-										<?php endforeach; ?>
-									</ul>
-									<!--<p>
-										<strong><a href="<?php echo get_category_link($category->term_id);?>" title="View all posts filed under <?php echo $category->name; ?>">ARCHIVE FOR '<?php echo $category->name; ?>' CATEGORY &raquo;</a></strong>
-									</p>-->
+											<?php
+												$currentPostID = get_the_ID();
+												$args = array(
+													'numberposts' => $numRecommendedPosts,
+													'category' => $category->term_id,
+													'post__not_in' => array( $currentPostID )
+												);
+												$posts = get_posts($args);
+												$index = 0;
+												foreach($posts as $post) : setup_postdata($post); $index++; ?>
+												
+													<li class="related-article threecol <?php if ($index==1) {echo 'first'; } ?>">
+														<a href="<?php the_permalink(); ?>">
+															<?php if (has_post_thumbnail()) {
+																	$thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail'); ?> 	
+																	<img class="related-article-img square-img" src="<?php echo $thumb[0]; ?>">
+															<?php } ?>
+															<h5><?php the_title(); ?></h5>
+														</a>
+													</li>
+												<?php endforeach; 
+												wp_reset_postdata(); ?>
+										</ul>
 								</nav>
 								
 								<!-- COMMENTS -->
@@ -124,12 +124,12 @@
 
 						<?php endif; ?>
 
-					</div>
+					</div> <!-- CLOSE #main -->
 
 					<?php get_sidebar(); ?>
 
-				</div>
+				</div><!-- CLOSE #inner-content -->
 
-			</div>
+			</div><!-- CLOSE #content -->
 
 <?php get_footer(); ?>

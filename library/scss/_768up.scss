@@ -185,8 +185,9 @@ POSTS & CONTENT STYLES
 	height: $article-header-image-large;
 	background-attachment: fixed;
 	
-	&#top-page-header-image {
-		height: $top-page-header-image-large;
+	
+	&.short-header-image {
+		height: $short-header-image-large;
 	}
 }
 
@@ -267,6 +268,13 @@ COMMENT STYLES
 		@include transition(all 0.3s ease-in-out);
 		
 	} /* end .commentlist .comment-reply-link */
+	
+	
+	li {
+		ul.children {
+			margin: 0 0 0 2em;
+		}
+	}
 
 } /* end .commentlist */
 
@@ -316,7 +324,7 @@ SIDEBARS & ASIDES
 	padding-left: 1em;
 }
 
-#content.top-page {
+#inner-content.post-select-page {
 	.sidebar {
 		margin-top: 0;
 	}
@@ -511,7 +519,7 @@ ARTICLE EXCERPT BOX
 		}
 	}
 
-	.article-author {
+	.article-meta {
 		a {
 			@include link-hover-effect;
 		}

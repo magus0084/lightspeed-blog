@@ -75,45 +75,13 @@
 
 							
 							<!-- BEGIN LOOP -->
-							<?php if (have_posts()) : while (have_posts()) : the_post(); 
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							
-								$postImage = get_the_post_thumbnail($id, 'medium');
-								$authorName = get_the_author_meta('display_name');
-								$authorURL = get_author_posts_url( get_the_author_meta( 'ID' ) );
-								$postImage;
-								$postImageLarge;
-				
-								if (has_post_thumbnail()) {
-									$postImage = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
-									$postImageLarge = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full-size');
-								} else {
-									$postImage = $defaultImagePath; 
-									$postImageLarge = $defaultImagePath;
-								}
-							?>
-
+								<?php /* Create Article Boxes */ ?>
+								<?php create_article_box($noSidebar = true, $showExcerpt = true, $showDate = false, $showCategories = false); ?>
 								
-								<!-- ARTICLE BOX -->
-								<article class="article-excerpt-box no-sidebar" role="article">
-									
-									<!-- POST IMAGE -->
-									<a href="<?php the_permalink(); ?>" title="Read the article &quot;<?php the_title(); ?>&quot;">
-										<header class="article-excerpt-image" style="background-image:url('<?php echo $postImage[0] ?>');"></header>	
-									</a>
-											
-									<!-- EXCERPT -->
-									<div class="article-excerpt-text">
-										<h3><a href="<?php the_permalink(); ?>" title="Read the article &quot;<?php the_title(); ?>&quot;"><?php the_title(); ?></a></h3>
-														
-										<!-- POST EXCERPT AND READ MORE LINK -->
-										<?php echo get_excerpt_by_chars($numCharsExcerpt, qtrans_getLanguage() ); ?>
-										
-										<!-- POST AUTHOR -->
-										<p class="article-author">By <a href="<?php echo $authorURL ?>"><?php echo $authorName ?></a></p>
-									</div>
-								</article>
-
 							<?php endwhile; ?>
+							<!-- END LOOP -->
 
 									<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
 										<?php bones_page_navi(); ?>

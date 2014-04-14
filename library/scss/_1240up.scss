@@ -16,8 +16,8 @@ POSTS & CONTENT STYLES
 .header-image {
 	height: $article-header-image-xxlarge;
 	
-	&#top-page-header-image {
-		height: $top-page-header-image-xxlarge;
+	&.short-header-image {
+		height: $short-header-image-xxlarge;
 	}
 }
 

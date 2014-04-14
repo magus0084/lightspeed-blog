@@ -827,7 +827,6 @@ ul.header-nav {
     line-height: 2.5em; }
     ul.header-nav > li a {
       display: block;
-      padding: 0.25em 1em;
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
       -ms-transition: all 0.3s ease-in-out;
@@ -837,7 +836,9 @@ ul.header-nav {
         color: white;
         background-color: #7c4d9e;
         cursor: pointer; }
-      ul.header-nav > li a img {
+    ul.header-nav > li > a {
+      padding: 0.25em 1em; }
+      ul.header-nav > li > a > img {
         vertical-align: middle;
         margin-bottom: 0.4em; }
     ul.header-nav > li:hover {
@@ -856,7 +857,8 @@ ul.header-nav {
   .right-header-nav ul.header-nav > li:hover .sub-menu {
     right: 0; }
   .right-header-nav .sub-menu {
-    right: 2em; }
+    right: 2em;
+    min-width: 10em; }
 
 ul.header-nav > li {
   margin-left: 0.25em;
@@ -894,8 +896,8 @@ ul.header-nav > li {
     background-color: #8b8b8b;
     background-color: rgba(0, 0, 0, 0.7); }
     .sub-menu > li > a, .sub-menu > li > div {
-      min-width: 10em;
-      padding: 0.75em 1.5em; }
+      min-width: 12em;
+      padding: 0.5em 1em; }
   .sub-menu:hover ul.header-nav > li > a {
     background-color: #7c4d9e; }
 
@@ -982,12 +984,18 @@ POSTS & CONTENT STYLES
   background-color: #292929;
   height: 15em;
   background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 25%;
+  -moz-background-size: 100% 25%;
+  -ms-background-size: 100% 25%;
+  -o-background-size: 100% 25%;
+  background-size: 100% 25%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
-  .header-image#top-page-header-image {
+  .header-image.short-header-image {
     height: 15em; }
 
 #inner-content {
@@ -1296,7 +1304,7 @@ COMMENT STYLES
     .commentlist li:last-child {
       margin-bottom: 0; }
     .commentlist li ul.children {
-      margin: 0 0 0 2em;
+      margin: 0em;
       /* variations */
       /* change number for different depth */ }
   .commentlist li[class*=depth-] {
@@ -1391,7 +1399,8 @@ COMMENT FORM STYLES
     .respond-form form textarea {
       padding: 1.2em 0.9em 0.2em 0.9em;
       background-color: transparent;
-      border: 0;
+      border-radius: 0;
+      border: none;
       border-bottom: 1px solid #c3c3c3;
       line-height: 1.5em;
       -webkit-transition: all 0.4s ease-in-out;
@@ -1400,6 +1409,11 @@ COMMENT FORM STYLES
       -o-transition: all 0.4s ease-in-out;
       transition: all 0.4s ease-in-out;
       font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, serif;
+      -webkit-appearance: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -ms-box-shadow: none;
+      box-shadow: none;
       /* form validation */ }
       .respond-form form input[type=text]:focus,
       .respond-form form input[type=email]:focus,
@@ -1524,7 +1538,7 @@ ARTICLE EXCERPT BOX
     background-size: cover; }
   .article-excerpt-box .article-excerpt-text {
     padding: 1em 1em; }
-  .article-excerpt-box .article-author {
+  .article-excerpt-box .article-meta {
     margin-bottom: 0; }
 
 /*********************
@@ -1584,7 +1598,7 @@ tweeners.
   *********************/
   .header-image {
     height: 20em; }
-    .header-image#top-page-header-image {
+    .header-image.short-header-image {
       height: 15em; }
 
   /* entry content */
@@ -1629,7 +1643,7 @@ tweeners.
       width: 47.5%; }
     .article-excerpt-box .article-excerpt-image {
       height: 10em; }
-    .article-excerpt-box .article-author {
+    .article-excerpt-box .article-meta {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -1864,7 +1878,7 @@ you can add resource intensive styles.
   .header-image {
     height: 25em;
     background-attachment: fixed; }
-    .header-image#top-page-header-image {
+    .header-image.short-header-image {
       height: 18em; }
 
   .entry-content a:hover {
@@ -1969,6 +1983,8 @@ you can add resource intensive styles.
       -ms-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
+    .commentlist li ul.children {
+      margin: 0 0 0 2em; }
 
   /* end .commentlist */
   /******************************************************************
@@ -1994,7 +2010,7 @@ you can add resource intensive styles.
     margin-top: 8em;
     padding-left: 1em; }
 
-  #content.top-page .sidebar {
+  #inner-content.post-select-page .sidebar {
     margin-top: 0; }
 
   .widgettitle {
@@ -2085,13 +2101,13 @@ you can add resource intensive styles.
       background-position-y: -50px; }
     .article-excerpt-box.no-sidebar .article-excerpt-image {
       height: 15em; }
-    .article-excerpt-box .article-author a {
+    .article-excerpt-box .article-meta a {
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
       -ms-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
-      .article-excerpt-box .article-author a:hover {
+      .article-excerpt-box .article-meta a:hover {
         background-color: #7c4d9e;
         color: white; }
 
@@ -2122,7 +2138,7 @@ you can add resource intensive styles.
   ***********************/
   .header-image {
     height: 30em; }
-    .header-image#top-page-header-image {
+    .header-image.short-header-image {
       height: 20em; }
 
   /* Fills left margin space */
@@ -2245,7 +2261,7 @@ This is for the larger monitors and possibly full screen viewers.
   ***********************/
   .header-image {
     height: 40em; }
-    .header-image#top-page-header-image {
+    .header-image.short-header-image {
       height: 30em; }
 
   #inner-content {
