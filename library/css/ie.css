@@ -1,81 +1,1061 @@
-/*
-Syntax error: Undefined variable: "$alert-yellow".
-        on line 127 of library/scss/_mixins.scss
-        from line 22 of library/scss/ie.scss
+/******************************************************************
+Site Name: 
+Author: 
 
-Backtrace:
-library/scss/_mixins.scss:127
-library/scss/ie.scss:22
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/script/tree/variable.rb:49:in `_perform'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/script/tree/node.rb:50:in `perform'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/script/tree/funcall.rb:170:in `perform_arg'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/script/tree/funcall.rb:123:in `each'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/script/tree/funcall.rb:123:in `each_with_index'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/script/tree/funcall.rb:123:in `each'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/script/tree/funcall.rb:123:in `map'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/script/tree/funcall.rb:123:in `_perform'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/script/tree/node.rb:50:in `perform'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:366:in `visit_prop'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:79:in `block in with_base'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:121:in `with_frame'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:79:in `with_base'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:389:in `map'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:79:in `block in with_base'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:121:in `with_frame'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:79:in `with_base'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:297:in `block (2 levels) in visit_import'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:297:in `map'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:297:in `block in visit_import'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:88:in `block in with_import'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:121:in `with_frame'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:88:in `with_import'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:294:in `visit_import'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:79:in `block in with_base'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:121:in `with_frame'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/stack.rb:79:in `with_base'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:152:in `visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:151:in `visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/tree/root_node.rb:20:in `render'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/engine.rb:274:in `render'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:186:in `each'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin/compiler.rb:221:in `watch'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/plugin.rb:108:in `method_missing'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/exec.rb:509:in `watch_or_update'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/exec.rb:346:in `process_result'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/exec.rb:43:in `parse'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/lib/sass/exec.rb:22:in `parse!'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.3.4/bin/sass:13:in `<top (required)>'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/bin/sass:19:in `load'
-/Users/todaa/.rvm/gems/ruby-1.9.2-p180/bin/sass:19:in `<main>'
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/*
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't 
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$alert-yellow\".\A         on line 127 of library/scss/_mixins.scss\A         from line 22 of library/scss/ie.scss"; }
+/******************************************************************
+Site Name: Lightspeed
+Author: Adam Toda
+Contact: adam.toda@gmail.com
+
+Stylesheet: Constants Stylesheet
+
+******************************************************************/
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+TYPOGRAPHY
+*********************/
+/*********************
+IMAGE SIZES
+*********************/
+/* AVATAR SIZES */
+/* HEADER IMAGE SIZES */
+/* TOP PAGE HEADER IMAGE SIZES */
+/* TOP PAGE ARTICLE LIST IMAGE SIZES */
+/* TOP PAGE ARTICLE LIST IMAGE SIZES */
+/*********************
+LAYOUT
+*********************/
+/* CONTENT OVERLAP EFFECT */
+/* LEFT MARGIN */
+/* INNER ARTICLE EXCERPT BOX GRID */
+/* RIGHT/LEFT ALIGN MARGIN */
+/* import mixins */
+/******************************************************************
+Site Name: Lightspeed
+Author: Adam Toda
+Contact: adam.toda@gmail.com
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+/*********************
+TOOLS
+*********************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/*********************
+TYPOGRAPHY
+*********************/
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('../fonts/font-name.eot');
+    	src: url('../fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/font-name.woff') format('woff'),
+             url('../fonts/font-name.ttf') format('truetype'),
+             url('../fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+/* MUSEO FONT
+ * ----------
+ * Used for titles, quotes, and other standout text.
+ */
+/* REGULAR */
+@font-face {
+  font-family: 'Museo';
+  src: url("../fonts/Museo300-Regular.otf");
+  font-weight: normal;
+  font-style: normal; }
+/* BOLD */
+@font-face {
+  font-family: 'Museo';
+  src: url("../fonts/Museo500-Regular.otf");
+  font-weight: bold;
+  font-style: normal; }
+/* BOLDER */
+@font-face {
+  font-family: 'Museo';
+  src: url("../fonts/Museo700-Regular.ttf");
+  font-weight: bolder;
+  font-style: normal; }
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.alert-help, .alert-info, .alert-error, .alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid; }
+
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f; }
+
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8; }
+
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4; }
+
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2; }
+
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+HOVER EFFECTS
+*********************/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*********************
+BACKGROUND SIZE
+*********************/
+/* @include background-size(cover); */
+/*********************
+OPACITY
+*********************/
+/*********************
+BUTTONS
+*********************/
+.button, input[type=submit], .button:visited, input[type=submit]:visited {
+  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
+  border: 0;
+  border-bottom: 1px solid #392348;
+  padding: 0.75em 1.5em;
+  color: white;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  margin-bottom: 20px;
+  background-color: #7c4d9e;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .button:hover, input[type=submit]:hover, .button:focus, input[type=submit]:focus, .button:visited:hover, input[type=submit]:visited:hover, .button:visited:focus, input[type=submit]:visited:focus {
+    color: white;
+    background-color: #613c7c;
+    border-bottom: 1px solid #030204; }
+  .button:active, input[type=submit]:active, .button:visited:active, input[type=submit]:visited:active {
+    background-color: #7c4d9e;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#6f458d), to(#7c4d9e));
+    background-image: -webkit-linear-gradient(top, #6f458d, #7c4d9e);
+    background-image: -moz-linear-gradient(top, #6f458d, #7c4d9e);
+    background-image: -o-linear-gradient(top, #6f458d, #7c4d9e);
+    background-image: linear-gradient(to bottom, #6f458d, #7c4d9e); }
+
+.blue-button, .blue-button:visited {
+  border-color: #1472ad;
+  background-color: #1990db;
+  text-shadow: 0 1px 1px #1472ad;
+  box-shadow: inset 0 0 3px #59b3ec; }
+  .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
+    border-color: #116396;
+    background-color: #1472ad;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1784c9), to(#1472ad));
+    background-image: -webkit-linear-gradient(top, #1784c9, #1472ad);
+    background-image: -moz-linear-gradient(top, #1784c9, #1472ad);
+    background-image: -o-linear-gradient(top, #1784c9, #1472ad);
+    background-image: linear-gradient(to bottom, #1784c9, #1472ad); }
+  .blue-button:active, .blue-button:visited:active {
+    background-color: #1990db;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db));
+    background-image: -webkit-linear-gradient(top, #1681c4, #1990db);
+    background-image: -moz-linear-gradient(top, #1681c4, #1990db);
+    background-image: -o-linear-gradient(top, #1681c4, #1990db);
+    background-image: linear-gradient(to bottom, #1681c4, #1990db); }
+
+/* Make submit button look like all other buttons */
+/*********************
+BORDERS
+*********************/
+/*********************
+LAYOUT
+*********************/
+.mini-logo-overlay {
+  position: relative;
+  z-index: 1; }
+  .mini-logo-overlay:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 10;
+    width: 2em;
+    height: 2em;
+    background-image: url("../images/ls-mini-logo.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -moz-opacity-size: 0.7;
+    -ms-opacity-size: 0.7;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=70); }
+
+.caption-text {
+  font-size: 0.85em;
+  margin: 4px 0 7px;
+  text-align: left;
+  font-style: italic;
+  color: #8b8b8b; }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+
+The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+together, let's see how this works out. If you want to use 1140, the original 
+values are commented out on each line.
+
+******************************************************************/
+.onecol {
+  width: 5.801104972%; }
+
+/* 4.85%;  } /* grid_1  */
+.twocol {
+  width: 14.364640883%; }
+
+/* 13.45%; } /* grid_2  */
+.threecol {
+  width: 22.928176794%; }
+
+/* 22.05%; } /* grid_3  */
+.fourcol {
+  width: 31.491712705%; }
+
+/* 30.75%; } /* grid_4  */
+.fivecol {
+  width: 40.055248616%; }
+
+/* 39.45%; } /* grid_5  */
+.sixcol {
+  width: 48.618784527%; }
+
+/* 48%;    } /* grid_6  */
+.sevencol {
+  width: 57.182320438000005%; }
+
+/* 56.75%; } /* grid_7  */
+.eightcol {
+  width: 65.74585634900001%; }
+
+/* 65.4%;  } /* grid_8  */
+.ninecol {
+  width: 74.30939226%; }
+
+/* 74.05%; } /* grid_9  */
+.tencol {
+  width: 82.87292817100001%; }
+
+/* 82.7%;  } /* grid_10 */
+.elevencol {
+  width: 91.436464082%; }
+
+/* 91.35%; } /* grid_11 */
+.twelvecol {
+  width: 99.999999993%; }
+
+/* 100%;   } /* grid_12 */
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+  position: relative;
+  float: left;
+  margin-left: 2.762430939%; }
+
+.first {
+  margin-left: 0; }
+
+.last {
+  float: right; }
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to 
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection. 
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.scss styles.
+
+******************************************************************/
+/*********************
+NAVIGATION STYLES
+*********************/
+/* .menu is clearfixed inside mixins.scss */
+.menu {
+  /* end .menu ul */ }
+  .menu ul {
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .menu ul li {
+      /*
+      plan your menus and drop-downs wisely.
+      */ }
+      .menu ul li a {
+        /*
+        you can use hover styles here even though this size
+        has the possibility of being a mobile device.
+        */ }
+
+/* end .menu */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+.header-image {
+  height: 20em; }
+  .header-image.short-header-image {
+    height: 15em; }
+
+/* entry content */
+.entry-content {
+  /* at this larger size, we can start to align images */ }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin: 1em 2em 1em 0;
+    display: inline;
+    float: left; }
+  .entry-content .alignright, .entry-content img.alignright {
+    margin: 1em 0 1em 2em;
+    display: inline;
+    float: right; }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    margin: 1em auto;
+    display: block;
+    clear: both; }
+
+/* end .entry-content */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+/* end .footer-links */
+/*********************
+ARTICLE EXCERPT BOX
+*********************/
+.article-excerpt-box {
+  position: relative;
+  float: left;
+  width: 45%;
+  margin-right: 5%;
+  height: 35em; }
+  .article-excerpt-box:nth-child(even) {
+    margin-right: 0;
+    float: right;
+    width: 47.5%; }
+  .article-excerpt-box:nth-child(odd) {
+    width: 47.5%; }
+  .article-excerpt-box .article-excerpt-image {
+    height: 10em; }
+  .article-excerpt-box .article-meta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1em 1em; }
+
+/*********************
+CUSTOM PAGE STYLES
+*********************/
+/* TOP PAGE */
+/* -------- */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  h1 a:hover, h1 a:focus, h1 a:visited:hover, h1 a:visited:focus, .h1 a:hover, .h1 a:focus, .h1 a:visited:hover, .h1 a:visited:focus, h2 a:hover, h2 a:focus, h2 a:visited:hover, h2 a:visited:focus, .h2 a:hover, .h2 a:focus, .h2 a:visited:hover, .h2 a:visited:focus, h3 a:hover, h3 a:focus, h3 a:visited:hover, h3 a:visited:focus, .h3 a:hover, .h3 a:focus, .h3 a:visited:hover, .h3 a:visited:focus, h4 a:hover, h4 a:focus, h4 a:visited:hover, h4 a:visited:focus, .h4 a:hover, .h4 a:focus, .h4 a:visited:hover, .h4 a:visited:focus, h5 a:hover, h5 a:focus, h5 a:visited:hover, h5 a:visited:focus, .h5 a:hover, .h5 a:focus, .h5 a:visited:hover, .h5 a:visited:focus {
+    color: #7c4d9e;
+    background-color: transparent; }
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap {
+  max-width: 1140px; }
+
+/*********************
+LINK STYLES
+*********************/
+a, a:visited {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+/*********************
+HEADER STYLES
+*********************/
+/*********************
+NAVIGATION STYLES
+*********************/
+.desktop-nav {
+  display: block; }
+
+.mobile-nav {
+  display: none;
+  background: #eee;
+  border: 0;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .mobile-nav ul {
+    margin-top: 0; }
+  .mobile-nav li {
+    float: left;
+    position: relative;
+    /*
+    plan your menus and drop-downs wisely.
+    */
+    /* showing sub-menus */ }
+    .mobile-nav li a {
+      border-bottom: 0;
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */ }
+      .mobile-nav li a:hover, .mobile-nav li a:focus {
+        background-color: #dedede; }
+    .mobile-nav li ul.sub-menu,
+    .mobile-nav li ul.children {
+      margin-top: 0;
+      border: 1px solid #ccc;
+      border-top: 0;
+      position: absolute;
+      overflow: hidden;
+      visibility: hidden;
+      z-index: 8999;
+      /* highlight sub-menu current page */ }
+      .mobile-nav li ul.sub-menu li,
+      .mobile-nav li ul.children li {
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
+        .mobile-nav li ul.sub-menu li a,
+        .mobile-nav li ul.children li a {
+          padding-left: 10px;
+          border-right: 0;
+          display: block;
+          width: 180px;
+          border-bottom: 1px solid #ccc; }
+        .mobile-nav li ul.sub-menu li:last-child a,
+        .mobile-nav li ul.children li:last-child a {
+          border-bottom: 0; }
+    .mobile-nav li:hover ul {
+      top: auto;
+      overflow: visible;
+      visibility: visible; }
+
+/* end .nav */
+/**********************
+POSTS & CONTENT STYLES
+***********************/
+#writtenByBox a img {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  #writtenByBox a img:hover {
+    background-color: white;
+    -moz-opacity-size: 0.5;
+    -ms-opacity-size: 0.5;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=50); }
+#writtenByBox .author a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  #writtenByBox .author a:hover {
+    background-color: #7c4d9e;
+    color: white; }
+
+.header-image {
+  height: 25em;
+  background-attachment: fixed; }
+  .header-image.short-header-image {
+    height: 18em; }
+
+.entry-content a:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .entry-content a:hover:hover {
+    background-color: #7c4d9e;
+    color: white; }
+.entry-content a img {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .entry-content a img:hover {
+    background-color: white;
+    -moz-opacity-size: 0.5;
+    -ms-opacity-size: 0.5;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=50); }
+
+.article-footer a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .article-footer a:hover {
+    background-color: #7c4d9e;
+    color: white; }
+
+/*********************
+AUTHOR BIO BOX
+*********************/
+.author-bio-box-avatar a img {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .author-bio-box-avatar a img:hover {
+    background-color: white;
+    -moz-opacity-size: 0.5;
+    -ms-opacity-size: 0.5;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=50); }
+
+h4.author-bio-box-position a {
+  color: #7c4d9e;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  h4.author-bio-box-position a:hover {
+    background-color: #7c4d9e;
+    color: white; }
+
+ul.author-bio-box-social-media a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  ul.author-bio-box-social-media a:hover {
+    background-color: #7c4d9e;
+    color: white; }
+
+/***********************
+RELATED CONTENT
+***********************/
+.related-content a img {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .related-content a img:hover {
+    background-color: white;
+    -moz-opacity-size: 0.5;
+    -ms-opacity-size: 0.5;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=50); }
+.related-content a h5:hover {
+  color: #7c4d9e; }
+
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+.commentlist {
+  /* comment reply link */
+  /* end .commentlist .comment-reply-link */ }
+  .commentlist .comment-reply-link {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+  .commentlist li ul.children {
+    margin: 0 0 0 2em; }
+
+/* end .commentlist */
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+.respond-form:hover #cancel-comment-reply a {
+  color: #7c4d9e; }
+.respond-form:hover input[type=text], .respond-form:hover input[type=email], .respond-form:hover input[type=url], .respond-form:hover textarea {
+  background: white;
+  background: rgba(255, 255, 255, 0.7); }
+
+#cancel-comment-reply a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar {
+  margin-top: 8em;
+  padding-left: 1em; }
+
+#inner-content.post-select-page .sidebar {
+  margin-top: 0; }
+
+.widgettitle {
+  margin-bottom: 0.75em; }
+
+.widget {
+  padding: 0 10px;
+  margin: 2.2em 0 10em; }
+  .widget ul {
+    list-style: disc;
+    margin-left: 1em; }
+    .widget ul.no-bullets {
+      list-style: none;
+      margin-left: 0; }
+    .widget ul li {
+      /* deep nesting */ }
+      .widget ul li ul {
+        margin-top: 0.75em;
+        padding-left: 1em; }
+  .widget a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .widget a:hover {
+      background-color: #7c4d9e;
+      color: white; }
+    .widget a img {
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      .widget a img:hover {
+        background-color: white;
+        -moz-opacity-size: 0.5;
+        -ms-opacity-size: 0.5;
+        opacity: 0.5;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+        filter: alpha(opacity=50); }
+  .widget h1 a:hover, .widget h1 a:focus, .widget h1 a:visited:hover, .widget h1 a:visited:focus, .widget .h1 a:hover, .widget .h1 a:focus, .widget .h1 a:visited:hover, .widget .h1 a:visited:focus, .widget h2 a:hover, .widget h2 a:focus, .widget h2 a:visited:hover, .widget h2 a:visited:focus, .widget .h2 a:hover, .widget .h2 a:focus, .widget .h2 a:visited:hover, .widget .h2 a:visited:focus, .widget h3 a:hover, .widget h3 a:focus, .widget h3 a:visited:hover, .widget h3 a:visited:focus, .widget .h3 a:hover, .widget .h3 a:focus, .widget .h3 a:visited:hover, .widget .h3 a:visited:focus, .widget h4 a:hover, .widget h4 a:focus, .widget h4 a:visited:hover, .widget h4 a:visited:focus, .widget .h4 a:hover, .widget .h4 a:focus, .widget .h4 a:visited:hover, .widget .h4 a:visited:focus, .widget h5 a:hover, .widget h5 a:focus, .widget h5 a:visited:hover, .widget h5 a:visited:focus, .widget .h5 a:hover, .widget .h5 a:focus, .widget .h5 a:visited:hover, .widget .h5 a:visited:focus {
+    color: #7c4d9e;
+    background-color: transparent; }
+
+/* links widget */
+/* meta widget */
+/* pages widget */
+/* recent-posts widget */
+/* archives widget */
+/* tag-cloud widget */
+/* calendar widget */
+/* category widget */
+/* recent-comments widget */
+/* search widget */
+/* text widget */
+/* Recommended Content */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links ul li {
+  /*
+  be careful with the depth of your menus.
+  it's very rare to have multi-depth menus in
+  the footer.
+  */ }
+
+/* end .footer-links */
+/*********************
+ARTICLE EXCERPT BOX
+*********************/
+.article-excerpt-box {
+  height: 40em; }
+  .article-excerpt-box .article-excerpt-image {
+    height: 10em;
+    -webkit-transition: all 0.25s ease-in;
+    -moz-transition: all 0.25s ease-in;
+    -ms-transition: all 0.25s ease-in;
+    -o-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in; }
+  .article-excerpt-box:hover .article-excerpt-image {
+    background-position-y: -50px; }
+  .article-excerpt-box.no-sidebar .article-excerpt-image {
+    height: 15em; }
+  .article-excerpt-box .article-meta a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .article-excerpt-box .article-meta a:hover {
+      background-color: #7c4d9e;
+      color: white; }
+
+/*********************
+CUSTOM PAGE STYLES
+*********************/
+/* TOP PAGE */
+/* -------- */
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+/**********************
+POSTS & CONTENT STYLES
+***********************/
+.header-image {
+  height: 30em; }
+  .header-image.short-header-image {
+    height: 20em; }
+
+/* Fills left margin space */
+#main {
+  background-color: white;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  padding-left: 1000em;
+  margin-left: -1000em; }
+
+/* Creates left margin for cooler layout of images */
+.post {
+  position: relative;
+  padding-left: 120px; }
+
+/* Puts the author box in the left margin */
+#writtenByBox {
+  width: 4.75em;
+  position: absolute;
+  top: 0.67em;
+  left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 0;
+  margin-left: 0; }
+  #writtenByBox .avatar {
+    width: 4.75em;
+    height: 4.75em;
+    margin-right: 0; }
+
+.entry-content {
+  box-sizing: border-box; }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin-left: -120px; }
+  .entry-content blockquote {
+    width: 50%;
+    float: left;
+    margin-left: -120px; }
+
+/***********************
+COMMENT STYLES
+***********************/
+.commentlist .comment article {
+  padding-bottom: 2em;
+  position: relative; }
+  .commentlist .comment article:hover .comment-reply-link {
+    -moz-opacity-size: 0.7;
+    -ms-opacity-size: 0.7;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=70); }
+.commentlist .comment-reply-link {
+  -moz-opacity-size: 0;
+  -ms-opacity-size: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+  filter: alpha(opacity=0);
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+/* end .commentlist */
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar {
+  margin-top: 12em;
+  padding-left: 2em; }
+
+/*********************
+AUTHOR BIO BOX
+*********************/
+/*********************
+ARTICLE EXCERPT BOX
+*********************/
+.article-excerpt-box {
+  height: 38em; }
+  .article-excerpt-box.no-sidebar {
+    width: 30%;
+    margin-right: 3.33%;
+    float: left; }
+  .article-excerpt-box .article-excerpt-image {
+    height: 15em; }
+
+/*********************
+CUSTOM PAGE STYLES
+*********************/
+/* ARCHIVES */
+/* -------- */
+.archives .archives-info-box {
+  width: 63.33%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* 
+you can call the larger styles if you want, but there's really no need 
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+.lt-ie9 .class { ... }
+
+*/
+/******************
+HEADER AND NAV
+******************/
+.lt-ie9 .left-header-nav ul.header-nav > li:hover .sub-menu {
+  left: 0; }
+.lt-ie9 .left-header-nav .sub-menu {
+  left: 0; }
+
+.lt-ie9 .right-header-nav ul.header-nav > li:hover .sub-menu {
+  right: 0; }
+.lt-ie9 .right-header-nav .sub-menu {
+  right: 0; }
+
+.lt-ie9 ul.header-nav > li:hover .sub-menu {
+  display: block;
+  -moz-opacity-size: 0.85;
+  -ms-opacity-size: 0.85;
+  opacity: 0.85;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+  filter: alpha(opacity=85); }
+
+.lt-ie9 .sub-menu {
+  display: none;
+  -moz-opacity-size: 0.85;
+  -ms-opacity-size: 0.85;
+  opacity: 0.85;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+  filter: alpha(opacity=85); }
+
+/**********************
+TAGLINE
+**********************/
+.lt-ie9 #tagline {
+  -moz-opacity-size: 0.85;
+  -ms-opacity-size: 0.85;
+  opacity: 0.85;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+  filter: alpha(opacity=85); }
+
+/*********************
+ARTICLE EXCERPT BOX
+*********************/
+.lt-ie9 .article-excerpt-box .article-excerpt-image {
+  background-color: #3e3e3e;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -ms-background-size: 100% auto;
+  -o-background-size: 100% auto;
+  background-size: 100% auto; }
+  .lt-ie9 .article-excerpt-box .article-excerpt-image:hover {
+    -moz-opacity-size: 0.7;
+    -ms-opacity-size: 0.7;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=70); }
+
+/**********************
+FORM LABELS
+**********************/
+.lt-ie9 .respond-form form label.no-placeholder {
+  display: block; }

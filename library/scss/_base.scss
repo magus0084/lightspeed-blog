@@ -22,6 +22,10 @@ body {
 	color: $body-text-color;
 }
 
+body.ja {
+	font-family: $serif-ja;
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -106,7 +110,7 @@ a, a:visited {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-family: $sans-serif;
 	text-rendering: optimizelegibility;
 	font-weight: 500;
@@ -134,7 +138,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-size: 1.125em;
+	font-size: 1.35em;
 }
 
 h4, .h4 {
@@ -143,10 +147,15 @@ h4, .h4 {
 }
 
 h5, .h5 {
-	font-size: 0.846em;
+	font-size: 0.9em;
 	line-height: 2.09em;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+}
+
+h6, .h6 {
+	@extend .h5;
+	text-transform: none;
 }
 
 /*********************
@@ -156,6 +165,10 @@ HEADER STYLES
 .header { 
 	padding: 0; 
 }
+
+	.desktop-nav {
+		display: none;
+	}
 
 	#header-nav {
 		
@@ -277,7 +290,7 @@ HEADER STYLES
 			
 			&>li {
 				display: block;
-				background-color: $medium-gray;
+				background-color: $dark-gray;
 				background-color: rgba(0,0,0, 0.7);
 				
 				&>a, &>div {
@@ -451,7 +464,7 @@ POSTS & CONTENT STYLES
 			position: absolute;
 			top: -5em;
 			right: 0;
-			background-color: $medium-gray;
+			background-color: $dark-gray;
 			background-color: rgba(0,0,0, 0.7);
 			padding: 0.5em 1.5em;
 			color: white;
@@ -503,7 +516,7 @@ POSTS & CONTENT STYLES
 
 		/* post meta */
 		.byline {
-			color: #999;
+			color: $medium-text-color;
 
 			time {}
 		}
@@ -516,17 +529,24 @@ POSTS & CONTENT STYLES
 			}
 			
 			a {
-				text-decoration: underline;
+				border-bottom: 1px solid $ls-purple;
+				color: $body-text-color;
 			}
 		
 			p {}
 
 
-			ul, ol, table, dl {}
+			ul, ol, table, dl {
+				margin-top: 1.5em;
+				margin-bottom: 1.5em;
+			}
 
 			ul, ol {
+				margin-left: 2.5em;
 
-				li {}
+				li {
+					padding: 0.5em 0 0.5em 0.5em;
+				}
 
 			}
 
@@ -538,7 +558,8 @@ POSTS & CONTENT STYLES
 			}
 
 			ol {
-
+				list-style: decimal;
+				
 				li {}
 
 			}
@@ -555,7 +576,9 @@ POSTS & CONTENT STYLES
 
 			dl {}
 
-			dt {}
+			dt {
+				font-weight: bold;
+			}
 
 			dd {
 				margin-left: 0;
@@ -594,15 +617,53 @@ POSTS & CONTENT STYLES
 			}
 			
 			table {
+				max-width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				border-top: 5px solid $ls-purple;
+				border-left: 0;
+				border-right: 0;
+				@include border-bottom-black;
+				
 				thead {
-					tr { }
+					tr { 
+						background-color: $lighter-gray;
+						vertical-align: bottom;
+						text-align: center;
+					}
 				}
 				
-				th { }
+				tr {
+					border-bottom: 4px solid $white;
+					background-color: $lighter-gray;
+				}
 				
-				tr { }
+				td, th {
+					padding: 0.75em 1em;
+					border: 0;
+					border-right: 4px solid $white;
+					
+					&:last-child {
+						border-right: 0;
+					}
+				}
 				
-				td { }
+				th {
+					font-family: $sans-serif;
+					padding: 0.75em 1em;
+					
+					color: $ls-purple;
+				}
+				
+				td {
+					word-wrap: break-word;
+					white-space: normal;
+					
+					b {
+						font-family: $sans-serif;
+						color: $ls-purple;
+					}
+				}
 			}
 
 		} /* end .entry-content */
@@ -1046,6 +1107,12 @@ COMMENT FORM STYLES
 				display: none;
 			}
 		}
+		
+		p {
+			label {
+				display: none;	
+			}
+		}
 
 		input[type=text],
 		input[type=email],
@@ -1143,14 +1210,17 @@ SIDEBARS & ASIDES
 
 .sidebar {}
 
-	.widgettitle {}
+	.widgettitle {
+		@include border-top;
+	}
 
 	.widget {
 
 		ul {
 
 			li {
-
+				margin-bottom: 0.75em;
+				
 				&:first-child {}
 
 				&:last-child {}
@@ -1158,7 +1228,9 @@ SIDEBARS & ASIDES
 				a {}
 
 				/* deep nesting */
-				ul {}
+				ul {
+					
+				}
 				
 				&.recommended-post {
 					@extend .mini-logo-overlay;
@@ -1251,7 +1323,10 @@ ARTICLE EXCERPT BOX
 	}
 	
 	.article-meta {
+		width: 100%;
 		margin-bottom: 0;
+		background-color: $lighter-gray;
+		color: $medium-gray;
 	}
 }
 
@@ -1266,4 +1341,17 @@ CUSTOM PAGE STYLES
 
 .archive-title {
 	clear: both;
+}
+
+
+
+/*********************
+MODERN BROWSER ALERT
+*********************/
+
+#upgrade-browser-alert {
+	background-color: $alert-red;
+	padding: 1em 0;
+	border-top: 1px solid darken($alert-yellow, 20%);
+	border-bottom: 1px solid darken($alert-red, 20%);
 }

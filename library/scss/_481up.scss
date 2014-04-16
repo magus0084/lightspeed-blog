@@ -85,12 +85,12 @@ POSTS & CONTENT STYLES
 	
 	/* at this larger size, we can start to align images */
 	.alignleft, img.alignleft { 
-		margin: 1em 1.5em 1em 0;
+		margin: 1em 2em 1em 0;
 		display: inline; 
 		float: left; 
 	}
 	.alignright, img.alignright { 
-		margin-left: 1em 0 1em 1.5em; 
+		margin: 1em 0 1em 2em; 
 		display: inline; 
 		float: right; 
 	}

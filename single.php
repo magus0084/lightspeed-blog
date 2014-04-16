@@ -3,16 +3,12 @@
 			<div id="content">
 
 				<!-- IMAGE HEADER -->
-				<?php
-					if (has_post_thumbnail()) {
-					$thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full-size');
-					?> 	
-					<header id="post-header-image" class="header-image" style="background-image:url('<?php echo $thumb[0]; ?>');"></header>
-				<?php } else {
-					$thumb = $defaultImage;
-					?>
-					<header id="post-header-image" class="header-image" style="background-image:url('<?php echo $defaultImage ?>');"></header>
-				<? } ?>
+				<?php if (has_post_thumbnail()) {
+						$thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full-size'); ?> 	
+						<header id="post-header-image" class="header-image" style="background-image:url('<?php echo $thumb[0]; ?>');"></header>
+				<?php } else { ?>
+						<header id="post-header-image" class="header-image" style="background-image:url('<?php echo $defaultImage ?>');"></header>
+				<?php } ?>
 							
 				<div id="inner-content" class="wrap clearfix article-page">
 					
@@ -92,6 +88,8 @@
 															<?php if (has_post_thumbnail()) {
 																	$thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail'); ?> 	
 																	<img class="related-article-img square-img" src="<?php echo $thumb[0]; ?>">
+															<?php } else { ?>
+																	<img class="related-article-img square-img" src="<?php echo $defaultImageThumb; ?>">
 															<?php } ?>
 															<h5><?php the_title(); ?></h5>
 														</a>

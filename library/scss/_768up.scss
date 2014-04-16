@@ -66,7 +66,12 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+.desktop-nav {
+		display: block;
+	}
+
 .mobile-nav {
+	display: none;
 	background: #eee;
 	border: 0;
 	ul {
@@ -191,18 +196,18 @@ POSTS & CONTENT STYLES
 	}
 }
 
-	.entry-content {
+.entry-content {
 	
-		a {
-			&:hover {
-				@include link-hover-effect;
-			}
+	a {
+		&:hover {
+			@include link-hover-effect;
+		}
 			
-			img {
-				@include img-hover-effect;
-			}
+		img {
+			@include img-hover-effect;
 		}
 	}
+}
 
 	
 .article-footer {
@@ -332,17 +337,22 @@ SIDEBARS & ASIDES
 
 	.widgettitle {
 		margin-bottom: 0.75em;
-		@include border-top;
 	}
 
 	.widget {
 		padding: 0 10px;
-		margin: 2.2em 0 6em;
+		margin: 2.2em 0 10em;
 
 		ul {
+			list-style: disc;
+			margin-left: 1em;
+			
+			&.no-bullets {
+				list-style: none;
+				margin-left: 0;
+			}
+		
 			li {
-				margin-bottom: 0.75em;
-
 				&:first-child {}
 				&:last-child {}
 				a { }
@@ -431,10 +441,7 @@ SIDEBARS & ASIDES
 
 	/* category widget */
 	.widget_categories {}
-	.widget_categories ul { 
-		list-style: disc;
-		margin-left: 1em;
-	}
+	.widget_categories ul {}
 	.widget_categories ul li {}
 	.widget_categories ul ul.children {}
 	.widget_categories a {}

@@ -45,6 +45,7 @@ LAYOUT
 /* CONTENT OVERLAP EFFECT */
 /* LEFT MARGIN */
 /* INNER ARTICLE EXCERPT BOX GRID */
+/* RIGHT/LEFT ALIGN MARGIN */
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -575,7 +576,7 @@ OPACITY
 BUTTONS
 *********************/
 .button, input[type=submit], .button:visited, input[type=submit]:visited {
-  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
   border: 0;
   border-bottom: 1px solid #392348;
   padding: 0.75em 1.5em;
@@ -686,10 +687,13 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 body {
-  font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, serif;
+  font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, "Hiragino Mincho Pro", "Kozuka Mincho", "MS PMincho", "MS Mincho", serif;
   font-size: 100%;
   line-height: 1.5;
   color: #292929; }
+
+body.ja {
+  font-family: "Hiragino Mincho Pro", "Kozuka Mincho", "MS PMincho", "MS Mincho", serif; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -766,8 +770,8 @@ a, a:visited {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, h6, .h6 {
+  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
   text-rendering: optimizelegibility;
   font-weight: 500;
   /*
@@ -775,7 +779,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   http://css-tricks.com/watch-your-font-weight/
   */
   /* removing text decoration from all headline links */ }
-  h1 a, h1 a:visited, .h1 a, .h1 a:visited, h2 a, h2 a:visited, .h2 a, .h2 a:visited, h3 a, h3 a:visited, .h3 a, .h3 a:visited, h4 a, h4 a:visited, .h4 a, .h4 a:visited, h5 a, h5 a:visited, .h5 a, .h5 a:visited {
+  h1 a, h1 a:visited, .h1 a, .h1 a:visited, h2 a, h2 a:visited, .h2 a, .h2 a:visited, h3 a, h3 a:visited, .h3 a, .h3 a:visited, h4 a, h4 a:visited, .h4 a, .h4 a:visited, h5 a, h5 a:visited, .h5 a, h6 a, .h6 a, .h5 a:visited, h6 a:visited, .h6 a:visited, h6 a, h6 a:visited, .h6 a, .h6 a:visited {
     color: #292929;
     text-decoration: none; }
 
@@ -789,17 +793,20 @@ h2, .h2 {
   margin-bottom: 0.375em; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 1.35em; }
 
 h4, .h4 {
   font-size: 1.1em;
   font-weight: 700; }
 
-h5, .h5 {
-  font-size: 0.846em;
+h5, .h5, h6, .h6 {
+  font-size: 0.9em;
   line-height: 2.09em;
   text-transform: uppercase;
   letter-spacing: 1px; }
+
+h6, .h6 {
+  text-transform: none; }
 
 /*********************
 HEADER STYLES
@@ -807,12 +814,15 @@ HEADER STYLES
 .header {
   padding: 0; }
 
+.desktop-nav {
+  display: none; }
+
 #logo {
   width: 120px;
   height: auto; }
 
 .header-nav {
-  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
   padding: 0;
   margin: 0; }
   .header-nav a {
@@ -857,8 +867,7 @@ ul.header-nav {
   .right-header-nav ul.header-nav > li:hover .sub-menu {
     right: 0; }
   .right-header-nav .sub-menu {
-    right: 2em;
-    min-width: 10em; }
+    right: 2em; }
 
 ul.header-nav > li {
   margin-left: 0.25em;
@@ -893,7 +902,7 @@ ul.header-nav > li {
   transition: all 0.2s ease-in-out; }
   .sub-menu > li {
     display: block;
-    background-color: #8b8b8b;
+    background-color: #3e3e3e;
     background-color: rgba(0, 0, 0, 0.7); }
     .sub-menu > li > a, .sub-menu > li > div {
       min-width: 12em;
@@ -1007,11 +1016,11 @@ POSTS & CONTENT STYLES
   position: absolute;
   top: -5em;
   right: 0;
-  background-color: #8b8b8b;
+  background-color: #3e3e3e;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 0.5em 1.5em;
   color: white;
-  font-family: "Helvetica Neue", Helvetica, Century Gothic, Tahoma, Arial, sans-seif;
+  font-family: "Helvetica Neue", Helvetica, Century Gothic, Tahoma, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
   font-weight: 300;
   font-style: italic;
   text-align: right;
@@ -1023,7 +1032,7 @@ POSTS & CONTENT STYLES
 /* end .hentry */
 /* STYLING ON EXCERPT */
 .single-excerpt {
-  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
   font-size: 1em;
   text-transform: uppercase;
   margin-bottom: 3em; }
@@ -1039,7 +1048,7 @@ POSTS & CONTENT STYLES
 /* style by tag (i.e. tag-news) */
 /* post meta */
 .byline {
-  color: #999; }
+  color: #6f6f6f; }
 
 /* entry content */
 .entry-content {
@@ -1049,20 +1058,32 @@ POSTS & CONTENT STYLES
   and floating images at the next breakpoint,
   but it's up to you. Feel free to change it up.
   */ }
-  .entry-content h1, .entry-content .h1, .entry-content h2, .entry-content .h2, .entry-content h3, .entry-content .h3, .entry-content h4, .entry-content .h4, .entry-content h5, .entry-content .h5 {
+  .entry-content h1, .entry-content .h1, .entry-content h2, .entry-content .h2, .entry-content h3, .entry-content .h3, .entry-content h4, .entry-content .h4, .entry-content h5, .entry-content .h5, .entry-content h6, .entry-content .h6 {
     margin-top: 3em; }
   .entry-content a {
-    text-decoration: underline; }
+    border-bottom: 1px solid #7c4d9e;
+    color: #292929; }
+  .entry-content ul, .entry-content ol, .entry-content table, .entry-content dl {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em; }
+  .entry-content ul, .entry-content ol {
+    margin-left: 2.5em; }
+    .entry-content ul li, .entry-content ol li {
+      padding: 0.5em 0 0.5em 0.5em; }
   .entry-content ul {
     list-style: disc; }
+  .entry-content ol {
+    list-style: decimal; }
   .entry-content blockquote {
-    font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
     font-size: 1.2em;
     color: #7c4d9e;
     border-top: 1px solid #c3c3c3;
     padding-top: 0.5em;
     border-bottom: 1px solid #c3c3c3;
     padding-bottom: 0.5em; }
+  .entry-content dt {
+    font-weight: bold; }
   .entry-content dd {
     margin-left: 0;
     font-size: 0.9em;
@@ -1095,6 +1116,38 @@ POSTS & CONTENT STYLES
     background: #eee;
     border: 1px solid #cecece;
     padding: 10px; }
+  .entry-content table {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 5px solid #7c4d9e;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 5px solid black;
+    padding-bottom: 0; }
+    .entry-content table thead tr {
+      background-color: #f1f1f1;
+      vertical-align: bottom;
+      text-align: center; }
+    .entry-content table tr {
+      border-bottom: 4px solid white;
+      background-color: #f1f1f1; }
+    .entry-content table td, .entry-content table th {
+      padding: 0.75em 1em;
+      border: 0;
+      border-right: 4px solid white; }
+      .entry-content table td:last-child, .entry-content table th:last-child {
+        border-right: 0; }
+    .entry-content table th {
+      font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
+      padding: 0.75em 1em;
+      color: #7c4d9e; }
+    .entry-content table td {
+      word-wrap: break-word;
+      white-space: normal; }
+      .entry-content table td b {
+        font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
+        color: #7c4d9e; }
 
 /* end .entry-content */
 .wp-caption {
@@ -1323,13 +1376,13 @@ COMMENT STYLES
   .commentlist .vcard {
     margin-left: 50px; }
     .commentlist .vcard cite.fn {
-      font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
       font-size: 1.2em;
       font-style: normal;
       text-transform: uppercase; }
     .commentlist .vcard time {
       display: block;
-      font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif; }
       .commentlist .vcard time a {
         color: #999;
         text-decoration: none; }
@@ -1349,7 +1402,7 @@ COMMENT STYLES
       line-height: 1.5em; }
   .commentlist .comment-reply-link {
     text-decoration: none;
-    font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
     float: right;
     background: #c3c3c3;
     padding: 3px 1em;
@@ -1393,6 +1446,8 @@ COMMENT FORM STYLES
       .respond-form form li label,
       .respond-form form li small {
         display: none; }
+    .respond-form form p label {
+      display: none; }
     .respond-form form input[type=text],
     .respond-form form input[type=email],
     .respond-form form input[type=url],
@@ -1408,7 +1463,7 @@ COMMENT FORM STYLES
       -ms-transition: all 0.4s ease-in-out;
       -o-transition: all 0.4s ease-in-out;
       transition: all 0.4s ease-in-out;
-      font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, serif;
+      font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, "Hiragino Mincho Pro", "Kozuka Mincho", "MS PMincho", "MS Mincho", serif;
       -webkit-appearance: none;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
@@ -1475,7 +1530,12 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
+.widgettitle {
+  border-top: 1px solid #c3c3c3;
+  padding-top: 0.5em; }
+
 .widget ul li {
+  margin-bottom: 0.75em;
   /* deep nesting */ }
   .widget ul li.recommended-post img {
     display: block;
@@ -1539,7 +1599,10 @@ ARTICLE EXCERPT BOX
   .article-excerpt-box .article-excerpt-text {
     padding: 1em 1em; }
   .article-excerpt-box .article-meta {
-    margin-bottom: 0; }
+    width: 100%;
+    margin-bottom: 0;
+    background-color: #f1f1f1;
+    color: #8b8b8b; }
 
 /*********************
 CUSTOM PAGE STYLES
@@ -1548,6 +1611,15 @@ CUSTOM PAGE STYLES
 /* ------- */
 .archive-title {
   clear: both; }
+
+/*********************
+MODERN BROWSER ALERT
+*********************/
+#upgrade-browser-alert {
+  background-color: #fbe3e4;
+  padding: 1em 0;
+  border-top: 1px solid #d6c71e;
+  border-bottom: 1px solid #ee8a8e; }
 
 /*
 LARGER MOBILE DEVICES
@@ -1605,11 +1677,11 @@ tweeners.
   .entry-content {
     /* at this larger size, we can start to align images */ }
     .entry-content .alignleft, .entry-content img.alignleft {
-      margin: 1em 1.5em 1em 0;
+      margin: 1em 2em 1em 0;
       display: inline;
       float: left; }
     .entry-content .alignright, .entry-content img.alignright {
-      margin-left: 1em 0 1em 1.5em;
+      margin: 1em 0 1em 2em;
       display: inline;
       float: right; }
     .entry-content .aligncenter, .entry-content img.aligncenter {
@@ -1761,13 +1833,13 @@ you can add resource intensive styles.
   /******************************************************************
   H1, H2, H3, H4, H5 STYLES
   ******************************************************************/
-  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
-    h1 a:hover, h1 a:focus, h1 a:visited:hover, h1 a:visited:focus, .h1 a:hover, .h1 a:focus, .h1 a:visited:hover, .h1 a:visited:focus, h2 a:hover, h2 a:focus, h2 a:visited:hover, h2 a:visited:focus, .h2 a:hover, .h2 a:focus, .h2 a:visited:hover, .h2 a:visited:focus, h3 a:hover, h3 a:focus, h3 a:visited:hover, h3 a:visited:focus, .h3 a:hover, .h3 a:focus, .h3 a:visited:hover, .h3 a:visited:focus, h4 a:hover, h4 a:focus, h4 a:visited:hover, h4 a:visited:focus, .h4 a:hover, .h4 a:focus, .h4 a:visited:hover, .h4 a:visited:focus, h5 a:hover, h5 a:focus, h5 a:visited:hover, h5 a:visited:focus, .h5 a:hover, .h5 a:focus, .h5 a:visited:hover, .h5 a:visited:focus {
+    h1 a:hover, h1 a:focus, h1 a:visited:hover, h1 a:visited:focus, .h1 a:hover, .h1 a:focus, .h1 a:visited:hover, .h1 a:visited:focus, h2 a:hover, h2 a:focus, h2 a:visited:hover, h2 a:visited:focus, .h2 a:hover, .h2 a:focus, .h2 a:visited:hover, .h2 a:visited:focus, h3 a:hover, h3 a:focus, h3 a:visited:hover, h3 a:visited:focus, .h3 a:hover, .h3 a:focus, .h3 a:visited:hover, .h3 a:visited:focus, h4 a:hover, h4 a:focus, h4 a:visited:hover, h4 a:visited:focus, .h4 a:hover, .h4 a:focus, .h4 a:visited:hover, .h4 a:visited:focus, h5 a:hover, h5 a:focus, h5 a:visited:hover, h5 a:visited:focus, .h5 a:hover, h6 a:hover, .h6 a:hover, .h5 a:focus, h6 a:focus, .h6 a:focus, .h5 a:visited:hover, h6 a:visited:hover, .h6 a:visited:hover, .h5 a:visited:focus, h6 a:visited:focus, .h6 a:visited:focus {
       color: #7c4d9e;
       background-color: transparent; }
 
@@ -1793,7 +1865,11 @@ you can add resource intensive styles.
   /*********************
   NAVIGATION STYLES
   *********************/
+  .desktop-nav {
+    display: block; }
+
   .mobile-nav {
+    display: none;
     background: #eee;
     border: 0;
     /* end .menu ul li */
@@ -2014,19 +2090,22 @@ you can add resource intensive styles.
     margin-top: 0; }
 
   .widgettitle {
-    margin-bottom: 0.75em;
-    border-top: 1px solid #c3c3c3;
-    padding-top: 0.5em; }
+    margin-bottom: 0.75em; }
 
   .widget {
     padding: 0 10px;
-    margin: 2.2em 0 6em; }
-    .widget ul li {
-      margin-bottom: 0.75em;
-      /* deep nesting */ }
-      .widget ul li ul {
-        margin-top: 0.75em;
-        padding-left: 1em; }
+    margin: 2.2em 0 10em; }
+    .widget ul {
+      list-style: disc;
+      margin-left: 1em; }
+      .widget ul.no-bullets {
+        list-style: none;
+        margin-left: 0; }
+      .widget ul li {
+        /* deep nesting */ }
+        .widget ul li ul {
+          margin-top: 0.75em;
+          padding-left: 1em; }
     .widget a {
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
@@ -2049,7 +2128,7 @@ you can add resource intensive styles.
           opacity: 0.5;
           -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
           filter: alpha(opacity=50); }
-    .widget h1 a:hover, .widget h1 a:focus, .widget h1 a:visited:hover, .widget h1 a:visited:focus, .widget .h1 a:hover, .widget .h1 a:focus, .widget .h1 a:visited:hover, .widget .h1 a:visited:focus, .widget h2 a:hover, .widget h2 a:focus, .widget h2 a:visited:hover, .widget h2 a:visited:focus, .widget .h2 a:hover, .widget .h2 a:focus, .widget .h2 a:visited:hover, .widget .h2 a:visited:focus, .widget h3 a:hover, .widget h3 a:focus, .widget h3 a:visited:hover, .widget h3 a:visited:focus, .widget .h3 a:hover, .widget .h3 a:focus, .widget .h3 a:visited:hover, .widget .h3 a:visited:focus, .widget h4 a:hover, .widget h4 a:focus, .widget h4 a:visited:hover, .widget h4 a:visited:focus, .widget .h4 a:hover, .widget .h4 a:focus, .widget .h4 a:visited:hover, .widget .h4 a:visited:focus, .widget h5 a:hover, .widget h5 a:focus, .widget h5 a:visited:hover, .widget h5 a:visited:focus, .widget .h5 a:hover, .widget .h5 a:focus, .widget .h5 a:visited:hover, .widget .h5 a:visited:focus {
+    .widget h1 a:hover, .widget h1 a:focus, .widget h1 a:visited:hover, .widget h1 a:visited:focus, .widget .h1 a:hover, .widget .h1 a:focus, .widget .h1 a:visited:hover, .widget .h1 a:visited:focus, .widget h2 a:hover, .widget h2 a:focus, .widget h2 a:visited:hover, .widget h2 a:visited:focus, .widget .h2 a:hover, .widget .h2 a:focus, .widget .h2 a:visited:hover, .widget .h2 a:visited:focus, .widget h3 a:hover, .widget h3 a:focus, .widget h3 a:visited:hover, .widget h3 a:visited:focus, .widget .h3 a:hover, .widget .h3 a:focus, .widget .h3 a:visited:hover, .widget .h3 a:visited:focus, .widget h4 a:hover, .widget h4 a:focus, .widget h4 a:visited:hover, .widget h4 a:visited:focus, .widget .h4 a:hover, .widget .h4 a:focus, .widget .h4 a:visited:hover, .widget .h4 a:visited:focus, .widget h5 a:hover, .widget h5 a:focus, .widget h5 a:visited:hover, .widget h5 a:visited:focus, .widget .h5 a:hover, .widget h6 a:hover, .widget .h6 a:hover, .widget .h5 a:focus, .widget h6 a:focus, .widget .h6 a:focus, .widget .h5 a:visited:hover, .widget h6 a:visited:hover, .widget .h6 a:visited:hover, .widget .h5 a:visited:focus, .widget h6 a:visited:focus, .widget .h6 a:visited:focus {
       color: #7c4d9e;
       background-color: transparent; }
 
@@ -2061,10 +2140,6 @@ you can add resource intensive styles.
   /* tag-cloud widget */
   /* calendar widget */
   /* category widget */
-  .widget_categories ul {
-    list-style: disc;
-    margin-left: 1em; }
-
   /* recent-comments widget */
   /* search widget */
   /* text widget */

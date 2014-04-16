@@ -18,6 +18,9 @@ understand (what's inside the media queries). We also need to
 import the mixins file so SASS can understand the variables.
 */
 
+// import constants
+@import "constants";
+
 /* import mixins */
 @import "mixins";
 
@@ -48,7 +51,102 @@ You can also target specific versions by using the classes applied to
 the html element. These can sometimes change, so take a look inside the
 header.php file to see what they are:
 
-
-.lt-ie8 .class { ... }
+.lt-ie9 .class { ... }
 
 */
+
+
+/******************
+HEADER AND NAV
+******************/
+
+.lt-ie9 .left-header-nav {
+		
+	ul.header-nav {
+		&>li:hover {
+			.sub-menu {
+				left: 0;
+			}
+		}
+	}
+		
+	.sub-menu {
+		left: 0;	
+	}
+}
+	
+.lt-ie9 .right-header-nav {
+
+	ul.header-nav >li {
+		&:hover {
+			.sub-menu {
+				right: 0;
+			}
+		}
+	}
+		
+	.sub-menu {
+		right: 0;
+	}
+}
+
+.lt-ie9 ul.header-nav {
+			
+	&>li {	
+		&:hover {
+			.sub-menu {
+				display: block;
+				@include opacity(0.85);
+			}
+		}
+	}
+}
+
+.lt-ie9 .sub-menu {
+	display: none;	
+	@include opacity(0.85);
+}
+
+
+/**********************
+TAGLINE
+**********************/
+
+.lt-ie9 #tagline {
+	@include opacity(0.85);
+}
+
+
+
+/*********************
+ARTICLE EXCERPT BOX
+*********************/
+
+.lt-ie9 .article-excerpt-box {
+	
+	.article-excerpt-image {
+		background-color: $dark-gray;
+		background-repeat: no-repeat;
+		background-position: center center;
+		@include background-size(100% auto);
+		
+		&:hover {
+			@include opacity(0.7);
+		}
+	}
+}
+
+
+
+/**********************
+FORM LABELS
+**********************/
+
+.lt-ie9 .respond-form {
+	form {
+		label.no-placeholder {
+			display: block;
+		}
+	}
+}
+

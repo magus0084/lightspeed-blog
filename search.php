@@ -10,17 +10,17 @@
 					<header id="post-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $thumb[0]; ?>');"></header>
 				<?php } else { ?>
 					<header id="post-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $defaultImage ?>');"></header>
-				<? } ?>
+				<?php } ?>
 				
 				<div id="inner-content" class="wrap clearfix">
 
 					<div id="main" class="twelvecol first clearfix" role="main">
-						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+					<h1 class="archive-title"><span><?php _e( '[:en]Search Results for:[:ja]検索結果：', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<?php /* Create Article Boxes */ ?>
-							<?php create_article_box($noSidebar = true, $showExcerpt = false, $showDate = true, $showCategories = true); ?>	
+							<?php create_article_box($noSidebar = true, $showExcerpt = true, $showDate = true, $showCategories = true, $excerptLength = $numCharsExcerptShort); ?>	
 
 						<?php endwhile; ?>
 
@@ -51,7 +51,7 @@
 							
 							<?php /* Adding this class is somewhat of a hack to get the separator line */ ?>
 							<div class="related-content">
-								<h2><?php qtrans_TextTranslate('Other Recommended Articles', 'お薦め記事'); ?></h2>
+								<h2><?php qtrans_TextTranslate('Other Recommended Articles', 'お薦め記事', $showText = true); ?></h2>
 								<?php 
 									$args=array(
 										'posts_per_page' => 6, 
@@ -69,7 +69,7 @@
 									// Start loop
 									if($recommended->have_posts()) : while($recommended->have_posts()) : $recommended->the_post();
 									
-										create_article_box($noSidebar = true, $showExcerpt = true, $showDate = false, $showCategories = false);
+										create_article_box($noSidebar = true, $showExcerpt = true, $showDate = false, $showCategories = false, $excerptLength = null);
 								
 									endwhile; endif; ?>
 								<?php wp_reset_postdata(); ?>

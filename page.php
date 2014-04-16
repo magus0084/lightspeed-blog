@@ -10,7 +10,7 @@
 					<header id="post-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $thumb[0]; ?>');"></header>
 				<?php } else { ?>
 					<header id="post-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $defaultImage ?>');"></header>
-				<? } ?>
+				<?php } ?>
 
 				<div id="inner-content" class="wrap clearfix">
 

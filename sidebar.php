@@ -1,3 +1,5 @@
+<?php global $defaultImage; ?>
+				
 				<div id="sidebar1" class="sidebar fourcol last clearfix" role="complementary">
 
 					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
@@ -24,26 +26,8 @@
 							'post__not_in' => array( $currentPostID ),
 							'orderby' => 'post_date'
 						);
-						//$currentPostID = get_the_ID();
-						/*$args=array(
-							'posts_per_page' => 6, 
-							'update_post_meta_cache' => false,
-							'orderby' => 'rand', 
-							'post__not_in' => array( $currentPostID ),
-							'meta_query' => array(
-								array(
-									'key' => 'recommended',
-									'value' => 'yes',
-								)
-							)
-						); */
-						//$i = 0;
-						$editorials = wp_get_recent_posts($args, OBJECT);
 						
-						//$editorials = new WP_Query($args);
-								
-						// If there are recommended posts add a recommended post widget
-						/*if($editorials->have_posts()) { ?>*/
+						$editorials = wp_get_recent_posts($args, OBJECT);
 						
 						
 						if (isset($editorials)) { ?>
@@ -51,10 +35,10 @@
 								
 								<div class="widget" id="widget-recommended">
 									<h4 class="widgettitle">
-										<?php qtrans_TextTranslate('Features', 'お薦め記事'); ?>
+										<?php qtrans_TextTranslate('Features', 'お薦め記事', $showText = true); ?>
 									</h4>
 									
-									<ul>
+									<ul class="no-bullets">
 									<?php for ( $i=0; $i<3; $i++ ) {
 										$postID = $editorials[$i]->ID; ?>
 										
@@ -69,9 +53,8 @@
 													<?php
 														$photo = get_the_post_thumbnail($postID, 'recommended-post-img');
 																	
-														if (isset($photo)) { 
-															echo $photo;
-														}
+														if ($photo != '') echo $photo;
+														else echo '<img width="550" height="375" src="'.$defaultImage.'" class="attachment-recommended-post-img wp-post-image" alt="'.get_the_title( $postID ).'">';
 													?>
 												</a>
 												

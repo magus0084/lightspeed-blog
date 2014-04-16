@@ -42,10 +42,22 @@
 
 	</head>
 
-	<body <?php body_class(); ?>>
+	<body <?php body_class(qtrans_TextTranslate('', 'ja', $showText = false)); ?>>
 
 		<div id="container">
-
+			
+			<!--[if lt IE 8]>
+			<div id="upgrade-browser-alert">
+				<article class="wrap">
+					<p>
+						for the best viewing experience, it is highly recommended that 
+						you view this website in a <a href="http://whatbrowser.org/" rel="nofollow">Modern Browser</a>. 
+						Please upgrade your browser to fully experience Lightspeed.
+					</p>
+				</article>
+			</div>
+			<![endif]-->
+		
 			<header class="header" id="site-header" role="banner">
 
 			
@@ -59,6 +71,8 @@
 
 					<nav id="header-nav" class="clearfix" role="navigation">
 						<nav class="left-header-nav">
+						
+							<!-- DESKTOP NAV -->
 							<ul class="desktop-nav header-nav clearfix">
 							
 								<!-- LOGO -->
@@ -71,7 +85,7 @@
 								<!-- ABOUT -->
 								<li>
 									<a rel="nofollow">
-										<?php qtrans_TextTranslate('About', 'Lightspeedについて'); ?>
+										<?php qtrans_TextTranslate('About', 'Lightspeedについて', $showText = true); ?>
 										<i class="fa fa-caret-down"></i>
 									</a>
 									
@@ -81,17 +95,17 @@
 								<!-- FEATURES -->
 								<li>
 									<a rel="nofollow">
-										<?php qtrans_TextTranslate('Features', 'お薦め記事'); ?>
+										<?php qtrans_TextTranslate('Features', 'お薦め記事', $showText = true); ?>
 										<i class="fa fa-caret-down"></i>
 									</a>
 									
 									<?php ls_navigation_features(); ?>
 								</li>
 								
-								<!-- CATEGORIES -->
+								<!-- TOPICS -->
 								<li>
 									<a rel="nofollow">
-										<?php qtrans_TextTranslate('Topics', 'カテゴリー'); ?>
+										<?php qtrans_TextTranslate('Topics', 'カテゴリー', $showText = true); ?>
 										<i class="fa fa-caret-down"></i>
 									</a>
 									
@@ -99,11 +113,21 @@
 								</li>
 							</ul>
 							
+							<!-- MOBILE NAV -->
+							<ul class="mobile-nav header-nav clearfix">
+								<li>
+									<a href="<?php echo qtrans_convertURL(home_url()); ?>" rel="nofollow">
+										<i class="fa fa-bars"></i>
+										<image id="logo" xlink:href="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.svg" src="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.png" />
+									</a>
+								</li>
+							</ul>
+							
 							<?php /* bones_main_nav(); */ ?>
 						</nav>
 						
 						<nav class="right-header-nav">
-							<ul class="header-nav">
+							<ul class="desktop-nav header-nav">
 								
 								<!-- SHARE -->
 								<li id="nav-share1">
@@ -164,6 +188,40 @@
 												<?php echo bones_wpsearch($form) ?>
 											</div>
 										</li>
+									</ul>
+								</li>
+							</ul>
+							
+							<!-- MOBILE NAV -->
+							<ul class="mobile-nav header-nav">
+								
+								<!-- GLOBE -->
+								<li id="nav-lang-mobile">
+									<a rel="nofollow">
+										<i class="fa fa-globe"></i>
+									</a>
+									
+									<ul class="sub-menu">
+										<li>
+											<a href="<?php echo qtrans_convertURL(get_permalink(), 'en') ?>">
+												English
+											</a>
+										</li>
+										<li>
+											<a href="<?php echo qtrans_convertURL(get_permalink(), 'ja') ?>">
+												日本語
+											</a>
+										</li>
+									</ul>
+								</li>
+								
+								<li id="nav-all-mobile">
+									<a rel="nofollow">
+										<i class="fa fa-bars"></i>
+									</a>
+									
+									<ul class="sub-menu">
+										
 									</ul>
 								</li>
 							</ul>

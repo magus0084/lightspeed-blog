@@ -19,13 +19,8 @@ Template Name: Top Page
 			// Start Loop
 			if($editorials->have_posts()) : while($editorials->have_posts()) : $editorials->the_post();
 
-				$postImageLarge;
-
-				if (has_post_thumbnail()) {
-					$postImageLarge = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full-size');
-				} else {
-					$postImageLarge = $defaultImage;
-				}
+				$postImageLarge = array($defaultImage);
+				if (has_post_thumbnail())  $postImageLarge = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full-size');
 				
 				// If this is the first post, add header image using and content space tags
 				if( $editorials->current_post == 0 && !is_paged() ) { ?>
@@ -45,7 +40,7 @@ Template Name: Top Page
 							<div id="main" class="eightcol first clearfix" role="main">
 				<?php }?>
 								<?php /* Create Article Boxes */ ?>
-								<?php create_article_box($noSidebar = false, $showExcerpt = true, $showDate = false, $showCategories = false); ?>
+								<?php create_article_box($noSidebar = false, $showExcerpt = true, $showDate = false, $showCategories = false, $excerptLength = null); ?>
 								
 			<?php endwhile; endif; ?>
 

@@ -84,29 +84,32 @@ The comments page for Bones
 	<ul id="comment-form-elements" class="clearfix">
 
 		<li>
-			<label for="author"><?php _e( 'Name', 'bonestheme' ); ?> <?php if ($req) _e( '(required)'); ?></label>
-			<input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e( 'Your Name*', 'bonestheme' ); ?>" <?php if ($req) echo "aria-required='true'"; ?> />
+			<label for="author" class="no-placeholder"><?php _e( '[:en]Name[:ja]名前', 'bonestheme' ); ?> <?php if ($req) _e( '(required)'); ?></label>
+			<input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e( '[:en]Your Name*[:ja]名前*', 'bonestheme' ); ?>" <?php if ($req) echo "aria-required='true'"; ?> />
 		</li>
 
 		<li>
-			<label for="email"><?php _e( 'Mail', 'bonestheme' ); ?> <?php if ($req) _e( '(required)'); ?></label>
-			<input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e( 'Your E-Mail*', 'bonestheme' ); ?>" <?php if ($req) echo "aria-required='true'"; ?> />
+			<label for="email" class="no-placeholder"><?php _e( '[:en]Mail[:ja]メール', 'bonestheme' ); ?> <?php if ($req) _e( '(required)'); ?></label>
+			<input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e( '[:en]Your E-Mail*[:ja]メール*', 'bonestheme' ); ?>" <?php if ($req) echo "aria-required='true'"; ?> />
 			<small><?php _e("(will not be published)", 'bonestheme' ); ?></small>
 		</li>
 
 		<li>
-			<label for="url"><?php _e( 'Website', 'bonestheme' ); ?></label>
-			<input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e( 'Got a website?', 'bonestheme' ); ?>" />
+			<label for="url" class="no-placeholder"><?php _e( '[:en]Website[:ja]ホームページ', 'bonestheme' ); ?></label>
+			<input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e( '[:en]Got a website?[:ja]ホームページ', 'bonestheme' ); ?>" />
 		</li>
 
 	</ul>
 
 	<?php endif; ?>
 
-	<p><textarea name="comment" id="comment" placeholder="<?php _e( 'Share your thoughts...', 'bonestheme' ); ?>"></textarea></p>
+	<p>
+		<label for="comment" class="no-placeholder"><?php _e( '[:en]Comments[:ja]コメント', 'bonestheme' ); ?></label>
+		<textarea name="comment" id="comment" placeholder="<?php _e( '[:en]Share your thoughts...[:ja]コメント', 'bonestheme' ); ?>"></textarea>
+	</p>
 
 	<p>
-		<input name="submit" type="submit" id="submit" class="button" value="<?php _e( 'Submit', 'bonestheme' ); ?>" />
+	<input name="submit" type="submit" id="submit" class="button" value="<?php _e( '[:en]Submit[:ja]送信', 'bonestheme' ); ?>" />
 		<?php comment_id_fields(); ?>
 	</p>
 

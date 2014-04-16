@@ -14,10 +14,12 @@ sidebars, comments, ect.
 // Article Page Excerpt
 $numCharsExcerptLong = 1000;
 $numCharsExcerpt = 230;
+$numCharsExcerptShort = 100;
 
 // Default Background images
-$defaultImage = get_bloginfo('template_url').'/library/images/default-images/default-image1.jpg';
+$defaultImage = get_bloginfo('template_url').'/library/images/default-images/default-image-1.jpg';
 $defaultImages = '';
+$defaultImageThumb = get_bloginfo('template_url').'/library/images/default-images/default-image-thumb-1.jpg';
 
 // Recent Posts 
 $numPostsPerPage = 8;
@@ -192,9 +194,13 @@ function bones_comments( $comment, $args, $depth ) {
 
 // Search Form
 function bones_wpsearch($form) {
-	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+	$actionurl = get_bloginfo('home');
+	$actionurl = qtrans_convertURL($actionurl, $locale);
+	$actionurl = $actionurl.'/';
+
+	$form = '<form role="search" method="get" id="searchform" action="' . $actionurl . '" >
 	<label class="screen-reader-text" for="s">' . __( 'Search for:', 'bonestheme' ) . '</label>
-	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_attr__( 'Search the Site...', 'bonestheme' ) . '" />
+	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_attr__( '[:en]Search the Site...[:ja]サイトを検索', 'bonestheme' ) . '" />
 	<input type="submit" id="searchsubmit" value="' . esc_attr__( 'Search' ) .'" />
 	</form>';
 	return $form;
@@ -274,7 +280,9 @@ function the_author_bio($authorID) {
 	$authorCompany = get_field('company', $customFieldAuthorID);			// Custom Field
 	$authorCompanyURL = get_field('company_url', $customFieldAuthorID);		// Custom Field
 	$authorPosition = get_field('position', $customFieldAuthorID);			// Custom Field
-	$authorBio = get_the_author_meta('description', $authorID);
+	$authorBio = qtrans_TextTranslate(get_the_author_meta('description', $authorID), 	// English Bio
+			get_field('author_description_ja', $customFieldAuthorID), 					// Japanese Bio
+			$showText = false);	
 	
 	// Get author social media values
 	$authorWebsite = get_the_author_meta('user_url', $authorID);
@@ -327,7 +335,7 @@ function the_author_bio($authorID) {
  ** Must be called within the loop.
  */
  
-function create_article_box($noSidebar, $showExcerpt, $showDate, $showCategories) {
+function create_article_box($noSidebar, $showExcerpt, $showDate, $showCategories, $excerptLength) {
 		
 	// Call in constants
 	global $defaultImage;
@@ -340,8 +348,10 @@ function create_article_box($noSidebar, $showExcerpt, $showDate, $showCategories
 	
 	// Set $postImage if an image exists for the post.
 	if (has_post_thumbnail()) {
-		$postImage = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium'); 
-	} ?>
+		$postImage = wp_get_attachment_image_src(get_post_thumbnail_id(), 'recommended-post-img'); 
+	} 
+	
+	(isset($excerptLength)? : $excerptLength = $numCharsExcerpt); ?>
 	
 	<!-- ARTICLE BOX -->
 	<article class="article-excerpt-box <?php echo ($noSidebar? 'no-sidebar': ''); ?>" role="article">
@@ -356,14 +366,14 @@ function create_article_box($noSidebar, $showExcerpt, $showDate, $showCategories
 			<h3><a href="<?php the_permalink(); ?>" title="Read the article &quot;<?php the_title(); ?>&quot;"><?php the_title(); ?></a></h3>
 														
 			<!-- POST EXCERPT -->
-			<?php echo ($showExcerpt? get_excerpt_by_chars($numCharsExcerpt, qtrans_getLanguage() ) : ''); ?>
+			<?php echo ($showExcerpt? get_excerpt_by_chars($excerptLength, qtrans_getLanguage() ) : ''); ?>
 										
 			<!-- POST AUTHOR -->
 			<p class="article-meta">
 				By <a href="<?php echo $authorURL ?>"><?php echo $authorName ?></a>
 			
 				<!-- POST DATE -->
-				<?php echo ($showDate? '<br><time class="updated" datetime="'.get_the_time( 'Y-m-j' ).'" pubdate>'.get_the_time( __( 'F jS, Y', 'bonestheme' ) ).'</time>' : '') ?>
+				<?php echo ($showDate? '<br><time class="updated" datetime="'.mysql2date('Y-m-j', get_the_date()).'" pubdate>'.mysql2date('F jS, Y', get_the_date()).'</time>' : '') ?>
 			
 				<!-- POST CATEGORIES -->
 				<?php echo ($showCategories? '<br>'.get_the_category_list(', ') : '') ?>	
@@ -413,10 +423,11 @@ function ls_navigation_about() {
 /************* ls_navigation_features **************/
 
 function ls_navigation_features() {
-
+	global $defaultImageThumb;
+		
 	// Set Arguments for array
 	$args = array(
-		'numberposts' => 5, 
+		'posts_per_page' => 5, 
 		'orderby' => 'post_date', 
 		'meta_query' => array(
 			array(
@@ -437,9 +448,8 @@ function ls_navigation_features() {
 					<?php
 						$photo = get_the_post_thumbnail(get_the_ID(), 'thumbnail');
 					
-						if (isset($photo)) { 
-							echo $photo;
-						}
+						if ($photo != '') echo $photo;
+						else echo '<img src="'.$defaultImageThumb.'">';
 					?>
 					<div><?php the_title(); ?></div>
 				</a>
@@ -487,12 +497,22 @@ function ls_navigation_categories() {
  ** currently set language.
  */
 
-function qtrans_TextTranslate($engString, $jpnString) {
+function qtrans_TextTranslate($engString, $jpnString, $showText) {
+	
+	// Default showText to true if not set
+	isset($showText)? $showText = $showText : $showText = true;
+	
+	// If English
 	if (qtrans_getLanguage() == 'en') {
-		echo $engString;
+		
+		if ($showText) echo ($engString);
+		else return $engString;
 			
+	// If Japanese
 	} elseif (qtrans_getLanguage() == 'ja') {
-		echo $jpnString;
+		
+		if ($showText) echo ($jpnString);
+		else return $jpnString;
 	}
 }
 
@@ -509,5 +529,18 @@ function get_ID_by_slug($page_slug) {
         return null;
     }
 }
+
+
+/************ qtranslate_filter **************/
+/** Adds in short codes for multilingual display.
+ */
+
+function qtranslate_filter($text) {
+	return __($text);
+}
+
+
+add_filter('get_the_author_meta', 'qtranslate_filter');
+
 
 ?>

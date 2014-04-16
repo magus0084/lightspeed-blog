@@ -8,11 +8,9 @@
 					$thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full-size');
 					?> 	
 					<header id="post-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $thumb[0]; ?>');"></header>
-				<?php } else {
-					$thumb = $defaultImage;
-					?>
+				<?php } else { ?>
 					<header id="post-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $defaultImage ?>');"></header>
-				<? } ?>
+				<?php } ?>
 
 				<!-- BEGIN MAIN CONTENT -->
 				<div id="inner-content" class="wrap clearfix">
@@ -59,17 +57,17 @@
 								</h1>
 							<?php } elseif (is_day()) { ?>
 								<h1 class="archive-title">
-									<span><?php _e( 'Daily Archives:', 'bonestheme' ); ?></span> <?php the_time('l, F j, Y'); ?>
+									<span><?php _e( 'Daily Archives:', 'bonestheme' ); ?></span> <?php echo mysql2date('l, F j, Y', get_the_date()); ?>
 								</h1>
 
 							<?php } elseif (is_month()) { ?>
 									<h1 class="archive-title">
-										<span><?php _e( 'Monthly Archives:', 'bonestheme' ); ?></span> <?php the_time('F Y'); ?>
+										<span><?php _e( 'Monthly Archives:', 'bonestheme' ); ?></span> <?php echo mysql2date('F Y', get_the_date()); ?>
 									</h1>
 
 							<?php } elseif (is_year()) { ?>
 									<h1 class="archive-title">
-										<span><?php _e( 'Yearly Archives:', 'bonestheme' ); ?></span> <?php the_time('Y'); ?>
+										<span><?php _e( 'Yearly Archives:', 'bonestheme' ); ?></span> <?php echo mysql2date('Y', get_the_date()); ?>
 									</h1>
 							<?php } ?>
 
@@ -78,7 +76,7 @@
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							
 								<?php /* Create Article Boxes */ ?>
-								<?php create_article_box($noSidebar = true, $showExcerpt = true, $showDate = false, $showCategories = false); ?>
+								<?php create_article_box($noSidebar = true, $showExcerpt = true, $showDate = false, $showCategories = false, $excerptLength = null); ?>
 								
 							<?php endwhile; ?>
 							<!-- END LOOP -->
