@@ -142,11 +142,9 @@ ARTICLE EXCERPT BOX
 FORM LABELS
 **********************/
 
-.lt-ie9 .respond-form {
-	form {
-		label.no-placeholder {
-			display: block;
-		}
+.lt-ie9 form {
+	label.no-placeholder {
+		display: block;
 	}
 }
 

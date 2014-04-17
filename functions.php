@@ -199,7 +199,7 @@ function bones_wpsearch($form) {
 	$actionurl = $actionurl.'/';
 
 	$form = '<form role="search" method="get" id="searchform" action="' . $actionurl . '" >
-	<label class="screen-reader-text" for="s">' . __( 'Search for:', 'bonestheme' ) . '</label>
+	<label class="screen-reader-text no-placeholder" for="s">' . __( 'Search for:', 'bonestheme' ) . '</label>
 	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_attr__( '[:en]Search the Site...[:ja]サイトを検索', 'bonestheme' ) . '" />
 	<input type="submit" id="searchsubmit" value="' . esc_attr__( 'Search' ) .'" />
 	</form>';

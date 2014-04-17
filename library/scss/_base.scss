@@ -1,13 +1,14 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: Lightspeed
+Author: Adam Toda
+Contact:  adam.toda@gmail.com
 
 Stylesheet: Base Mobile Stylesheet
 
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
+This is called at the top of the main stylesheet
+and will be used across all viewports.  Not the
+prettiest implementation, but hey, I was crunched
+for time.
 
 ******************************************************************/
 
@@ -157,6 +158,36 @@ h6, .h6 {
 	@extend .h5;
 	text-transform: none;
 }
+
+
+/*********************
+FORMS
+*********************/
+
+form {
+	label.no-placeholder,
+	small {
+		display: none;
+		color: $light-text-color;
+	}
+	
+	small {
+		font-style: italic;
+	}
+}
+
+
+/* IE9 ONLY FIX
+ * ------------
+ * IE9 doesn't support HTML5 placeholders so we show the labels instead.
+ */
+
+.ie9 form {
+	label.no-placeholder {
+		display: block;
+	}
+}
+
 
 /*********************
 HEADER STYLES
@@ -1101,11 +1132,6 @@ COMMENT FORM STYLES
 			list-style-type: none;
 			clear: both;
 			margin-bottom: 0.7335em;
-
-			label,
-			small {
-				display: none;
-			}
 		}
 		
 		p {
