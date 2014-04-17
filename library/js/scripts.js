@@ -65,12 +65,36 @@ jQuery(document).ready(function($) {
 	
 	}
 	
-	
-	// add all your scripts here
-	
+	/* Setup Mobile Menu Interaction */
+	$('.mobile-nav li a').each(function() {
+		$(this).on('click', function(event) {
+			var $objectToShow = $(this).siblings('ul');
+			
+			if ($objectToShow.length != 0) {
+				event.preventDefault();
+				$(this).toggleClass('selected');
+				$objectToShow.not(':animated').slideToggle(400);
+			}
+		}); 
+	});	
  
 }); /* end of as page load scripts */
 
+
+function SetupToggleInteraction(selector) {
+	//$('#nav-lang-link').each(function() {
+		//$("#nav-lang-link").addClass('selected');
+		/*$("#nav-lang-link").on('click', function(event) {
+			var $objectToShow = $(this).siblings();
+			
+			if ($objectToShow) {
+				event.preventDefault();
+				$(this).toggleClass('selected');
+				$objectToShow.not(':animated').slideToggle(300);
+			}
+		}); */
+	//});	
+}
 
 /*! A fix for the iOS orientationchange zoom bug.
  Script by @scottjehl, rebound by @wilto.

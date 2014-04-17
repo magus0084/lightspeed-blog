@@ -137,6 +137,20 @@ ARTICLE EXCERPT BOX
 }
 
 
+/******************************
+SIDEBAR RECOMMENDED CONTENT
+******************************/
+
+.lt-ie9 #widget-recommended {
+	
+	.recommended-post{
+		&:after {
+			display: none;
+		}
+	}
+}
+
+
 
 /**********************
 FORM LABELS

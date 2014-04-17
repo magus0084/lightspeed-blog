@@ -818,6 +818,44 @@ form small {
   color: #8f8f8f; }
 form small {
   font-style: italic; }
+form input[type=text],
+form input[type=email],
+form input[type=url],
+form textarea {
+  padding: 1.2em 0.9em 0.2em 0.9em;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #c3c3c3;
+  line-height: 1.5em;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, "Hiragino Mincho Pro", "Kozuka Mincho", "MS PMincho", "MS Mincho", serif;
+  -webkit-appearance: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  /* form validation */ }
+  form input[type=text]:focus,
+  form input[type=email]:focus,
+  form input[type=url]:focus,
+  form textarea:focus {
+    background: white; }
+  form input[type=text]:invalid,
+  form input[type=email]:invalid,
+  form input[type=url]:invalid,
+  form textarea:invalid {
+    outline: none;
+    border-color: #fbc2c4;
+    background-color: #f6e7eb;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
 
 /* IE9 ONLY FIX
  * ------------
@@ -835,113 +873,9 @@ HEADER STYLES
 .desktop-nav {
   display: none; }
 
-#logo {
+#header-nav .logo {
   width: 120px;
   height: auto; }
-
-.header-nav {
-  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
-  padding: 0;
-  margin: 0; }
-  .header-nav a {
-    color: white; }
-
-ul.header-nav {
-  vertical-align: middle; }
-  ul.header-nav > li {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 1em;
-    line-height: 2.5em; }
-    ul.header-nav > li a {
-      display: block;
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -ms-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out; }
-      ul.header-nav > li a:hover {
-        color: white;
-        background-color: #7c4d9e;
-        cursor: pointer; }
-    ul.header-nav > li > a {
-      padding: 0.25em 1em; }
-      ul.header-nav > li > a > img {
-        vertical-align: middle;
-        margin-bottom: 0.4em; }
-    ul.header-nav > li:hover {
-      background-color: #7c4d9e;
-      cursor: pointer; }
-
-.left-header-nav {
-  float: left; }
-  .left-header-nav ul.header-nav > li:hover .sub-menu {
-    left: 0; }
-  .left-header-nav .sub-menu {
-    left: 2em; }
-
-.right-header-nav {
-  float: right; }
-  .right-header-nav ul.header-nav > li:hover .sub-menu {
-    right: 0; }
-  .right-header-nav .sub-menu {
-    right: 2em; }
-
-ul.header-nav > li {
-  margin-left: 0.25em;
-  margin-right: 0;
-  position: relative; }
-  ul.header-nav > li:hover .sub-menu {
-    visibility: visible;
-    -moz-opacity-size: 1;
-    -ms-opacity-size: 1;
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
-    filter: alpha(opacity=100); }
-
-.sub-menu {
-  visibility: hidden;
-  position: absolute;
-  top: 3em;
-  color: white;
-  z-index: 100;
-  border-top: 2px solid #7c4d9e;
-  -moz-opacity-size: 0;
-  -ms-opacity-size: 0;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
-  filter: alpha(opacity=0);
-  border-bottom: 5px solid black;
-  padding-bottom: 0;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
-  .sub-menu > li {
-    display: block;
-    background-color: #3e3e3e;
-    background-color: rgba(0, 0, 0, 0.7); }
-    .sub-menu > li > a, .sub-menu > li > div {
-      min-width: 12em;
-      padding: 0.5em 1em; }
-  .sub-menu:hover ul.header-nav > li > a {
-    background-color: #7c4d9e; }
-
-.sub-menu-featured-article {
-  width: 450px; }
-  .sub-menu-featured-article img {
-    display: inline-block;
-    vertical-align: top;
-    width: 4.5em;
-    height: auto; }
-  .sub-menu-featured-article div {
-    display: inline-block;
-    vertical-align: middle;
-    background-color: transparent;
-    margin-left: 1em;
-    width: 300px;
-    line-height: 1.4em; }
 
 /*********************
 NAVIGATION STYLES
@@ -960,33 +894,119 @@ and more scalable.
   width: 100%;
   background-color: black; }
 
-.mobile-nav {
+.header-nav {
+  font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
+  padding: 0;
+  margin: 0; }
+  .header-nav a {
+    color: white; }
+
+ul.header-nav {
+  vertical-align: middle; }
+  ul.header-nav > li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.25em;
+    line-height: 2.5em;
+    position: relative; }
+    ul.header-nav > li:first-child {
+      margin-left: 0; }
+    ul.header-nav > li a {
+      display: block; }
+      ul.header-nav > li a.selected {
+        color: white;
+        background-color: #7c4d9e;
+        cursor: pointer; }
+    ul.header-nav > li > a {
+      padding: 0.25em 1em; }
+      ul.header-nav > li > a > img {
+        vertical-align: middle;
+        margin-bottom: 0.4em; }
+
+.left-header-nav {
+  float: left; }
+
+.right-header-nav {
+  float: right; }
+  .right-header-nav .sub-menu {
+    right: 0; }
+
+.sub-menu {
+  display: block;
+  position: absolute;
+  top: 3em;
+  color: white;
+  z-index: 100;
+  border-top: 2px solid #7c4d9e;
+  border-bottom: 5px solid black;
+  padding-bottom: 0; }
+  .sub-menu > li {
+    display: block;
+    background-color: #3e3e3e;
+    background-color: rgba(0, 0, 0, 0.7); }
+    .sub-menu > li > a, .sub-menu > li > div {
+      min-width: 12em;
+      padding: 0.5em 1em; }
+
+.sub-menu-featured-article img {
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+  height: auto; }
+.sub-menu-featured-article div {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: transparent;
+  margin-left: 1em;
+  width: 70%;
+  line-height: 1.4em; }
+
+ul.mobile-nav {
   /* end .menu li */
+  /* Menu Search */
+  /* End Menu Search */
   /* highlight current page */
   /* end current highlighters */ }
-  .mobile-nav li {
-    /*
-    so you really have to rethink your dropdowns for mobile.
-    you don't want to have it expand too much because the
-    screen is so small. How you manage your menu should
-    depend on the project. Here's some great info on it:
-    http://www.alistapart.com/articles/organizing-mobile/
-    */ }
-    .mobile-nav li a {
-      display: block;
-      text-decoration: none;
-      padding: 10px 10px;
-      background-color: #eee;
-      border-bottom: 1px solid #ccc;
-      /*
-      remember this is for mobile ONLY, so there's no need
-      to even declare hover styles here, you can do it in
-      the style.scss file where it's relevant. We want to
-      keep this file as small as possible!
-      */ }
-    .mobile-nav li ul.sub-menu li a,
-    .mobile-nav li ul.children li a {
-      padding-left: 30px; }
+  ul.mobile-nav li {
+    position: static; }
+    ul.mobile-nav li ul.sub-menu,
+    ul.mobile-nav li ul.children {
+      display: none;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.55); }
+      ul.mobile-nav li ul.sub-menu li,
+      ul.mobile-nav li ul.children li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        ul.mobile-nav li ul.sub-menu li a,
+        ul.mobile-nav li ul.children li a {
+          display: block;
+          width: 100%;
+          padding: 1em 1.5em; }
+        ul.mobile-nav li ul.sub-menu li:last-child,
+        ul.mobile-nav li ul.children li:last-child {
+          border-bottom: none; }
+    ul.mobile-nav li ul.sub-menu {
+      border-bottom: 5px solid #7c4d9e; }
+    ul.mobile-nav li ul.children {
+      border-top: 1px solid #7c4d9e;
+      border-bottom: 1px solid black; }
+      ul.mobile-nav li ul.children li {
+        padding-left: 1.25em; }
+  ul.mobile-nav .search-box-container {
+    background-color: rgba(0, 0, 0, 0.5); }
+    ul.mobile-nav .search-box-container .search-form {
+      margin-top: 1em;
+      margin-bottom: 1em; }
+      ul.mobile-nav .search-box-container .search-form input[type="text"] {
+        border-radius: none;
+        -webkit-appearance: none;
+        color: white;
+        width: 100%; }
+        ul.mobile-nav .search-box-container .search-form input[type="text"]:focus {
+          background-color: black; }
+    ul.mobile-nav .search-box-container .search-submit {
+      margin-top: 0.5em;
+      margin-bottom: 0; }
 
 /* end .nav */
 /*********************
@@ -994,15 +1014,9 @@ POSTS & CONTENT STYLES
 *********************/
 #writtenByBox {
   padding-top: 1em;
-  padding-bottom: 1em;
-  background-color: #f1f1f1;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  -ms-box-sizing: content-box;
-  box-sizing: content-box;
-  padding-left: 1000em;
-  margin-left: -1000em; }
+  padding-bottom: 1em; }
   #writtenByBox .avatar {
+    display: none;
     width: 2.5em;
     height: 2.5em;
     margin-right: 1em; }
@@ -1047,13 +1061,23 @@ POSTS & CONTENT STYLES
   #tagline span {
     font-size: 0.7em; }
 
+.entry-content .addtoany_share_save_container {
+  width: 100%;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  border-top: 1px solid #c3c3c3;
+  padding-top: 0.5em;
+  border-bottom: 1px solid #c3c3c3;
+  padding-bottom: 0.5em; }
+  .entry-content .addtoany_share_save_container a {
+    border-bottom: none; }
+
 /* end .hentry */
 /* STYLING ON EXCERPT */
-.single-excerpt {
+.post header .article-excerpt {
   font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
   font-size: 1em;
-  text-transform: uppercase;
-  margin-bottom: 3em; }
+  text-transform: uppercase; }
 
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -1204,6 +1228,8 @@ POSTS & CONTENT STYLES
     margin-right: 0.5em;
     width: 25%;
     height: auto; }
+    .gallery dl a {
+      border-bottom: none; }
     .gallery dl img {
       border-top: none;
       border-bottom: none;
@@ -1217,6 +1243,12 @@ POSTS & CONTENT STYLES
   text-align: center;
   color: #8b8b8b;
   font-size: 0.9em; }
+
+.tags {
+  margin-bottom: 0; }
+
+.published-date {
+  margin-top: 0.2em; }
 
 /*********************
 AUTHOR BIO BOX
@@ -1332,6 +1364,20 @@ PAGE NAVI STYLES
 /******************************************************************
 SEARCH FORM
 ******************************************************************/
+.search-form {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+  .search-form input[type="text"] {
+    border-radius: none;
+    -webkit-appearance: none;
+    color: white; }
+    .search-form input[type="text"]:focus {
+      background-color: black; }
+
+.search-submit {
+  margin-top: 0.5em;
+  margin-bottom: 0; }
+
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/
@@ -1463,44 +1509,6 @@ COMMENT FORM STYLES
       margin-bottom: 0.7335em; }
     .respond-form form p label {
       display: none; }
-    .respond-form form input[type=text],
-    .respond-form form input[type=email],
-    .respond-form form input[type=url],
-    .respond-form form textarea {
-      padding: 1.2em 0.9em 0.2em 0.9em;
-      background-color: transparent;
-      border-radius: 0;
-      border: none;
-      border-bottom: 1px solid #c3c3c3;
-      line-height: 1.5em;
-      -webkit-transition: all 0.4s ease-in-out;
-      -moz-transition: all 0.4s ease-in-out;
-      -ms-transition: all 0.4s ease-in-out;
-      -o-transition: all 0.4s ease-in-out;
-      transition: all 0.4s ease-in-out;
-      font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, "Hiragino Mincho Pro", "Kozuka Mincho", "MS PMincho", "MS Mincho", serif;
-      -webkit-appearance: none;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      -ms-box-shadow: none;
-      box-shadow: none;
-      /* form validation */ }
-      .respond-form form input[type=text]:focus,
-      .respond-form form input[type=email]:focus,
-      .respond-form form input[type=url]:focus,
-      .respond-form form textarea:focus {
-        background: white; }
-      .respond-form form input[type=text]:invalid,
-      .respond-form form input[type=email]:invalid,
-      .respond-form form input[type=url]:invalid,
-      .respond-form form textarea:invalid {
-        outline: none;
-        border-color: #fbc2c4;
-        background-color: #f6e7eb;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        -ms-box-shadow: none;
-        box-shadow: none; }
     .respond-form form input[type=text],
     .respond-form form input[type=email],
     .respond-form form input[type=url] {
@@ -1722,11 +1730,11 @@ tweeners.
     width: 45%;
     margin-right: 5%;
     height: 35em; }
-    .article-excerpt-box:nth-child(even) {
+    .article-excerpt-box:nth-child(odd) {
       margin-right: 0;
       float: right;
       width: 47.5%; }
-    .article-excerpt-box:nth-child(odd) {
+    .article-excerpt-box:nth-child(even) {
       width: 47.5%; }
     .article-excerpt-box .article-excerpt-image {
       height: 10em; }
@@ -1883,63 +1891,91 @@ you can add resource intensive styles.
   .desktop-nav {
     display: block; }
 
-  .mobile-nav {
-    display: none;
-    background: #eee;
-    border: 0;
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
-    .mobile-nav ul {
-      margin-top: 0; }
-    .mobile-nav li {
-      float: left;
-      position: relative;
-      /*
-      plan your menus and drop-downs wisely.
-      */
-      /* showing sub-menus */ }
-      .mobile-nav li a {
-        border-bottom: 0;
-        /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
-        .mobile-nav li a:hover, .mobile-nav li a:focus {
-          background-color: #dedede; }
-      .mobile-nav li ul.sub-menu,
-      .mobile-nav li ul.children {
-        margin-top: 0;
-        border: 1px solid #ccc;
-        border-top: 0;
-        position: absolute;
-        overflow: hidden;
-        visibility: hidden;
-        z-index: 8999;
-        /* highlight sub-menu current page */ }
-        .mobile-nav li ul.sub-menu li,
-        .mobile-nav li ul.children li {
-          /*
-          if you need to go deeper, go nuts
-          just remember deeper menus suck
-          for usability. k, bai.
-          */ }
-          .mobile-nav li ul.sub-menu li a,
-          .mobile-nav li ul.children li a {
-            padding-left: 10px;
-            border-right: 0;
-            display: block;
-            width: 180px;
-            border-bottom: 1px solid #ccc; }
-          .mobile-nav li ul.sub-menu li:last-child a,
-          .mobile-nav li ul.children li:last-child a {
-            border-bottom: 0; }
-      .mobile-nav li:hover ul {
-        top: auto;
-        overflow: visible;
-        visibility: visible; }
+  ul.header-nav > li a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    ul.header-nav > li a:hover {
+      color: white;
+      background-color: #7c4d9e;
+      cursor: pointer; }
+  ul.header-nav > li:hover {
+    background-color: #7c4d9e;
+    cursor: pointer; }
+    ul.header-nav > li:hover .sub-menu {
+      visibility: visible;
+      -moz-opacity-size: 1;
+      -ms-opacity-size: 1;
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=100); }
 
-  /* end .nav */
+  .left-header-nav ul.header-nav > li:hover .sub-menu {
+    left: 0; }
+  .left-header-nav .sub-menu {
+    left: 2em; }
+
+  .right-header-nav {
+    text-align: right; }
+    .right-header-nav ul.header-nav > li:hover .sub-menu {
+      right: 0; }
+    .right-header-nav .sub-menu {
+      right: 2em; }
+      .right-header-nav .sub-menu > li > a {
+        min-width: 8em; }
+
+  .sub-menu {
+    visibility: hidden;
+    -moz-opacity-size: 0;
+    -ms-opacity-size: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=0);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    .sub-menu > li {
+      display: block;
+      background-color: #3e3e3e;
+      background-color: rgba(0, 0, 0, 0.7); }
+      .sub-menu > li > a, .sub-menu > li > div {
+        min-width: 12em;
+        padding: 0.5em 1em; }
+    .sub-menu:hover ul.header-nav > li > a {
+      background-color: #7c4d9e; }
+
+  .sub-menu-featured-article {
+    width: 450px; }
+    .sub-menu-featured-article img {
+      width: 4.5em; }
+    .sub-menu-featured-article div {
+      width: 300px; }
+
+  /* Menu Search */
+  .search-box-container {
+    background-color: transparent; }
+    .search-box-container:hover input[type="text"] {
+      background-color: #3e3e3e;
+      background-color: rgba(0, 0, 0, 0.5); }
+    .search-box-container .search-form input[type="text"] {
+      border-radius: none;
+      -webkit-appearance: none;
+      color: white;
+      width: 100%; }
+      .search-box-container .search-form input[type="text"]:focus {
+        background-color: black; }
+    .search-box-container .search-submit {
+      margin-top: 0.5em;
+      margin-bottom: 0; }
+
+  /* End Menu Search */
+  .mobile-nav {
+    display: none; }
+
   /**********************
   POSTS & CONTENT STYLES
   ***********************/
@@ -1994,6 +2030,33 @@ you can add resource intensive styles.
       opacity: 0.5;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
       filter: alpha(opacity=50); }
+  .entry-content .addtoany_share_save_container {
+    -moz-opacity-size: 0.5;
+    -ms-opacity-size: 0.5;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=50);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .entry-content .addtoany_share_save_container:hover {
+      -moz-opacity-size: 1;
+      -ms-opacity-size: 1;
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=100); }
+    .entry-content .addtoany_share_save_container a {
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      .entry-content .addtoany_share_save_container a:hover {
+        background-color: transparent; }
+  .entry-content .gallery a:hover {
+    background-color: transparent; }
 
   .article-footer a {
     -webkit-transition: all 0.3s ease-in-out;
@@ -2262,6 +2325,7 @@ you can add resource intensive styles.
     padding-left: 0;
     margin-left: 0; }
     #writtenByBox .avatar {
+      display: block;
       width: 4.75em;
       height: 4.75em;
       margin-right: 0; }

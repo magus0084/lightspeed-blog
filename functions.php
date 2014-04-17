@@ -198,10 +198,10 @@ function bones_wpsearch($form) {
 	$actionurl = qtrans_convertURL($actionurl, $locale);
 	$actionurl = $actionurl.'/';
 
-	$form = '<form role="search" method="get" id="searchform" action="' . $actionurl . '" >
+	$form = '<form role="search" method="get" class="search-form" action="' . $actionurl . '" >
 	<label class="screen-reader-text no-placeholder" for="s">' . __( 'Search for:', 'bonestheme' ) . '</label>
 	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_attr__( '[:en]Search the Site...[:ja]サイトを検索', 'bonestheme' ) . '" />
-	<input type="submit" id="searchsubmit" value="' . esc_attr__( 'Search' ) .'" />
+	<input type="submit" class="search-submit" value="' . esc_attr__( 'Search' ) .'" />
 	</form>';
 	return $form;
 } // don't remove this bracket!
@@ -234,28 +234,36 @@ function get_first_image($size) {
 
 
 /************* GET EXCERPT BY NUMBER OF CHARS *************/
+/** Returns an excerpt of a specified length.  If no length
+ ** is given, the ID calls
+ ** Must to be called within the Loop
+ */
 
-function get_excerpt_by_chars($count, $language){
+function get_excerpt_by_chars($count, $appendingString, $showAutoExcerpt){
   global $numCharsExcerpt;
 		
   // Set a default count if none is provided
   if ($count == "" || $count == null) {
-	$count = $numCharsExcerpt;		
+  		  $count = $numCharsExcerpt;		
   }
   
   // Get content and strip tags
-  $excerpt = get_the_excerpt();
+  $excerpt = qtranslate_filter(get_post_field('post_excerpt', get_the_ID()));
+  if ($excerpt == '' && $showAutoExcerpt)	$excerpt = get_the_content();
   $excerpt = strip_tags($excerpt);
-  $excerpt = substr($excerpt, 0, $count);
-  //$excerpt = substr(  Need to remove "read More"
   
   // Trim the text by word if it's English
-  if ($language == 'en') {
-  	  $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+  if (qtrans_getLanguage() == 'en') {	
+  		  $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+  		  $excerpt = substr($excerpt, 0, $count);
+  		  
+  // Trim the text for multibyte characters if Japanese
+  } else if (qtrans_getLanguage() == 'ja') {
+  		  $excerpt = mb_substr($excerpt, 0, $count/2, 'utf-8');
   }
   
   // Add <p> tags
-  $excerpt = '<p>'.$excerpt.'...</p>';
+  $excerpt = '<p class="article-excerpt">'.$excerpt.$appendingString.'</p>';
   
   // Return content
   return $excerpt;
@@ -366,7 +374,7 @@ function create_article_box($noSidebar, $showExcerpt, $showDate, $showCategories
 			<h3><a href="<?php the_permalink(); ?>" title="Read the article &quot;<?php the_title(); ?>&quot;"><?php the_title(); ?></a></h3>
 														
 			<!-- POST EXCERPT -->
-			<?php echo ($showExcerpt? get_excerpt_by_chars($excerptLength, qtrans_getLanguage() ) : ''); ?>
+			<?php echo ($showExcerpt? get_excerpt_by_chars($excerptLength, '...', $showAutoExcerpt = true) : ''); ?>
 										
 			<!-- POST AUTHOR -->
 			<p class="article-meta">
@@ -391,7 +399,11 @@ function create_article_box($noSidebar, $showExcerpt, $showDate, $showCategories
 
 /************* ls_navigation_about **************/
 
-function ls_navigation_about() {
+function ls_navigation_about($class) {
+		
+	// Set the class variable if not set
+	isset($class)? $class : $class = "sub-menu";
+		
 	// Set Arguments for array
 	$args = array(
 		'child_of' => get_ID_by_slug('about-us')
@@ -400,7 +412,7 @@ function ls_navigation_about() {
 	// Get List
 	$pages = get_pages($args); ?>
 	 
-	<ul class="sub-menu">
+	<ul class="<?php echo $class ?>">
 		<li>
 			<a href="<?php echo get_permalink( get_ID_by_slug('about-us') ); ?>">
 				<?php echo get_the_title( get_ID_by_slug('about-us') ); ?>
@@ -422,7 +434,10 @@ function ls_navigation_about() {
 
 /************* ls_navigation_features **************/
 
-function ls_navigation_features() {
+function ls_navigation_features($class) {
+		
+	// Set the class variable if not set
+	isset($class)? $class : $class = "sub-menu";
 	global $defaultImageThumb;
 		
 	// Set Arguments for array
@@ -440,11 +455,11 @@ function ls_navigation_features() {
 	// Get list
 	$featuredArticles = new WP_Query($args); ?>
 
-	<ul class="sub-menu">
+	<ul class="<?php echo $class ?>">
 		<!-- the loop -->
 		<?php if($featuredArticles->have_posts()) : while($featuredArticles->have_posts()) : $featuredArticles->the_post(); ?>
 			<li class="sub-menu-featured-article">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="clearfix">
 					<?php
 						$photo = get_the_post_thumbnail(get_the_ID(), 'thumbnail');
 					
@@ -465,8 +480,11 @@ function ls_navigation_features() {
 
 /************* ls_navigation_categories **************/
 
-function ls_navigation_categories() {
-
+function ls_navigation_categories($class) {
+		
+	// Set the class variable if not set
+	isset($class)? $class : $class = "sub-menu";
+	
 	// Set Arguments for array
 	$args = array(
 		'hide_empty' => 1,
@@ -477,7 +495,7 @@ function ls_navigation_categories() {
 		);
 	$categories = get_categories($args); ?>
 		
-	<ul class="sub-menu">
+	<ul class="<?php echo $class ?>">
 		<!-- the loop -->
 		<?php foreach ( $categories as $category ) { ?>
 			<li>
@@ -540,7 +558,12 @@ function qtranslate_filter($text) {
 }
 
 
-add_filter('get_the_author_meta', 'qtranslate_filter');
+// Enable qTranslate for WordPress SEO
+add_filter('wpseo_title', 'qtranslate_filter', 10, 1);
+add_filter('wpseo_metadesc', 'qtranslate_filter', 10, 1);
+add_filter('wpseo_metakey', 'qtranslate_filter', 10, 1);
+
+
 
 
 ?>

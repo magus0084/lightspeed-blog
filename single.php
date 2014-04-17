@@ -29,8 +29,8 @@
 
 									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 									<?php
-										//$entryExcerpt = get_excerpt_by_chars($numCharsExcerptLong, qtrans_getLanguage() );
-										$entryExcerpt = get_the_excerpt();
+										$entryExcerpt = get_excerpt_by_chars($numCharsExcerptLong, $appendingString = '', $showAutoExcerpt = false);
+										//$entryExcerpt = get_the_excerpt();
 										if ($entryExcerpt != '') {
 											printf ( __('<p class="entry-excerpt single-excerpt" itemprop="summary">%1s</p>'), $entryExcerpt);
 										} else {
@@ -56,7 +56,7 @@
 									
 									<!-- PUBLISHED DATE -->
 									<?php
-										printf( __( 'Posted on <time class="updated" datetime="%1$s" pubdate>%2$s</time> <span class="amp">&amp;</span> filed under %3$s.', 'bonestheme' ), get_the_date(), get_the_date( get_option('date_format')), get_the_category_list(', ') );
+										printf( __( '<p class="published-date">Posted on <time class="updated" datetime="%1$s" pubdate>%2$s</time> <span class="amp">&amp;</span> filed under %3$s.</p>', 'bonestheme' ), get_the_date(), get_the_date( get_option('date_format')), get_the_category_list(', ') );
 									?>
 								</footer>
 								

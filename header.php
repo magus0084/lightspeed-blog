@@ -79,7 +79,7 @@
 								<!-- LOGO -->
 								<li>
 									<a href="<?php echo qtrans_convertURL(home_url()); ?>" rel="nofollow">
-										<image id="logo" xlink:href="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.svg" src="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.png" />
+										<image class="logo" xlink:href="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.svg" src="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.png" />
 									</a>
 								</li>
 								
@@ -118,8 +118,7 @@
 							<ul class="mobile-nav header-nav clearfix">
 								<li>
 									<a href="<?php echo qtrans_convertURL(home_url()); ?>" rel="nofollow">
-										<i class="fa fa-bars"></i>
-										<image id="logo" xlink:href="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.svg" src="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.png" />
+										<image class="logo" xlink:href="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.svg" src="<?php echo get_bloginfo('template_url'); ?>/library/images/lightspeed-logo.png" />
 									</a>
 								</li>
 							</ul>
@@ -198,7 +197,7 @@
 								
 								<!-- GLOBE -->
 								<li id="nav-lang-mobile">
-									<a rel="nofollow">
+									<a id="nav-lang-link" rel="nofollow">
 										<i class="fa fa-globe"></i>
 									</a>
 									
@@ -216,13 +215,58 @@
 									</ul>
 								</li>
 								
+								<!-- ALL NAV -->
 								<li id="nav-all-mobile">
 									<a rel="nofollow">
 										<i class="fa fa-bars"></i>
 									</a>
 									
+									<!-- SUB-MENU -->
 									<ul class="sub-menu">
+									
+										<!-- ABOUT -->
+										<li>
+											<a rel="nofollow">
+												<?php qtrans_TextTranslate('About', 'Lightspeedについて', $showText = true); ?>
+												<i class="fa fa-caret-down"></i>
+											</a>
+											
+											<?php ls_navigation_about('children'); ?>
+										</li>
 										
+										<!-- FEATURES -->
+										<li>
+											<a rel="nofollow">
+												<?php qtrans_TextTranslate('Features', 'お薦め記事', $showText = true); ?>
+												<i class="fa fa-caret-down"></i>
+											</a>
+											
+											<?php ls_navigation_features('children'); ?>
+										</li>
+										
+										<!-- TOPICS -->
+										<li>
+											<a rel="nofollow">
+												<?php qtrans_TextTranslate('Topics', 'カテゴリー', $showText = true); ?>
+												<i class="fa fa-caret-down"></i>
+											</a>
+											
+											<?php ls_navigation_categories('children'); ?>
+										</li>
+										
+										<!-- RSS -->
+										<li id="nav-RSS">
+											<a href="http://feeds.feedburner.com/kvhblog">
+												<i class="fa fa-rss"></i>
+											</a>
+										</li>
+								
+										<!-- SEARCH -->
+										<li>
+											<div class="search-box-container">
+												<?php echo bones_wpsearch($form) ?>
+											</div>
+										</li>
 									</ul>
 								</li>
 							</ul>

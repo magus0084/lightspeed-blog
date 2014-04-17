@@ -643,6 +643,33 @@ POSTS & CONTENT STYLES
     opacity: 0.5;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
     filter: alpha(opacity=50); }
+.entry-content .addtoany_share_save_container {
+  -moz-opacity-size: 0.5;
+  -ms-opacity-size: 0.5;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+  filter: alpha(opacity=50);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .entry-content .addtoany_share_save_container:hover {
+    -moz-opacity-size: 1;
+    -ms-opacity-size: 1;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=100); }
+  .entry-content .addtoany_share_save_container a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .entry-content .addtoany_share_save_container a:hover {
+      background-color: transparent; }
+.entry-content .gallery a:hover {
+  background-color: transparent; }
 
 .article-footer a {
   -webkit-transition: all 0.3s ease-in-out;
@@ -904,6 +931,7 @@ POSTS & CONTENT STYLES
   padding-left: 0;
   margin-left: 0; }
   #writtenByBox .avatar {
+    display: block;
     width: 4.75em;
     height: 4.75em;
     margin-right: 0; }
@@ -1053,6 +1081,12 @@ ARTICLE EXCERPT BOX
     opacity: 0.7;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
     filter: alpha(opacity=70); }
+
+/******************************
+SIDEBAR RECOMMENDED CONTENT
+******************************/
+.lt-ie9 #widget-recommended .recommended-post:after {
+  display: none; }
 
 /**********************
 FORM LABELS

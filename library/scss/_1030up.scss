@@ -46,6 +46,7 @@ POSTS & CONTENT STYLES
 	@include normal-left-width;
 	
 	.avatar {
+		display: block;
 		width: $large-avatar;
 		height: $large-avatar;
 		margin-right: 0;

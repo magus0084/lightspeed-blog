@@ -174,6 +174,40 @@ form {
 	small {
 		font-style: italic;
 	}
+	
+	input[type=text],
+	input[type=email],
+	input[type=url],
+	textarea {
+		padding: 1.2em 0.9em 0.2em 0.9em;
+		background-color: transparent;
+		border-radius: 0;
+		border: none;
+		border-bottom: 1px solid $light-gray;
+		line-height: 1.5em;
+		@include transition(all 0.4s ease-in-out);
+		font-family: $serif;
+		-webkit-appearance: none;
+		-webkit-box-shadow: none;
+		   -moz-box-shadow: none;
+			-ms-box-shadow: none;
+			    box-shadow: none;
+
+		&:focus {
+			background: $white;
+		}
+
+		/* form validation */
+		&:invalid {
+			outline: none;
+			border-color: #fbc2c4;
+			background-color: #f6e7eb;
+			-webkit-box-shadow: none;
+			   -moz-box-shadow: none;
+			    -ms-box-shadow: none;
+					box-shadow: none;
+		}
+	}
 }
 
 
@@ -202,159 +236,11 @@ HEADER STYLES
 	}
 
 	#header-nav {
-		
+		.logo { 
+			width: 120px; 
+			height: auto;
+		}	
 	}
-
-	#logo { 
-		width: 120px; 
-		height: auto;
-	}
-	
-	.header-nav {
-		font-family: $sans-serif;
-		padding: 0;
-		margin: 0;
-		
-		a {
-			color: white;
-		}
-	}
-	
-	ul.header-nav {
-		vertical-align: middle;
-		
-		&>li {
-			display: inline-block;
-			vertical-align: middle;
-			margin-right: 1em;
-			line-height: 2.5em;
-			
-			// For all links and submenus
-			a {
-				display: block;
-				@include transition(all 0.3s ease-in-out);
-				
-				&:hover {
-					color: $white;
-					background-color: $ls-purple;
-					cursor: pointer;
-				}
-			}
-			
-			// For links ONLY in the nav header bar
-			&>a {
-				padding: 0.25em 1em;
-				
-				// For logo
-				&>img {
-					vertical-align: middle;
-					margin-bottom: 0.4em;
-				}
-			}
-			
-			&:hover {
-				background-color: $ls-purple;
-				cursor: pointer;
-			}
-		}
-	}
-	
-	.left-header-nav {
-		float: left;
-		
-		ul.header-nav {
-			&>li:hover {
-				.sub-menu {
-					left: 0;
-				}
-			}
-		}
-		
-		.sub-menu {
-			left: 2em;	
-		}
-	}
-	
-	.right-header-nav {
-		float: right;
-		
-		ul.header-nav >li {
-			&:hover {
-				.sub-menu {
-					right: 0;
-				}
-			}
-		}
-		
-		.sub-menu {
-			right: 2em;
-		}
-	}
-	
-	ul.header-nav {
-			
-		&>li {
-			margin-left: 0.25em;
-			margin-right: 0;
-			position: relative;
-				
-			&:hover {
-					
-				.sub-menu {
-					visibility: visible;
-					@include opacity(1);
-				}
-			}
-		}
-	}
-	
-		.sub-menu {
-			visibility: hidden;
-			position: absolute;
-			top: 3em;
-			color: white;
-			z-index: 100;
-			border-top: 2px solid $ls-purple;	// should be a made a mixin
-			@include opacity(0);
-			@include border-bottom-black;
-			@include transition(all 0.2s ease-in-out);
-			
-			&>li {
-				display: block;
-				background-color: $dark-gray;
-				background-color: rgba(0,0,0, 0.7);
-				
-				&>a, &>div {
-					min-width: 12em;
-					padding: 0.5em 1em;
-				}
-			}
-			
-			// Highlights the active navigation header for this menu
-			&:hover ul.header-nav>li>a {
-				background-color: $ls-purple;
-			}
-		}
-		
-		.sub-menu-featured-article {
-			width: 450px;
-			
-			img {
-				display: inline-block;
-				vertical-align: top;
-				width: $featured-articles-img-size;
-				height: auto;
-			}
-		
-			div {
-				display: inline-block;
-				vertical-align: middle;
-				background-color: transparent;
-				margin-left: 1em;
-				width: 300px;
-				line-height: 1.4em;
-			}
-		}
 		
 		
 		
@@ -379,64 +265,185 @@ and more scalable.
   background-color: black;
 }
 
-
-.mobile-nav {
-
-	li {
-
+	.header-nav {
+		font-family: $sans-serif;
+		padding: 0;
+		margin: 0;
+		
 		a {
+			color: white;
+		}
+	}
+	
+	ul.header-nav {
+		vertical-align: middle;
+		
+		// Middle align items in the header bar
+		&>li {
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 0.25em;
+			line-height: 2.5em;
+			position: relative;
+			
+			// Remove margin on first item
+			&:first-child {
+				margin-left: 0;
+			}
+			
+			// For all links and submenus
+			a {
+				display: block;
+				
+				&.selected {
+				 	color: $white;
+				 	background-color: $ls-purple;
+				 	cursor: pointer;
+				}
+			}
+			
+			// For links ONLY in the nav header bar
+			&>a {
+				padding: 0.25em 1em;
+				
+				// For logo
+				&>img {
+					vertical-align: middle;
+					margin-bottom: 0.4em;
+				}
+			}
+		}
+	}
+	
+	.left-header-nav {
+		float: left;
+	}
+	
+	.right-header-nav {
+		float: right;
+		
+		.sub-menu {
+			right: 0;
+		}
+	}
+	
+		.sub-menu {
 			display: block;
-			text-decoration: none;
-			padding: 10px 10px;
-			background-color: #eee;
-			border-bottom: 1px solid #ccc;
-
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
-
+			position: absolute;
+			top: 3em;
+			color: white;
+			z-index: 100;
+			border-top: 2px solid $ls-purple;	// should be a made a mixin
+			@include border-bottom-black;
+			
+			&>li {
+				display: block;
+				background-color: $dark-gray;
+				background-color: rgba(0,0,0, 0.7);
+				
+				&>a, &>div {
+					min-width: 12em;
+					padding: 0.5em 1em;
+				}
+			}
+		}
+		
+		.sub-menu-featured-article {
+			
+			img {
+				display: inline-block;
+				vertical-align: top;
+				width: 20%;
+				height: auto;
+			}
+		
+			div {
+				display: inline-block;
+				vertical-align: middle;
+				background-color: transparent;
+				margin-left: 1em;
+				width: 70%;
+				line-height: 1.4em;
 			}
 		}
 
-		&:first-child {}
+ul.mobile-nav {
 
+	li {
+		position: static;
+
+		&:first-child {}
 		&:last-child {}
 
-		/*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
 		ul.sub-menu,
 		ul.children {
-
+			display: none;
+			width: 100%;
+			background-color: rgba(0,0,0,0.55);
+		
 			li {
-
+				border-bottom: 1px solid rgba(255,255,255, 0.1);
+				
 				a {
-					padding-left: 30px;
-					
-					&:hover,
-					&:focus {}
+					display: block;
+					width: 100%;
+					padding: 1em 1.5em;
 
 					&:link {}
-
 				}
 
-				&:first-child {}
-
-				&:last-child {}
+				&:last-child {
+					border-bottom: none;
+				}
 
 			}
 
+		}
+		
+		ul.sub-menu {
+			border-bottom: 5px solid $ls-purple;
+		}
+		
+		ul.children {
+			border-top: 1px solid $ls-purple;
+			border-bottom: 1px solid $black;
+			
+			li { 
+				padding-left: 1.25em;
+			}
 		}
 
 	} /* end .menu li */
+	
+	/* Menu Search */
+	.search-box-container {
+		background-color: rgba(0,0,0, 0.5);
+		
+		.search-form {
+			margin-top: 1em;
+			margin-bottom: 1em;
+	
+			&:hover {
+		
+			}
+	
+			input[type="text"] {
+				border-radius: none;
+				-webkit-appearance: none;
+				color: white;
+				width: 100%;
+		
+				&:focus {
+					background-color: $black;
+				}
+			}
+		}
+	
+		.search-submit {
+			margin-top: 0.5em;
+			margin-bottom: 0;
+		}
+	} /* End Menu Search */
 
 	/* highlight current page */
 	li.current-menu-item,
@@ -457,19 +464,13 @@ POSTS & CONTENT STYLES
 #writtenByBox {
 	padding-top: 1em;
 	padding-bottom: 1em;
-	background-color: $lighter-gray;
-	@include full-left-width;
 
 	.avatar {
+		display: none;
 		width: $small-avatar;
 		height: $small-avatar;
 		margin-right: 1em;
 	}
-}
-
-#content {
-	
-	
 }
 
 .header-image {
@@ -509,6 +510,18 @@ POSTS & CONTENT STYLES
 				font-size: 0.7em;
 			}
 		}
+		
+		.entry-content .addtoany_share_save_container {
+			width: 100%;
+			margin-bottom: 2em;
+			margin-top: 2em;
+			@include border-top;
+			@include border-bottom;	
+		
+			a {
+				border-bottom: none;
+			}
+		}
 
 		.hentry {
 
@@ -528,11 +541,11 @@ POSTS & CONTENT STYLES
 		.archive-title { }
 		
 		/* STYLING ON EXCERPT */
-		.single-excerpt {
+		.post header .article-excerpt {
 			font-family: $sans-serif;
 			font-size: 1em;
 			text-transform: uppercase;
-			margin-bottom: 3em;
+			//margin-bottom: 3em;
 		}
 
 		/* want to style individual post classes? Booya! */
@@ -737,7 +750,9 @@ POSTS & CONTENT STYLES
 				width: 25%;
 				height: auto;
 				
-				a {}
+				a {
+					border-bottom: none;
+				}
 
 				img { 
 					border-top: none;
@@ -768,6 +783,14 @@ POSTS & CONTENT STYLES
 	color: $medium-gray;
 	font-size: 0.9em;
 }
+
+	.tags {
+		margin-bottom: 0;
+	}
+	
+	.published-date {
+		margin-top: 0.2em;
+	}
 		
 		
 /*********************
@@ -909,12 +932,29 @@ PAGE NAVI STYLES
 SEARCH FORM
 ******************************************************************/
 
-#searchform {
+.search-form {
+	margin-top: 1em;
+	margin-bottom: 1em;
 	
-	input[type="text"] {
+	&:hover {
 		
 	}
+	
+	input[type="text"] {
+		border-radius: none;
+		-webkit-appearance: none;
+		color: white;
+		
+		&:focus {
+			background-color: $black;
+		}
+	}
 }
+
+	.search-submit {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+	}
 
 	
 /******************************************************************
@@ -1137,40 +1177,6 @@ COMMENT FORM STYLES
 		p {
 			label {
 				display: none;	
-			}
-		}
-
-		input[type=text],
-		input[type=email],
-		input[type=url],
-		textarea {
-			padding: 1.2em 0.9em 0.2em 0.9em;
-			background-color: transparent;
-			border-radius: 0;
-			border: none;
-			border-bottom: 1px solid $light-gray;
-			line-height: 1.5em;
-			@include transition(all 0.4s ease-in-out);
-			font-family: $serif;
-			-webkit-appearance: none;
-			-webkit-box-shadow: none;
-			   -moz-box-shadow: none;
-				-ms-box-shadow: none;
-				    box-shadow: none;
-
-			&:focus {
-				background: $white;
-			}
-
-			/* form validation */
-			&:invalid {
-				outline: none;
-				border-color: #fbc2c4;
-				background-color: #f6e7eb;
-				-webkit-box-shadow: none;
-				   -moz-box-shadow: none;
-				    -ms-box-shadow: none;
-						box-shadow: none;
 			}
 		}
 

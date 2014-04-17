@@ -67,105 +67,141 @@ NAVIGATION STYLES
 *********************/
 
 .desktop-nav {
-		display: block;
+	display: block;
+}
+
+ul.header-nav {
+		
+	&>li {
+			
+		// For all links and submenus
+		a {
+			@include transition(all 0.3s ease-in-out);
+			
+			&:hover {
+				color: $white;
+				background-color: $ls-purple;
+				cursor: pointer;
+			}
+		}
+		
+		// Hover effect on header nav items
+		&:hover {
+			background-color: $ls-purple;
+			cursor: pointer;
+			
+			// Reveal sub-menu on hover
+			& .sub-menu {
+				visibility: visible;
+				@include opacity(1);
+			}
+		}
 	}
+}
+	
+	.left-header-nav {
+		
+		ul.header-nav {
+			&>li:hover {
+				.sub-menu {
+					left: 0;
+				}
+			}
+		}
+		
+		.sub-menu {
+			left: 2em;	
+		}
+	}
+	
+	.right-header-nav {
+		text-align: right;
+		
+		ul.header-nav >li {
+			&:hover {
+				.sub-menu {
+					right: 0;
+				}
+			}
+		}
+		
+		.sub-menu {
+			right: 2em;
+
+			&>li>a {
+				min-width: 8em;
+			} 
+		}
+	}
+	
+		.sub-menu {
+			visibility: hidden;
+			@include opacity(0);
+			@include transition(all 0.2s ease-in-out);
+			
+			&>li {
+				display: block;
+				background-color: $dark-gray;
+				background-color: rgba(0,0,0, 0.7);
+				
+				&>a, &>div {
+					min-width: 12em;
+					padding: 0.5em 1em;
+				}
+			}
+			
+			// Highlights the active navigation header for this menu
+			&:hover ul.header-nav>li>a {
+				background-color: $ls-purple;
+			}
+		}
+		
+		.sub-menu-featured-article {
+			width: 450px;
+			
+			img {
+				width: $featured-articles-img-size;
+			}
+		
+			div {
+				width: 300px;
+			}
+		}
+		
+	/* Menu Search */
+	.search-box-container {
+		background-color: transparent;
+	
+		&:hover {
+			& input[type="text"] {
+				background-color: $dark-gray;
+				background-color: rgba(0,0,0, 0.5);
+			}
+		}
+		
+		.search-form {
+	
+			input[type="text"] {
+				border-radius: none;
+				-webkit-appearance: none;
+				color: white;
+				width: 100%;
+		
+				&:focus {
+					background-color: $black;
+				}
+			}
+		}
+	
+		.search-submit {
+			margin-top: 0.5em;
+			margin-bottom: 0;
+		}
+	} /* End Menu Search */
 
 .mobile-nav {
 	display: none;
-	background: #eee;
-	border: 0;
-	ul {
-		margin-top:0;
-	}
-	li {
-		float: left;
-		position: relative;
-
-		a {
-			border-bottom: 0;
-
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
-			&:hover, &:focus {
-				background-color: #dedede;
-			}
-		}
-
-		&:first-child {}
-		&:last-child {}
-
-		/*
-		plan your menus and drop-downs wisely.
-		*/
-		ul.sub-menu,
-		ul.children {
-			margin-top: 0;
-			border: 1px solid #ccc;
-			border-top: 0;
-			position: absolute;
-			overflow: hidden;
-			visibility: hidden;
-			z-index: 8999;
-
-			li {
-
-				a {
-					padding-left: 10px;
-					border-right: 0;
-					display: block;
-					width: 180px;
-					border-bottom: 1px solid #ccc;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-				}
-
-				&:first-child {}
-
-				&:last-child {
-
-					a {
-						border-bottom: 0;
-					}
-				}
-
-				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
-				ul {}
-			}
-
-			/* highlight sub-menu current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current-page-ancestor {
-				a {}
-			}
-		}
-
-		/* showing sub-menus */
-		&:hover ul {
-			top: auto;
-			overflow: visible;
-			visibility:visible;
-		}
-
-	} /* end .menu ul li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current-page-ancestor {
-		a {}
-	}  /* end current highlighters */
-
-} /* end .nav */
+}
 
 
 /**********************
@@ -205,6 +241,31 @@ POSTS & CONTENT STYLES
 			
 		img {
 			@include img-hover-effect;
+		}
+	}
+	
+	.addtoany_share_save_container {
+		@include opacity(0.5);
+		@include transition(all 0.3s ease-in-out);
+		
+		&:hover {
+			@include opacity(1);
+		}
+		
+		a {
+			@include transition(all 0.3s ease-in-out);
+			
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+	
+	.gallery {
+		a {
+			&:hover {
+				background-color: transparent;
+			}
 		}
 	}
 }

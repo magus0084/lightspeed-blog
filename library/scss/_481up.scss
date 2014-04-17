@@ -128,13 +128,13 @@ ARTICLE EXCERPT BOX
 	margin-right: $two-col-margin;
 	height: 35em;
 	
-	&:nth-child(even) {
+	&:nth-child(odd) {
 		margin-right: 0;
 		float: right;
 		width: $two-col-width + $two-col-margin / 2;
 	}
 	
-	&:nth-child(odd) {
+	&:nth-child(even) {
 		width: $two-col-width + $two-col-margin / 2;
 	}
 	
