@@ -176,6 +176,43 @@ USAGE: @include transition(all 0.2s ease-in-out);
 
 
 
+/***********************
+ANIMATIONS
+***********************/
+
+
+@mixin animation($animation) {
+	-webkit-animation: $animation;
+	   -moz-animation: $animation;
+	        animation: $animation;
+}
+
+@mixin keyframes-pulse($name, $opacityStart, $opacityMid, $opacityEnd) {
+	@-webkit-keyframes $name { 
+		0%	{ 	opacity: $opacityStart; }
+		50%	{ 	opacity: $opacityMid; }
+		100% { 	opacity: $opacityEnd; }
+	}
+	@keyframes $name {
+		0%	{  opacity: $opacityStart; }
+		50%	{  opacity: $opacityMid; }
+		100% { opacity: $opacityEnd; }
+	}
+}
+
+@mixin keyframes-spin($name) {
+	@-webkit-keyframes $name { 
+		from	{ -webkit-transform: rotate(0deg); }
+		to		{ -webkit-transform: rotate(360deg); }
+	}
+	@keyframes $name {
+		from	{ transform: rotate(0deg); }
+		to		{ transform: rotate(360deg); }
+	}
+}
+
+
+
 /*********************
 HOVER EFFECTS
 *********************/
@@ -197,6 +234,18 @@ HOVER EFFECTS
 		background-color: $ls-purple;
 		color: $white;
 	}
+}
+
+
+
+/*********************
+TRANSFORM
+*********************/
+
+@mixin transform($transform) {
+  @each $prefix in $prefixes {
+    #{$prefix}transform: $transform;
+  }
 }
 
 

@@ -550,8 +550,14 @@ You'll need to be using Sass 3.2+ for these to work.
 Thanks to @anthonyshort for the inspiration on these.
 USAGE: @include transition(all 0.2s ease-in-out);
 */
+/***********************
+ANIMATIONS
+***********************/
 /*********************
 HOVER EFFECTS
+*********************/
+/*********************
+TRANSFORM
 *********************/
 /*********************
 CSS3 GRADIENTS
@@ -1115,6 +1121,10 @@ POSTS & CONTENT STYLES
     list-style: disc; }
   .entry-content ol {
     list-style: decimal; }
+  .entry-content hr {
+    width: 100%;
+    border-top: 1px solid #c3c3c3;
+    margin: 2em 0; }
   .entry-content blockquote {
     font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
     font-size: 1.2em;
@@ -1998,6 +2008,23 @@ you can add resource intensive styles.
       margin-bottom: 0; }
 
   /* End Menu Search */
+  /* Menu Share */
+  /* ---------- */
+  #nav-share1 .sub-menu {
+    width: 200px; }
+
+  .nav-share-title {
+    font-size: 0.9em;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 0.5em 1em 0.2em 1em;
+    border-bottom: 1px solid #292929;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6); }
+
+  .nav-share-icon {
+    display: inline-block;
+    padding-left: 1.5em; }
+
   .mobile-nav {
     display: none; }
 
@@ -2263,6 +2290,27 @@ you can add resource intensive styles.
     */ }
 
   /* end .footer-links */
+  /***********************
+  ANIMATIONS
+  ***********************/
+  @-webkit-keyframes pulse {
+    0% {
+      opacity: 1; }
+
+    50% {
+      opacity: 0.4; }
+
+    100% {
+      opacity: 1; } }
+  @keyframes pulse {
+    0% {
+      opacity: 1; }
+
+    50% {
+      opacity: 0.4; }
+
+    100% {
+      opacity: 1; } }
   /*********************
   ARTICLE EXCERPT BOX
   *********************/
@@ -2276,7 +2324,21 @@ you can add resource intensive styles.
       -o-transition: all 0.25s ease-in;
       transition: all 0.25s ease-in; }
     .article-excerpt-box:hover .article-excerpt-image {
-      background-position-y: -50px; }
+      -webkit-animation: pulse 2s infinite ease-in-out;
+      -moz-animation: pulse 2s infinite ease-in-out;
+      animation: pulse 2s infinite ease-in-out;
+      /* Arrow on mouseover.  Removed for now.
+      &:after {
+      	content: url('../images/ls-arrow.png');
+      	display: block;
+      	position: absolute;
+      	top: 4em;
+      	left: 50%;
+      	margin-left: -1em;
+      	width: 2em;
+      	height: auto;
+      	//@include animation(spin 1s infinite ease-in-out);
+      } */ }
     .article-excerpt-box.no-sidebar .article-excerpt-image {
       height: 15em; }
     .article-excerpt-box .article-meta a {
@@ -2464,7 +2526,13 @@ This is for the larger monitors and possibly full screen viewers.
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     -ms-box-sizing: content-box;
-    box-sizing: content-box; } }
+    box-sizing: content-box; }
+
+  /*********************
+  SIDEBAR
+  *********************/
+  .sidebar {
+    padding-right: 1.5em; } }
 /*
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

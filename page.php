@@ -12,12 +12,15 @@
 					<header id="post-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $defaultImage ?>');"></header>
 				<?php } ?>
 
+				<!-- #inner-content -->
 				<div id="inner-content" class="wrap clearfix">
 
+						<!-- MAIN -->
 						<div id="main" class="eightcol first clearfix" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+							<!-- ARTICLE #post -->
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 								<header class="article-header">
@@ -28,16 +31,17 @@
 
 								<section class="entry-content clearfix" itemprop="articleBody">
 									<?php the_content(); ?>
-							</section>
+								</section>
 
 								<footer class="article-footer">
 									<?php the_tags( '<span class="tags">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?>
 
 								</footer>
 
-								<?php comments_template(); ?>
+								<!-- REMOVED COMMENTS FOR PAGES -->
+								<?php /* comments_template(); */ ?>
 
-							</article>
+							</article><!-- CLOSE ARTICLE #post -->
 
 							<?php endwhile; else : ?>
 
@@ -49,18 +53,18 @@
 											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the page.php template.', 'bonestheme' ); ?></p>
+												
 										</footer>
 									</article>
 
 							<?php endif; ?>
 
-						</div>
+						</div> <!-- CLOSE #main -->
 
 						<?php get_sidebar(); ?>
 
-				</div>
+				</div> <!-- CLOSE #inner-content -->
 
-			</div>
+			</div> <!-- CLOSE #content -->
 
 <?php get_footer(); ?>

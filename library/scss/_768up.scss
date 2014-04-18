@@ -199,6 +199,31 @@ ul.header-nav {
 			margin-bottom: 0;
 		}
 	} /* End Menu Search */
+	
+	
+	/* Menu Share */
+	/* ---------- */
+	
+	#nav-share1 {
+		.sub-menu {
+			width: 200px;
+		}
+	}
+	
+	.nav-share-title {
+		font-size: 0.9em;
+		font-weight: $normal;
+		text-transform: uppercase;
+		padding: 0.5em 1em 0.2em 1em;
+		border-bottom: 1px solid $darker-gray;
+		border-bottom: 1px solid rgba(0,0,0, 0.6);
+	}
+	
+	.nav-share-icon {
+		display: inline-block;
+		padding-left: 1.5em;
+	}
+	
 
 .mobile-nav {
 	display: none;
@@ -564,6 +589,12 @@ mobile. Make sure to double check these!
 } /* end .footer-links */
 
 
+/***********************
+ANIMATIONS
+***********************/
+
+@include keyframes-pulse(pulse, 1, 0.4, 1);
+
 
 /*********************
 ARTICLE EXCERPT BOX
@@ -578,7 +609,23 @@ ARTICLE EXCERPT BOX
 	}
 	
 	&:hover .article-excerpt-image {
-		background-position-y: -50px;
+		//@include opacity(0.65);
+		@include animation(pulse 2s infinite ease-in-out);
+		//@include animation(spin 3s);
+		//background-position-y: -50px;
+		
+		/* Arrow on mouseover.  Removed for now.
+		&:after {
+			content: url('../images/ls-arrow.png');
+			display: block;
+			position: absolute;
+			top: 4em;
+			left: 50%;
+			margin-left: -1em;
+			width: 2em;
+			height: auto;
+			//@include animation(spin 1s infinite ease-in-out);
+		} */
 	}
 	
 	&.no-sidebar {

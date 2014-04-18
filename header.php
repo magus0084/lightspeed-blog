@@ -95,7 +95,7 @@
 										<i class="fa fa-caret-down"></i>
 									</a>
 									
-									<?php ls_navigation_about(); ?>
+									<?php ls_navigation_about('sub-menu'); ?>
 								</li>
 								
 								<!-- FEATURES -->
@@ -105,7 +105,7 @@
 										<i class="fa fa-caret-down"></i>
 									</a>
 									
-									<?php ls_navigation_features(); ?>
+									<?php ls_navigation_features('sub-menu'); ?>
 								</li>
 								
 								<!-- TOPICS -->
@@ -115,7 +115,7 @@
 										<i class="fa fa-caret-down"></i>
 									</a>
 									
-									<?php ls_navigation_categories(); ?>
+									<?php ls_navigation_categories('sub-menu'); ?>
 								</li>
 							</ul>
 							
@@ -141,14 +141,22 @@
 									</a>
 									
 									<ul class="sub-menu">
+										<li class="nav-share-title">
+											More About KVH
+										</li>
 										<li>
-											<a href="<?php echo qtrans_convertURL(get_permalink(), 'en') ?>">
-												<i class="fa fa-twitter"></i> Twitter
+											<a href="https://twitter.com/KVH_JP" rel="nofollow">
+												Twitter <i class="fa fa-twitter nav-share-icon"></i>
 											</a>
 										</li>
 										<li>
-											<a href="<?php echo qtrans_convertURL(get_permalink(), 'ja') ?>">
-												<i class="fa fa-linkedin"></i> LinkedIn
+											<a href="http://www.linkedin.com/company/kvh" rel="nofollow">
+												LinkedIn <i class="fa fa-linkedin nav-share-icon"></i>
+											</a>
+										</li>
+										<li>
+											<a href="http://www.kvhasia.com">
+												Website <i class="fa fa-desktop nav-share-icon"></i>
 											</a>
 										</li>
 									</ul>
