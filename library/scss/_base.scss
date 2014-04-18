@@ -24,7 +24,7 @@ body {
 }
 
 body.ja {
-	font-family: $serif-ja;
+	font-family: $sans-serif-ja;
 }
 
 /********************
@@ -114,11 +114,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-family: $sans-serif;
 	text-rendering: optimizelegibility;
-	font-weight: 500;
-	/*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
+	font-weight: $normal;
 
 	/* removing text decoration from all headline links */
 	a, a:visited {
@@ -144,7 +140,7 @@ h3, .h3 {
 
 h4, .h4 {
 	font-size: 1.1em;
-	font-weight: 700;
+	font-weight: $bolder;
 }
 
 h5, .h5 {
@@ -175,6 +171,7 @@ form {
 		font-style: italic;
 	}
 	
+	
 	input[type=text],
 	input[type=email],
 	input[type=url],
@@ -197,7 +194,7 @@ form {
 			background: $white;
 		}
 
-		/* form validation */
+		// form validation
 		&:invalid {
 			outline: none;
 			border-color: #fbc2c4;
@@ -207,7 +204,7 @@ form {
 			    -ms-box-shadow: none;
 					box-shadow: none;
 		}
-	}
+	} 
 }
 
 
@@ -423,10 +420,6 @@ ul.mobile-nav {
 			margin-top: 1em;
 			margin-bottom: 1em;
 	
-			&:hover {
-		
-			}
-	
 			input[type="text"] {
 				border-radius: none;
 				-webkit-appearance: none;
@@ -440,8 +433,9 @@ ul.mobile-nav {
 		}
 	
 		.search-submit {
-			margin-top: 0.5em;
+			margin-top: 0.75em;
 			margin-bottom: 0;
+			padding: 0.5em 1em;
 		}
 	} /* End Menu Search */
 
@@ -493,6 +487,7 @@ POSTS & CONTENT STYLES
 
 		#tagline {
 			display: block;
+			box-sizing: content-box;
 			position: absolute;
 			top: -5em;
 			right: 0;
@@ -501,9 +496,11 @@ POSTS & CONTENT STYLES
 			padding: 0.5em 1.5em;
 			color: white;
 			font-family: $tagline-fonts;
-			font-weight: 300;
+			font-weight: $normal;
 			font-style: italic;
+			font-size: 0.9em;
 			text-align: right;
+			line-height: 1.4em;
 			@include border-bottom-black;
 			
 			span {
@@ -828,7 +825,7 @@ AUTHOR BIO BOX
 			text-transform: none;
 			line-height: 1.2em;
 			font-size: 1em;
-			font-weight: normal;
+			font-weight: $normal;
 			letter-spacing: 0;
 			color: $medium-text-color;
 			margin-top: 0;
@@ -867,7 +864,7 @@ PAGE NAVI STYLES
 		
 		h5 {
 			margin-top: 0.5em;
-			font-weight: 300;
+			font-weight: $normal;
 			@include small-article-title;	
 		}
 	}
@@ -897,7 +894,7 @@ PAGE NAVI STYLES
                     padding: 0;
                     line-height: 1em;
                     font-size: 1em;
-                    font-weight: normal;
+                    font-weight: $normal;
                     padding: .5em;
                     min-width: 1em;
                     display: block;
@@ -932,29 +929,7 @@ PAGE NAVI STYLES
 SEARCH FORM
 ******************************************************************/
 
-.search-form {
-	margin-top: 1em;
-	margin-bottom: 1em;
-	
-	&:hover {
-		
-	}
-	
-	input[type="text"] {
-		border-radius: none;
-		-webkit-appearance: none;
-		color: white;
-		
-		&:focus {
-			background-color: $black;
-		}
-	}
-}
 
-	.search-submit {
-		margin-top: 0.5em;
-		margin-bottom: 0;
-	}
 
 	
 /******************************************************************
@@ -1070,7 +1045,7 @@ COMMENT STYLES
 		cite.fn {
 			font-family: $sans-serif;
 			font-size: 1.2em;
-			font-style: normal;
+			font-style: $normal;
 			text-transform: uppercase;
 
 			a.url {}
@@ -1142,7 +1117,7 @@ COMMENT STYLES
 		color: #fff;
 		@include opacity(0.65);
 		margin-bottom: 10px;
-		font-weight: 700;
+		font-weight: $bolder;
 		font-size: 0.9em;
 
 		&:hover,
@@ -1180,6 +1155,55 @@ COMMENT FORM STYLES
 			}
 		}
 
+		
+		
+		
+		
+		
+		
+	/*
+		input[type=text],
+	input[type=email],
+	input[type=url],
+	textarea {
+		padding: 1.2em 0.9em 0.2em 0.9em;
+		background-color: transparent;
+		border-radius: 0;
+		border: none;
+		border-bottom: 1px solid $light-gray;
+		line-height: 1.5em;
+		@include transition(all 0.4s ease-in-out);
+		font-family: $serif;
+		-webkit-appearance: none;
+		-webkit-box-shadow: none;
+		   -moz-box-shadow: none;
+			-ms-box-shadow: none;
+			    box-shadow: none;
+
+		&:focus {
+			background: $white;
+		}
+
+		// form validation
+		&:invalid {
+			outline: none;
+			border-color: #fbc2c4;
+			background-color: #f6e7eb;
+			-webkit-box-shadow: none;
+			   -moz-box-shadow: none;
+			    -ms-box-shadow: none;
+					box-shadow: none;
+		}
+	} */
+	
+		
+	
+	
+	
+	
+	
+	
+	
 		input[type=text],
 		input[type=email],
 		input[type=url] {
@@ -1373,6 +1397,15 @@ CUSTOM PAGE STYLES
 
 .archive-title {
 	clear: both;
+}
+
+
+/* 404 NOT FOUND */
+/* ------------- */
+
+#post-not-found {
+	@extend .author-bio-box;
+	//width: 63.33%;
 }
 
 

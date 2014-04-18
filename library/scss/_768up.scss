@@ -171,6 +171,7 @@ ul.header-nav {
 	/* Menu Search */
 	.search-box-container {
 		background-color: transparent;
+		width: 17em;
 	
 		&:hover {
 			& input[type="text"] {
@@ -603,4 +604,18 @@ CUSTOM PAGE STYLES
 /* TOP PAGE */
 /* -------- */
 
+
+/* 404 NOT FOUND */
+/* ------------- */
+
+#post-not-found {
+	
+	&:hover {
+		.search-form {
+			input[type="text"] {
+				background-color: $white;
+			}
+		}
+	}
+}
 

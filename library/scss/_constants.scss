@@ -53,11 +53,15 @@ http://sachagreif.com/sass-color-variables/
 TYPOGRAPHY
 *********************/
 
+$normal:			300;
+$bold:				500;
+$bolder:			700;
+
 $sans-serif-ja:		"Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
 $serif-ja:			"Hiragino Mincho Pro", "Kozuka Mincho", "MS PMincho", "MS Mincho", serif;
 $sans-serif-title:	"Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, $sans-serif-ja;
 $sans-serif:        "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, $sans-serif-ja;
-$serif:             "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, $serif-ja;
+$serif:             "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, $sans-serif-ja;
 $tagline-fonts:		"Helvetica Neue", Helvetica, Century Gothic, Tahoma, Arial, $sans-serif-ja;
 
 $h1-top-margin: 	0.67em;
@@ -69,7 +73,7 @@ IMAGE SIZES
 /* AVATAR SIZES */
 $small-avatar: 		2.5em;
 $medium-avatar: 	3.5em;
-$large-avatar: 		4.75em;
+$large-avatar: 		5em;
 
 /* HEADER IMAGE SIZES */
 $article-header-image-small: 	15em;

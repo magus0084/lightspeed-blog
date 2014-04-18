@@ -1,5 +1,10 @@
 <!doctype html>
 
+<!-- Lightspeed -->
+<!-- ********** -->
+<!-- Crafted by Adam Toda, adam.toda@gmail.com -->
+<!-- Many thanks to the creators of the Bones development framework for providing the foundation of this site. -->
+
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->

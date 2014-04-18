@@ -78,24 +78,24 @@ TYPOGRAPHY
 /* REGULAR */
 @font-face {
     font-family: 'Museo';
-    src: url('../fonts/Museo300-Regular.otf');
-    font-weight: normal;
+    src: url('../fonts/Museo300-Regular.otf') format('opentype');
+    font-weight: 300;
     font-style: normal;
 } 
  
 /* BOLD */
 @font-face {
     font-family: 'Museo';
-    src: url('../fonts/Museo500-Regular.otf');
-    font-weight: bold;
+    src: url('../fonts/Museo500-Regular.otf') format('opentype');
+    font-weight: 500;
     font-style: normal;
 }
 
 /* BOLDER */
 @font-face {
     font-family: 'Museo';
-    src: url('../fonts/Museo700-Regular.ttf');
-    font-weight: bolder;
+    src: url('../fonts/Museo700-Regular.ttf') format('truetype');
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -147,7 +147,7 @@ span.amp {
 }
 
 @mixin small-article-title {
-	font-weight: bold;
+	font-weight: $bold;
 	text-transform: none;
 	letter-spacing: 0;
 	line-height: 1.5em;
@@ -268,7 +268,7 @@ BUTTONS
 	color: $white;
 	display: inline-block;
 	font-size: 1em;
-	font-weight: bold;
+	font-weight: $bold;
 	text-decoration: none;
 	text-shadow: 0 1px rgba(0,0,0, .75);
 	cursor: pointer;

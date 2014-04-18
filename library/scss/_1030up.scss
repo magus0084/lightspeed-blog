@@ -51,6 +51,10 @@ POSTS & CONTENT STYLES
 		height: $large-avatar;
 		margin-right: 0;
 	}
+	
+	.written-by-text {
+		font-size: 0.9em;
+	}
 }
 
 .entry-content {	
@@ -141,12 +145,29 @@ CUSTOM PAGE STYLES
 /* ARCHIVES */
 /* -------- */
 
-
 .archives {
 
 	.archives-info-box {
 		width: $three-col-width * 2 + $three-col-margin;
 		@include box-sizing(border-box);
+	}
+}
+
+
+
+
+/* 404 NOT FOUND */
+/* ------------- */
+
+#post-not-found {
+	width: $three-col-width * 2 + $three-col-margin;
+	
+	.search-form {
+		input[type="text"] {
+			display: block;
+			width: 100%;
+			margin-bottom: 0.75em;
+		}
 	}
 }
 

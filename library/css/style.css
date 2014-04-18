@@ -488,20 +488,20 @@ TYPOGRAPHY
 /* REGULAR */
 @font-face {
   font-family: 'Museo';
-  src: url("../fonts/Museo300-Regular.otf");
-  font-weight: normal;
+  src: url("../fonts/Museo300-Regular.otf") format("opentype");
+  font-weight: 300;
   font-style: normal; }
 /* BOLD */
 @font-face {
   font-family: 'Museo';
-  src: url("../fonts/Museo500-Regular.otf");
-  font-weight: bold;
+  src: url("../fonts/Museo500-Regular.otf") format("opentype");
+  font-weight: 500;
   font-style: normal; }
 /* BOLDER */
 @font-face {
   font-family: 'Museo';
-  src: url("../fonts/Museo700-Regular.ttf");
-  font-weight: bolder;
+  src: url("../fonts/Museo700-Regular.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal; }
 /*
 use the best ampersand
@@ -583,7 +583,7 @@ BUTTONS
   color: white;
   display: inline-block;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.75);
   cursor: pointer;
@@ -688,13 +688,13 @@ for time.
 GENERAL STYLES
 *********************/
 body {
-  font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, "Hiragino Mincho Pro", "Kozuka Mincho", "MS PMincho", "MS Mincho", serif;
+  font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
   font-size: 100%;
   line-height: 1.5;
   color: #292929; }
 
 body.ja {
-  font-family: "Hiragino Mincho Pro", "Kozuka Mincho", "MS PMincho", "MS Mincho", serif; }
+  font-family: "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -774,11 +774,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, h6, .h6 {
   font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
   text-rendering: optimizelegibility;
-  font-weight: 500;
-  /*
-  if you're going to use webfonts, be sure to check your weights
-  http://css-tricks.com/watch-your-font-weight/
-  */
+  font-weight: 300;
   /* removing text decoration from all headline links */ }
   h1 a, h1 a:visited, .h1 a, .h1 a:visited, h2 a, h2 a:visited, .h2 a, .h2 a:visited, h3 a, h3 a:visited, .h3 a, .h3 a:visited, h4 a, h4 a:visited, .h4 a, .h4 a:visited, h5 a, h5 a:visited, .h5 a, h6 a, .h6 a, .h5 a:visited, h6 a:visited, .h6 a:visited, h6 a, h6 a:visited, .h6 a, .h6 a:visited {
     color: #292929;
@@ -833,13 +829,12 @@ form textarea {
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, "Hiragino Mincho Pro", "Kozuka Mincho", "MS PMincho", "MS Mincho", serif;
+  font-family: "Georgia", "Garamond", "Adobe Garamond Pro", Cambria, Times New Roman, Times, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
   -webkit-appearance: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
-  box-shadow: none;
-  /* form validation */ }
+  box-shadow: none; }
   form input[type=text]:focus,
   form input[type=email]:focus,
   form input[type=url]:focus,
@@ -1005,8 +1000,9 @@ ul.mobile-nav {
         ul.mobile-nav .search-box-container .search-form input[type="text"]:focus {
           background-color: black; }
     ul.mobile-nav .search-box-container .search-submit {
-      margin-top: 0.5em;
-      margin-bottom: 0; }
+      margin-top: 0.75em;
+      margin-bottom: 0;
+      padding: 0.5em 1em; }
 
 /* end .nav */
 /*********************
@@ -1045,6 +1041,7 @@ POSTS & CONTENT STYLES
 
 #tagline {
   display: block;
+  box-sizing: content-box;
   position: absolute;
   top: -5em;
   right: 0;
@@ -1055,7 +1052,9 @@ POSTS & CONTENT STYLES
   font-family: "Helvetica Neue", Helvetica, Century Gothic, Tahoma, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
   font-weight: 300;
   font-style: italic;
+  font-size: 0.9em;
   text-align: right;
+  line-height: 1.4em;
   border-bottom: 5px solid black;
   padding-bottom: 0; }
   #tagline span {
@@ -1253,7 +1252,7 @@ POSTS & CONTENT STYLES
 /*********************
 AUTHOR BIO BOX
 *********************/
-.author-bio-box {
+.author-bio-box, #post-not-found {
   background-color: #f1f1f1;
   padding: 1.5em;
   margin-top: 4em;
@@ -1283,7 +1282,7 @@ AUTHOR BIO BOX
     text-transform: none;
     line-height: 1.2em;
     font-size: 1em;
-    font-weight: normal;
+    font-weight: 300;
     letter-spacing: 0;
     color: #6f6f6f;
     margin-top: 0;
@@ -1315,7 +1314,7 @@ PAGE NAVI STYLES
   .related-content .related-article h5 {
     margin-top: 0.5em;
     font-weight: 300;
-    font-weight: bold;
+    font-weight: 500;
     text-transform: none;
     letter-spacing: 0;
     line-height: 1.5em;
@@ -1346,7 +1345,7 @@ PAGE NAVI STYLES
         padding: 0;
         line-height: 1em;
         font-size: 1em;
-        font-weight: normal;
+        font-weight: 300;
         padding: .5em;
         min-width: 1em;
         display: block; }
@@ -1364,20 +1363,6 @@ PAGE NAVI STYLES
 /******************************************************************
 SEARCH FORM
 ******************************************************************/
-.search-form {
-  margin-top: 1em;
-  margin-bottom: 1em; }
-  .search-form input[type="text"] {
-    border-radius: none;
-    -webkit-appearance: none;
-    color: white; }
-    .search-form input[type="text"]:focus {
-      background-color: black; }
-
-.search-submit {
-  margin-top: 0.5em;
-  margin-bottom: 0; }
-
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/
@@ -1442,7 +1427,7 @@ COMMENT STYLES
     .commentlist .vcard cite.fn {
       font-family: "Museo", "Century Gothic", "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Kozuka Gothic, Meiryo, "MS PGothic", sans-serif;
       font-size: 1.2em;
-      font-style: normal;
+      font-style: 300;
       text-transform: uppercase; }
     .commentlist .vcard time {
       display: block;
@@ -1502,7 +1487,41 @@ COMMENT FORM STYLES
   padding-left: 1000em;
   margin-left: -1000em; }
   .respond-form form {
-    margin: 0.75em 0; }
+    margin: 0.75em 0;
+    	/*
+    		input[type=text],
+    	input[type=email],
+    	input[type=url],
+    	textarea {
+    		padding: 1.2em 0.9em 0.2em 0.9em;
+    		background-color: transparent;
+    		border-radius: 0;
+    		border: none;
+    		border-bottom: 1px solid $light-gray;
+    		line-height: 1.5em;
+    		@include transition(all 0.4s ease-in-out);
+    		font-family: $serif;
+    		-webkit-appearance: none;
+    		-webkit-box-shadow: none;
+    		   -moz-box-shadow: none;
+    			-ms-box-shadow: none;
+    			    box-shadow: none;
+    
+    		&:focus {
+    			background: $white;
+    		}
+    
+    		// form validation
+    		&:invalid {
+    			outline: none;
+    			border-color: #fbc2c4;
+    			background-color: #f6e7eb;
+    			-webkit-box-shadow: none;
+    			   -moz-box-shadow: none;
+    			    -ms-box-shadow: none;
+    					box-shadow: none;
+    		}
+    	} */ }
     .respond-form form li {
       list-style-type: none;
       clear: both;
@@ -1569,7 +1588,7 @@ SIDEBARS & ASIDES
   .widget ul li.recommended-post h5 {
     margin-top: 0.4em;
     margin-bottom: 2.5em;
-    font-weight: bold;
+    font-weight: 500;
     text-transform: none;
     letter-spacing: 0;
     line-height: 1.5em;
@@ -1635,6 +1654,8 @@ CUSTOM PAGE STYLES
 .archive-title {
   clear: both; }
 
+/* 404 NOT FOUND */
+/* ------------- */
 /*********************
 MODERN BROWSER ALERT
 *********************/
@@ -1695,6 +1716,9 @@ tweeners.
     height: 20em; }
     .header-image.short-header-image {
       height: 15em; }
+
+  #tagline {
+    font-size: 1em; }
 
   /* entry content */
   .entry-content {
@@ -1957,7 +1981,8 @@ you can add resource intensive styles.
 
   /* Menu Search */
   .search-box-container {
-    background-color: transparent; }
+    background-color: transparent;
+    width: 17em; }
     .search-box-container:hover input[type="text"] {
       background-color: #3e3e3e;
       background-color: rgba(0, 0, 0, 0.5); }
@@ -2268,7 +2293,11 @@ you can add resource intensive styles.
   CUSTOM PAGE STYLES
   *********************/
   /* TOP PAGE */
-  /* -------- */ }
+  /* -------- */
+  /* 404 NOT FOUND */
+  /* ------------- */
+  #post-not-found:hover .search-form input[type="text"] {
+    background-color: white; } }
 /*
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
@@ -2311,7 +2340,7 @@ you can add resource intensive styles.
 
   /* Puts the author box in the left margin */
   #writtenByBox {
-    width: 4.75em;
+    width: 5em;
     position: absolute;
     top: 0.67em;
     left: 0;
@@ -2326,9 +2355,11 @@ you can add resource intensive styles.
     margin-left: 0; }
     #writtenByBox .avatar {
       display: block;
-      width: 4.75em;
-      height: 4.75em;
+      width: 5em;
+      height: 5em;
       margin-right: 0; }
+    #writtenByBox .written-by-text {
+      font-size: 0.9em; }
 
   .entry-content {
     box-sizing: border-box; }
@@ -2394,7 +2425,16 @@ you can add resource intensive styles.
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
-    box-sizing: border-box; } }
+    box-sizing: border-box; }
+
+  /* 404 NOT FOUND */
+  /* ------------- */
+  #post-not-found {
+    width: 63.33%; }
+    #post-not-found .search-form input[type="text"] {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.75em; } }
 /*
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.

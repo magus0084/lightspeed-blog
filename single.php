@@ -41,7 +41,7 @@
 									<!-- USER INFO -->
 									<p id="writtenByBox"><?php
 										printf( __( '<a href="%1$s" rel="author">%2$s</a>', 'bonestheme'), get_author_posts_url( get_the_author_meta( 'ID' ) ) , get_avatar( get_the_author_meta( 'ID' ) , 100 )); 
-										printf( __( 'By <span class="author">%1$s</span>', 'bonestheme' ), bones_get_the_author_posts_link() );
+										printf( __( '<span class="written-by-text">By <span class="author">%1$s</span></span>', 'bonestheme' ), bones_get_the_author_posts_link() );
 									?></p>
 
 								</header>
