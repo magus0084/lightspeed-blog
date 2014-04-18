@@ -480,6 +480,14 @@ POSTS & CONTENT STYLES
 	}
 }
 
+#desktop-header-image {
+	display: none;
+}
+
+#mobile-header-image {
+	display: block;
+}
+
 #inner-content {
 	position: relative;
 	margin-bottom: 3em;
@@ -725,6 +733,7 @@ POSTS & CONTENT STYLES
 			/* images inside wp-caption */
 			img {
 				max-width: 100%;
+				margin-top: 0;
 				margin-bottom: 0;
 				width: 100%;
 				border: 0;

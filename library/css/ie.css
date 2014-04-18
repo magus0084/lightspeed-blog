@@ -431,6 +431,12 @@ POSTS & CONTENT STYLES
   .header-image.short-header-image {
     height: 15em; }
 
+#desktop-header-image {
+  display: block; }
+
+#mobile-header-image {
+  display: none; }
+
 #tagline {
   font-size: 1em; }
 
@@ -468,11 +474,11 @@ ARTICLE EXCERPT BOX
   width: 45%;
   margin-right: 5%;
   height: 35em; }
-  .article-excerpt-box:nth-child(odd) {
+  .article-excerpt-box:nth-child(even) {
     margin-right: 0;
     float: right;
     width: 47.5%; }
-  .article-excerpt-box:nth-child(even) {
+  .article-excerpt-box:nth-child(odd) {
     width: 47.5%; }
   .article-excerpt-box .article-excerpt-image {
     height: 10em; }
@@ -671,60 +677,68 @@ POSTS & CONTENT STYLES
     color: white; }
 
 .header-image {
-  height: 25em;
+  height: 27em;
   background-attachment: fixed; }
   .header-image.short-header-image {
     height: 18em; }
 
-.entry-content a:hover {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; }
-  .entry-content a:hover:hover {
-    background-color: #7c4d9e;
-    color: white; }
-.entry-content a img {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; }
-  .entry-content a img:hover {
-    background-color: white;
-    -moz-opacity-size: 0.5;
-    -ms-opacity-size: 0.5;
-    opacity: 0.5;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
-    filter: alpha(opacity=50); }
-.entry-content .addtoany_share_save_container {
-  -moz-opacity-size: 0.5;
-  -ms-opacity-size: 0.5;
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
-  filter: alpha(opacity=50);
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; }
-  .entry-content .addtoany_share_save_container:hover {
-    -moz-opacity-size: 1;
-    -ms-opacity-size: 1;
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
-    filter: alpha(opacity=100); }
-  .entry-content .addtoany_share_save_container a {
+.entry-content {
+  /* end .wp-caption */ }
+  .entry-content a:hover {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out; }
-    .entry-content .addtoany_share_save_container a:hover {
-      background-color: transparent; }
-.entry-content .gallery a:hover {
-  background-color: transparent; }
+    .entry-content a:hover:hover {
+      background-color: #7c4d9e;
+      color: white; }
+  .entry-content a img {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .entry-content a img:hover {
+      background-color: white;
+      -moz-opacity-size: 0.5;
+      -ms-opacity-size: 0.5;
+      opacity: 0.5;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=50); }
+  .entry-content .addtoany_share_save_container {
+    -moz-opacity-size: 0.5;
+    -ms-opacity-size: 0.5;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+    filter: alpha(opacity=50);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .entry-content .addtoany_share_save_container:hover {
+      -moz-opacity-size: 1;
+      -ms-opacity-size: 1;
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value * 100)";
+      filter: alpha(opacity=100); }
+    .entry-content .addtoany_share_save_container a {
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      .entry-content .addtoany_share_save_container a:hover {
+        background-color: transparent; }
+  .entry-content .gallery a:hover {
+    background-color: transparent; }
+  .entry-content .wp-caption {
+    /* images inside wp-caption */ }
+    .entry-content .wp-caption a {
+      border-bottom: none; }
+      .entry-content .wp-caption a:hover {
+        background-color: transparent; }
 
 .article-footer a {
   -webkit-transition: all 0.3s ease-in-out;
@@ -991,7 +1005,7 @@ be seen on the Desktop.
 POSTS & CONTENT STYLES
 ***********************/
 .header-image {
-  height: 30em; }
+  height: 35em; }
   .header-image.short-header-image {
     height: 20em; }
 

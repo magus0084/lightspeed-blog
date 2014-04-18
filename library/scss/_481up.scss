@@ -79,6 +79,14 @@ POSTS & CONTENT STYLES
 	}
 }
 
+#desktop-header-image {
+	display: block;
+}
+
+#mobile-header-image {
+	display: none;
+}
+
 
 #tagline {
 	font-size: 1em;
@@ -134,13 +142,13 @@ ARTICLE EXCERPT BOX
 	margin-right: $two-col-margin;
 	height: 35em;
 	
-	&:nth-child(odd) {
+	&:nth-child(even) {
 		margin-right: 0;
 		float: right;
 		width: $two-col-width + $two-col-margin / 2;
 	}
 	
-	&:nth-child(even) {
+	&:nth-child(odd) {
 		width: $two-col-width + $two-col-margin / 2;
 	}
 	

@@ -294,6 +294,20 @@ POSTS & CONTENT STYLES
 			}
 		}
 	}
+	
+
+	.wp-caption {
+	
+		/* images inside wp-caption */
+		a {
+			border-bottom: none;
+			
+			&:hover {
+				background-color: transparent;
+			}
+		}
+
+	} /* end .wp-caption */
 }
 
 	

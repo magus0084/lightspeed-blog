@@ -24,9 +24,12 @@ Template Name: Top Page
 				
 				// If this is the first post, add header image using and content space tags
 				if( $editorials->current_post == 0 && !is_paged() ) { ?>
-					<!-- IMAGE HEADER -->
-					<header id="top-page-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $postImageLarge[0] ?>');"></header>
+					<!-- DESKTOP IMAGE HEADER -->
+					<header id="desktop-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $postImageLarge[0] ?>');"></header>
 						
+					<!-- MOBILE IMAGE HEADER -->
+					<header id="mobile-header-image" class="header-image short-header-image" style="background-image:url('<?php echo $defaultImage ?>');"></header>
+					
 						<!-- BEGIN inner-content -->
 						<div id="inner-content" class="wrap clearfix post-select-page">
 	
